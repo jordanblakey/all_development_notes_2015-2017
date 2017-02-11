@@ -1,0 +1,1054 @@
+<html>
+<head>
+  <title>Vim Commands and FAQ</title>
+  <basefont face="Tahoma" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/303788 (en-US, DDL); Windows/10.0.14393 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Tahoma;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="333"/>
+<h1>Vim Commands and FAQ</h1>
+
+<div>
+<span><div style="margin: 0px 0px 5px; padding: 0px; border: 0px; width: 660px; word-wrap: break-word; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><div style="margin: 0px 0px 1em; padding: 0px; border: 0px; clear: both;"><div><table style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; border-spacing: 0px; border-collapse: collapse; color: rgb(36, 39, 41); font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;width:721px;"><tr style="margin: 0px; padding: 0px; border: 0px; font-size: 13px;"><td style="margin: 0px; padding: 0px 15px 0px 0px; border: 0px; font-size: 13px; vertical-align: top;width:8.460471567267684%;"><div style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; text-align: center; min-width: 46px;"><a style="margin: 0px auto 2px; padding: 0px; border: 0px; font-size: 1px; color: rgb(0, 119, 204); text-decoration: none; cursor: pointer; background-image: url(&quot;img/sprites.svg?v=d689de80c4e2&quot;), none; background-size: initial; background-repeat: no-repeat; overflow: hidden; display: block; text-indent: -9999em; width: 40px; height: 30px; background-position: 0px -170px;" title="This answer is useful">up vote</a><span style="margin: 8px 0px; padding: 0px; border: 0px; font-size: 20px; display: block; color: rgb(106, 115, 124);">1218</span><a style="margin: 0px auto 10px; padding: 0px; border: 0px; font-size: 1px; color: rgb(0, 119, 204); text-decoration: none; cursor: pointer; background-image: url(&quot;img/sprites.svg?v=d689de80c4e2&quot;), none; background-size: initial; background-repeat: no-repeat; overflow: hidden; display: block; text-indent: -9999em; width: 40px; height: 30px; background-position: 0px -220px;" title="This answer is not useful">down vote</a><span style="margin: 0px auto 10px; padding: 0px; border: 0px; font-size: 1px; background-image: url(&quot;img/sprites.svg?v=d689de80c4e2&quot;), none; background-size: initial; background-repeat: no-repeat; overflow: hidden; display: block; text-indent: -9999em; width: 40px; height: 40px; background-position: -40px -270px; color: rgb(106, 115, 124);" title="loading when this answer was accepted...">accepted</span></div></td><td style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: top;width:91.53952843273233%;"><div style="margin: 0px 0px 5px; padding: 0px; border: 0px; font-size: 15px; width: 660px; word-wrap: break-word;"><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 15px; clear: both;">To turn off autoindent when you paste code, there's a special &quot;paste&quot; mode.</p><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 15px; clear: both;">Type</p><pre style="margin: 0px 0px 1em; padding: 5px; border: 0px; font-size: 13px; width: auto; max-height: 600px; overflow: auto; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); word-wrap: normal;"><code style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: inherit;">:set paste
+</code></pre><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 15px; clear: both;">Then paste your code. Note that the text in the tooltip now says <code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: pre-wrap;">-- INSERT (paste) --</code>.</p><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 15px; clear: both;">After you pasted your code, turn off the paste-mode, so that auto-indenting when you type works correctly again.</p><pre style="margin: 0px 0px 1em; padding: 5px; border: 0px; font-size: 13px; width: auto; max-height: 600px; overflow: auto; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); word-wrap: normal;"><code style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: inherit;">:set nopaste
+</code></pre><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 15px; clear: both;">However, I always found that cumbersome. That's why I map <code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: pre-wrap;">&lt;F3&gt;</code> such that it can switch between paste and nopaste modes <em style="margin: 0px; padding: 0px; border: 0px; font-size: 15px; font-style: italic;">while editing the text!</em> I add this to <code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: pre-wrap;">.vimrc</code></p><pre style="margin: 0px 0px 1em; padding: 5px; border: 0px; font-size: 13px; width: auto; max-height: 600px; overflow: auto; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); word-wrap: normal;"><code style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: inherit;">set pastetoggle=&lt;F3&gt;</code></pre></div></td></tr></table></div><div><hr/></div><div><b>.Vimrc Config</b></div><div><br/></div><div>Colors</div><div>colorscheme badwolf        &quot; awesome colorschem</div><div>syntax enable          &quot; enable syntax processing</div><div>set tabstop=4      &quot; number of visual spaces per TAB</div><div>set softtabstop=4  &quot; number of spaces in tab when editing</div><div>set expandtab      &quot; tabs are spaces</div><div>expandtab turns &lt;TAB&gt;s into spaces. That's it. So &lt;TAB&gt; just becomes a shortcut for &quot;insert four spaces&quot;.</div><div><br/></div><div>UI Config</div><div>set number              &quot; show line numbers</div><div>set showcmd            &quot; show command in bottom bar</div><div>set cursorline          &quot; highlight current line</div><div>filetype indent on      &quot; load filetype-specific indent files</div><div>set wildmenu            &quot; visual autocomplete for command menu</div><div>set lazyredraw          &quot; redraw only when we need to.</div><div>set showmatch          &quot; highlight matching [{()}]</div><div>Searching</div><div>set incsearch          &quot; search as characters are enteredset hlsearch            &quot; highlight matches</div><div>&quot; turn off search highlightnnoremap &lt;leader&gt;&lt;space&gt; :nohlsearch&lt;CR&gt;</div><div>Folding</div><div>set foldenable          &quot; enable folding</div><div>set foldlevelstart=10  &quot; open most folds by default</div><div>set foldnestmax=10      &quot; 10 nested fold max</div><div>&quot; space open/closes foldsnnoremap &lt;space&gt; za</div><div>set foldmethod=indent  &quot; fold based on indent level</div><div>&quot; highlight last inserted textnnoremap gV `[v`]</div><div>&lt;ESC&gt; is very far away. jk is a much better replacement as it's on the home row and I actually never type it when writing text. Except right now when I wrote this section of this post. Which I'm writing in Vim. The workaround if you ever need to enter this rare sequence of keys is to enter the j, wait for the leader-check timeout to fade, and then enter the k.</div><div>&quot; toggle gundonnoremap &lt;leader&gt;u :GundoToggle&lt;CR&gt;\</div><div>In one of its cleverest innovations, Vim doesn't model undo as a simple stack. In Vim it's a tree. This makes sure you never lose an action in Vim, but also makes it much more difficult to traverse around that tree. gundo.vim fixes this by displaying that undo tree in graphical form. Get it and don't look back. Here I've mapped it to ,u, which I like to think of as &quot;super undo&quot;.</div><div>&quot; edit vimrc/zshrc and load vimrc bindingsnnoremap &lt;leader&gt;ev :vsp $MYVIMRC&lt;CR&gt;nnoremap &lt;leader&gt;ez :vsp ~/.zshrc&lt;CR&gt;nnoremap &lt;leader&gt;sv :source $MYVIMRC&lt;CR&gt;</div><div>ave sessionnnoremap &lt;leader&gt;s :mksession&lt;CR&gt;</div><div><br/></div><div>Ever wanted to save a given assortment of windows so that they're there next time you open up Vim? :mksession does just that! After saving a Vim session, you can reopen it with vim -S. Here I've mapped it to ,s, which I remember by thinking of it as &quot;super save&quot;.</div><div><br/></div><div>&quot; open ag.vimnnoremap &lt;leader&gt;a :Ag</div><div>CtrlP</div><div>ctrlp.vim is my life in Vim. If you've never used a fuzzy file searcher this will open your eyes. If you're currently using commandt.vim, you're on the right track, but CtrlP is the spiritual successor. It's can be (see below) significantly faster and more configurable than CommandT (Thanks Reddit!). Anyways here are my settings for CtrlP.</div><div>&quot; CtrlP settingslet g:ctrlp_match_window = 'bottom,order:ttb'let g:ctrlp_switch_buffer = 0let g:ctrlp_working_path_mode = 0let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g &quot;&quot;'</div><div>let g:ctrlp_user_command = 'ag %s -l --nocolor -g &quot;&quot;'</div><div>Launch Config</div><div>These are o</div></div><div style="margin: 0px 0px 1em; padding: 0px; border: 0px; clear: both;"><div><hr/></div><div><b>Cursor movement</b></div><div>h - move left</div><div>j - move down</div><div>k - move up</div><div>l - move right</div><div>w - jump by start of words (punctuation considered words)</div><div>W jump by words (spaces separate words)</div><div>we - jump to end of words (punctuation considered words)</div><div>E - jump to end of words (no punctuation)</div><div>b - jump backward by words (punctuation considered words)</div><div>B - jump backward by words (no punctuation)</div><div>0 - (zero) start of line</div><div>^ - first non-blank character of line</div><div>$ - end of line</div><div>G - Go To command (prefix with number - 5G goes to line 5)</div><div>Note: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.</div><div><b>Insert Mode - Inserting/Appending text</b></div><div>i - start insert mode at cursor</div><div>I - insert at the beginning of the line</div><div>a - append after the cursor</div><div>A - append at the end of the line</div><div>o - open (append) blank line below current line (no need to press return)</div><div>O - open blank line above current line</div><div>ea - append at end of word</div><div>Esc - exit insert mode</div><div><b>Editing</b></div><div>r - replace a single character (does not use insert mode)</div><div>J - join line below to the current one</div><div>cc - change (replace) an entire line</div><div>cw - change (replace) to the end of word</div><div>c$ - change (replace) to the end of line</div><div>s - delete character at cursor and subsitute text</div><div>S - delete line at cursor and substitute text (same as cc)</div><div>xp - transpose two letters (delete and paste, technically)</div><div>u - undo</div><div>. - repeat last command</div><div><b>Marking text (visual mode)</b></div><div>v - start visual mode, mark lines, then do command (such as y-yank)</div><div>start Linewise visual mode</div><div>o - move to other end of marked area</div><div>Ctrl+v - start visual block mode</div><div>O - move to Other corner of block</div><div>aw - mark a word</div><div>ab - a () block (with braces)</div><div>aB - a {} block (with brackets)</div><div>ib - inner () block</div><div>iB - inner {} block</div><div>Esc - exit visual mode</div><div><b>Visual commands</b></div><div>&gt; - shift right</div><div>&lt; - shift left</div><div>y - yank (copy) marked text</div><div>d - delete marked text</div><div>~ - switch case</div><div><b>Cut and Paste</b></div><div>yy - yank (copy) a line</div><div>2yy - yank 2 lines</div><div>yw - yank word</div><div>y$ - yank to end of line</div><div>p - put (paste) the clipboard after cursor</div><div>P - put (paste) before cursor</div><div>dd - delete (cut) a line</div><div>dw - delete (cut) the current word</div><div>x - delete (cut) current character</div><div><b>Exiting</b></div><div>:w - write (save) the file, but don't exit</div><div>:wq - write (save) and quit</div><div>:q - quit (fails if anything has changed)</div><div>:q! - quit and throw away changes</div><div><b>Search/Replace</b></div><div>/pattern - search for pattern</div><div>?pattern - search backward for pattern</div><div>n - repeat search in same direction</div><div>N - repeat search in opposite direction</div><div>:%s/old/new/g - replace all old with new throughout file</div><div>:%s/old/new/gc - replace all old with new throughout file with confirmations</div><div><b>Working with multiple files</b></div><div>:e filename - Edit a file in a new buffer</div><div>:bnext (or :bn) - go to next buffer</div><div>:bprev (of :bp) - go to previous buffer</div><div>:bd - delete a buffer (close a file)</div><div>:sp filename - Open a file in a new buffer and split window</div><div>ctrl+ws - Split windows</div><div>ctrl+ww - switch between windows</div><div>ctrl+wq - Quit a window</div><div>ctrl+wv - Split windows vertically</div><div><hr/></div><div><b>Great Encouragement to Learn Vim</b></div><div><a href="https://www.youtube.com/watch?v=_NUO4JEtkDw">https://www.youtube.com/watch?v=_NUO4JEtkDw</a></div><div><b>Best Tool To Learn/Drill Vim</b></div><div><a href="http://www.vimgenius.com/">http://www.vimgenius.com/</a></div><div><hr/></div><div><span style="font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;"><span style="background-color: rgb(239, 240, 241);"><span style="color: rgb(36, 39, 41);"><br/></span></span></span></div><div><span style="color: rgb(36, 39, 41);"><code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241);">ci&quot;</code><span style="font-size: 15px;"><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">, which means: change what inside the double quotes.</span></span></span></div></div><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 15px; clear: both;"><span style="color: rgb(36, 39, 41);"><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">You can also manipulate other text objects in a similar way, e.g.:</span></span></p><ul style="margin: 0px 0px 1em 30px; padding: 0px; border: 0px; font-size: 15px; list-style-type: disc;"><li style="margin: 0px 0px 0.5em; padding: 0px; border: 0px; font-size: 15px; word-wrap: break-word;"><span style="color: rgb(36, 39, 41);"><code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: pre-wrap;">ci'</code><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"> - change inside the single quotes</span></span></li><li style="margin: 0px 0px 0.5em; padding: 0px; border: 0px; font-size: 15px; word-wrap: break-word;"><span style="color: rgb(36, 39, 41);"><code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: pre-wrap;">ciw</code><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"> - change inside a word</span></span></li><li style="margin: 0px 0px 0.5em; padding: 0px; border: 0px; font-size: 15px; word-wrap: break-word;"><span style="color: rgb(36, 39, 41);"><code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: pre-wrap;">ci(</code><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"> - change inside parentheses</span></span></li><li style="margin: 0px; padding: 0px; border: 0px; font-size: 15px; word-wrap: break-word;"><span style="color: rgb(36, 39, 41);"><code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241); white-space: pre-wrap;">dit</code><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"> - delete inside an HTML tag, etc.</span></span></li></ul><div style="margin: 0px 0px 1em; padding: 0px; border: 0px; clear: both;"><div><span style="font-size: 16px;"><span style="color: rgb(36, 39, 41);"><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">More about different vim text objects <a href="http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/" style="margin: 0px; padding: 0px; border: 0px; font-size: 15px; color: rgb(0, 89, 153); text-decoration: none; cursor: pointer;">here</a></span></span></span></div><div><strong><br clear="none"/></strong></div></div></div><div><hr/></div><div><strong>VimTutor</strong></div><div><a href="http://linuxcommand.org/man_pages/vimtutor1.html" shape="rect"><strong>http://linuxcommand.org/man_pages/vimtutor1.html</strong></a></div><div><br clear="none"/></div><div><hr/></div><div><strong>Why Use VIM?</strong></div><div><a href="http://www.viemu.com/a-why-vi-vim.html" shape="rect" target="_blank">Why, oh WHY, do those #?@! nutheads use vi?<br clear="none"/></a></div><div><br clear="none"/></div><div><span style="color: rgb(55, 55, 55);"><span style="font-family: ProximaNova;"><span style="font-size: 18px;"><br/></span></span></span></div><div><hr/></div><div><br/></div><div><div><br/></div><div><b>While in command mode (case sensitive)</b></div><ul><li>move the cursor with arrow keys; if there aren't any arrow keys, use j,k,h,l</li><li>i - change to insert mode (before cursor)</li><li>a - change to insert mode (after cursor)</li><li>A - change to insert mode (at end of line)</li><li>r - replace one character</li><li>R - overwrite text</li><li>x - delete one character</li><li>dd - delete one line</li><li>yy - yank line (copy)</li><li>p - paste deleted or yanked text after cursor</li><li>P - paste deleted or yanked text before cursor</li><li>G - go to end of the file</li><li>1G - go to top of the file</li><li>J - merge next line with this one</li><li>/ - search, follow / with text to find</li><li>:wq - write file and quit</li><li>:q! - quit without saving</li><li>%s/old/new/g - substitute; replace &quot;old&quot; with &quot;new&quot; on all lines</li><li>:g/pattern/d - delete all lines that match the pattern</li></ul><div><b>While in insert mode</b></div><ul><li>ESC - change to command mode</li><li>any text typed is entered at the cursor</li></ul><div><b>Typical vi session</b></div></div><ol><li>Type &quot;vi file.txt&quot; at command prompt</li><li>Move cursor to where new text will be added</li><li>Type &quot;i&quot; to change to insert mode</li><li>Type new text</li><li>Type ESC to go back to command mode</li><li>type &quot;:wq&quot; and ENTER to write the file and quit</li></ol><div><br/></div><div><br/></div><div><hr/></div><div><br clear="none"/></div><div><strong>rayninfo.co.uk - Best of Vim Tricks</strong></div><div><br clear="none"/></div><div><pre>
+BEGIN__
+*vimtips.txt*   For Vim version 7.3.  
+------------------------------------------------------------------------------
+&quot; new items marked [N] , corrected items marked [C]
+&quot; *best-searching*
+/joe/e                      : cursor set to End of match
+3/joe/e+1                   : find 3rd joe cursor set to End of match plus 1 [C]
+/joe/s-2                    : cursor set to Start of match minus 2
+/joe/+3                     : find joe move cursor 3 lines down
+/^joe.*fred.*bill/          : find joe AND fred AND Bill (Joe at start of line)
+/^[A-J]/                    : search for lines beginning with one or more A-J
+/begin\_.*end               : search over possible multiple lines
+/fred\_s*joe/               : any whitespace including newline [C]
+/fred\|joe                  : Search for FRED OR JOE
+/.*fred\&amp;.*joe              : Search for FRED AND JOE in any ORDER!
+/\&lt;fred\&gt;/                  : search for fred but not alfred or frederick [C]
+/\&lt;\d\d\d\d\&gt;               : Search for exactly 4 digit numbers
+/\D\d\d\d\d\D               : Search for exactly 4 digit numbers
+/\&lt;\d\{4}\&gt;                 : same thing
+/\([^0-9]\|^\)%.*%          : Search for absence of a digit or beginning of line
+&quot; finding empty lines
+/^\n\{3}                    : find 3 empty lines
+/^str.*\nstr                : find 2 successive lines starting with str
+/\(^str.*\n\)\{2}           : find 2 successive lines starting with str
+&quot; using rexexp memory in a search find fred.*joe.*joe.*fred *C*
+/\(fred\).*\(joe\).*\2.*\1
+&quot; Repeating the Regexp (rather than what the Regexp finds)
+/^\([^,]*,\)\{8}
+&quot; visual searching
+:vmap // y/&lt;C-R&gt;&quot;&lt;CR&gt;       : search for visually highlighted text
+:vmap &lt;silent&gt; //    y/&lt;C-R&gt;=escape(@&quot;, '\\/.*$^~[]')&lt;CR&gt;&lt;CR&gt; : with spec chars
+&quot; \zs and \ze regex delimiters :h /\zs
+/&lt;\zs[^&gt;]*\ze&gt;              : search for tag contents, ignoring chevrons
+&quot; zero-width :h /\@=
+/&lt;\@&lt;=[^&gt;]*&gt;\@=             : search for tag contents, ignoring chevrons
+/&lt;\@&lt;=\_[^&gt;]*&gt;\@=           : search for tags across possible multiple lines
+&quot; searching over multiple lines \_ means including newline
+/&lt;!--\_p\{-}--&gt;                   : search for multiple line comments
+/fred\_s*joe/                     : any whitespace including newline *C*
+/bugs\(\_.\)*bunny                : bugs followed by bunny anywhere in file
+:h \_                             : help
+&quot; search for declaration of subroutine/function under cursor
+:nmap gx yiw/^\(sub\&lt;bar&gt;function\)\s\+&lt;C-R&gt;&quot;&lt;CR&gt;
+&quot; multiple file search
+:bufdo /searchstr/                : use :rewind to recommence search
+&quot; multiple file search better but cheating
+:bufdo %s/searchstr/&amp;/gic   : say n and then a to stop
+&quot; How to search for a URL without backslashing
+?http://www.vim.org/        : (first) search BACKWARDS!!! clever huh!
+&quot; Specify what you are NOT searching for (vowels)
+/\c\v([^aeiou]&amp;\a){4}       : search for 4 consecutive consonants
+/\%&gt;20l\%&lt;30lgoat           : Search for goat between lines 20 and 30 [N]
+/^.\{-}home.\{-}\zshome/e   : match only the 2nd occurence in a line of &quot;home&quot; [N]
+:%s/home.\{-}\zshome/alone  : Substitute only the 2nd occurrence of home in any line [U]
+&quot; find str but not on lines containing tongue
+^\(.*tongue.*\)\@!.*nose.*$
+\v^((tongue)@!.)*nose((tongue)@!.)*$
+.*nose.*\&amp;^\%(\%(tongue\)\@!.\)*$ 
+:v/tongue/s/nose/&amp;/gic
+'a,'bs/extrascost//gc       : trick: restrict search to between markers (answer n) [N]
+&quot;----------------------------------------
+&quot; *best-substitution*
+:%s/fred/joe/igc            : general substitute command
+:%s//joe/igc                : Substitute what you last searched for [N]
+:%s/~/sue/igc               : Substitute your last replacement string [N]
+:%s/\r//g                   : Delete DOS returns ^M
+&quot; Is your Text File jumbled onto one line? use following
+:%s/\r/\r/g                 : Turn DOS returns ^M into real returns
+:%s=  *$==                  : delete end of line blanks
+:%s= \+$==                  : Same thing
+:%s#\s*\r\?$##              : Clean both trailing spaces AND DOS returns
+:%s#\s*\r*$##               : same thing
+&quot; deleting empty lines
+:%s/^\n\{3}//               : delete blocks of 3 empty lines
+:%s/^\n\+/\r/               : compressing empty lines
+:%s#&lt;[^&gt;]\+&gt;##g             : delete html tags, leave text (non-greedy)
+:%s#&lt;\_.\{-1,}&gt;##g          : delete html tags possibly multi-line (non-greedy)
+:%s#.*\(\d\+hours\).*#\1#   : Delete all but memorised string (\1) [N]
+&quot; parse xml/soap 
+%s#&gt;&lt;\([^/]\)#&gt;\r&lt;\1#g      : split jumbled up XML file into one tag per line [N]
+%s/&lt;/\r&amp;/g                  : simple split of html/xml/soap  [N]
+:%s#&lt;[^/]#\r&amp;#gic           : simple split of html/xml/soap  but not closing tag [N]
+:%s#&lt;[^/]#\r&amp;#gi            : parse on open xml tag [N]
+:%s#\[\d\+\]#\r&amp;#g          : parse on numbered array elements [1] [N]
+ggVGgJ                      : rejoin XML without extra spaces (gJ) [N]
+&quot; VIM Power Substitute
+:'a,'bg/fred/s/dick/joe/igc : VERY USEFUL
+&quot; duplicating columns
+:%s= [^ ]\+$=&amp;&amp;=            : duplicate end column
+:%s= \f\+$=&amp;&amp;=              : Dupicate filename
+:%s= \S\+$=&amp;&amp;               : usually the same
+&quot; memory
+:%s#example#&amp; = &amp;#gic        : duplicate entire matched string [N]
+:%s#.*\(tbl_\w\+\).*#\1#    : extract list of all strings tbl_* from text  [NC]
+:s/\(.*\):\(.*\)/\2 : \1/   : reverse fields separated by :
+:%s/^\(.*\)\n\1$/\1/        : delete duplicate lines
+:%s/^\(.*\)\(\n\1\)\+$/\1/  : delete multiple duplicate lines [N]
+&quot; non-greedy matching \{-}
+:%s/^.\{-}pdf/new.pdf/      : delete to 1st occurence of pdf only (non-greedy)
+%s#^.\{-}\([0-9]\{3,4\}serial\)#\1#gic : delete up to 123serial or 1234serial [N]
+&quot; use of optional atom \?
+:%s#\&lt;[zy]\?tbl_[a-z_]\+\&gt;#\L&amp;#gc : lowercase with optional leading characters
+&quot; over possibly many lines
+:%s/&lt;!--\_.\{-}--&gt;//        : delete possibly multi-line comments
+:help /\{-}                 : help non-greedy
+&quot; substitute using a register
+:s/fred/&lt;c-r&gt;a/g            : sub &quot;fred&quot; with contents of register &quot;a&quot;
+:s/fred/&lt;c-r&gt;asome_text&lt;c-r&gt;s/g  
+:s/fred/\=@a/g              : better alternative as register not displayed (not *) [C]
+&quot; multiple commands on one line
+:%s/\f\+\.gif\&gt;/\r&amp;\r/g | v/\.gif$/d | %s/gif/jpg/
+:%s/a/but/gie|:update|:next : then use @: to repeat
+&quot; ORing
+:%s/goat\|cow/sheep/gc      : ORing (must break pipe)
+:'a,'bs#\[\|\]##g           : remove [] from lines between markers a and b [N]
+:%s/\v(.*\n){5}/&amp;\r         : insert a blank line every 5 lines [N]
+&quot; Calling a VIM function
+:s/__date__/\=strftime(&quot;%c&quot;)/ : insert datestring
+:inoremap \zd &lt;C-R&gt;=strftime(&quot;%d%b%y&quot;)&lt;CR&gt;    : insert date eg 31Jan11 [N]
+&quot; Working with Columns sub any str1 in col3
+:%s:\(\(\w\+\s\+\)\{2}\)str1:\1str2:
+&quot; Swapping first &amp; last column (4 columns)
+:%s:\(\w\+\)\(.*\s\+\)\(\w\+\)$:\3\2\1:
+&quot; format a mysql query 
+:%s#\&lt;from\&gt;\|\&lt;where\&gt;\|\&lt;left join\&gt;\|\&lt;\inner join\&gt;#\r&amp;#g
+&quot; filter all form elements into paste register
+:redir @*|sil exec 'g#&lt;\(input\|select\|textarea\|/\=form\)\&gt;#p'|redir END
+:nmap ,z :redir @*&lt;Bar&gt;sil exec 'g@&lt;\(input\&lt;Bar&gt;select\&lt;Bar&gt;textarea\&lt;Bar&gt;/\=form\)\&gt;@p'&lt;Bar&gt;redir END&lt;CR&gt;
+&quot; substitute string in column 30 [N]
+:%s/^\(.\{30\}\)xx/\1yy/
+&quot; decrement numbers by 3
+:%s/\d\+/\=(submatch(0)-3)/
+&quot; increment numbers by 6 on certain lines only
+:g/loc\|function/s/\d/\=submatch(0)+6/
+&quot; better
+:%s#txtdev\zs\d#\=submatch(0)+1#g
+:h /\zs
+&quot; increment only numbers gg\d\d  by 6 (another way)
+:%s/\(gg\)\@&lt;=\d\+/\=submatch(0)+6/
+:h zero-width
+&quot; rename a string with an incrementing number
+:let i=10 | 'a,'bg/Abc/s/yy/\=i/ |let i=i+1 # convert yy to 10,11,12 etc
+&quot; as above but more precise
+:let i=10 | 'a,'bg/Abc/s/xx\zsyy\ze/\=i/ |let i=i+1 # convert xxyy to xx11,xx12,xx13
+&quot; find replacement text, put in memory, then use \zs to simplify substitute
+:%s/&quot;\([^.]\+\).*\zsxx/\1/
+&quot; Pull word under cursor into LHS of a substitute
+:nmap &lt;leader&gt;z :%s#\&lt;&lt;c-r&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;cr&gt;\&gt;#
+&quot; Pull Visually Highlighted text into LHS of a substitute
+:vmap &lt;leader&gt;z :&lt;C-U&gt;%s/\&lt;&lt;c-r&gt;*\&gt;/
+&quot; substitute singular or plural
+:'a,'bs/bucket\(s\)*/bowl\1/gic   [N]
+----------------------------------------
+&quot; all following performing similar task, substitute within substitution
+&quot; Multiple single character substitution in a portion of line only
+:%s,\(all/.*\)\@&lt;=/,_,g     : replace all / with _ AFTER &quot;all/&quot;
+&quot; Same thing
+:s#all/\zs.*#\=substitute(submatch(0), '/', '_', 'g')#
+&quot; Substitute by splitting line, then re-joining
+:s#all/#&amp;^M#|s#/#_#g|-j!
+&quot; Substitute inside substitute
+:%s/.*/\='cp '.submatch(0).' all/'.substitute(submatch(0),'/','_','g')/
+----------------------------------------
+&quot; *best-global* command 
+:g/gladiolli/#              : display with line numbers (YOU WANT THIS!)
+:g/fred.*joe.*dick/         : display all lines fred,joe &amp; dick
+:g/\&lt;fred\&gt;/                : display all lines fred but not freddy
+:g/^\s*$/d                  : delete all blank lines
+:g!/^dd/d                   : delete lines not containing string
+:v/^dd/d                    : delete lines not containing string
+:g/joe/,/fred/d             : not line based (very powerfull)
+:g/fred/,/joe/j             : Join Lines [N]
+:g/-------/.-10,.d          : Delete string &amp; 10 previous lines
+:g/{/ ,/}/- s/\n\+/\r/g     : Delete empty lines but only between {...}
+:v/\S/d                     : Delete empty lines (and blank lines ie whitespace)
+:v/./,/./-j                 : compress empty lines
+:g/^$/,/./-j                : compress empty lines
+:g/&lt;input\|&lt;form/p          : ORing
+:g/^/put_                   : double space file (pu = put)
+:g/^/m0                     : Reverse file (m = move)
+:g/^/m$                     : No effect! [N]
+:'a,'bg/^/m'b               : Reverse a section a to b
+:g/^/t.                     : duplicate every line
+:g/fred/t$                  : copy (transfer) lines matching fred to EOF
+:g/stage/t'a                : copy (transfer) lines matching stage to marker a (cannot use .) [C]
+:g/^Chapter/t.|s/./-/g      : Automatically underline selecting headings [N]
+:g/\(^I[^^I]*\)\{80}/d      : delete all lines containing at least 80 tabs
+&quot; perform a substitute on every other line
+:g/^/ if line('.')%2|s/^/zz / 
+&quot; match all lines containing &quot;somestr&quot; between markers a &amp; b
+&quot; copy after line containing &quot;otherstr&quot;
+:'a,'bg/somestr/co/otherstr/ : co(py) or mo(ve)
+&quot; as above but also do a substitution
+:'a,'bg/str1/s/str1/&amp;&amp;&amp;/|mo/str2/
+:%norm jdd                  : delete every other line
+&quot; incrementing numbers (type &lt;c-a&gt; as 5 characters)
+:.,$g/^\d/exe &quot;norm! \&lt;c-a&gt;&quot;: increment numbers
+:'a,'bg/\d\+/norm! ^A       : increment numbers
+&quot; storing glob results (note must use APPEND) you need to empty reg a first with qaq. 
+&quot;save results to a register/paste buffer
+:g/fred/y A                 : append all lines fred to register a
+:g/fred/y A | :let @*=@a    : put into paste buffer
+:g//y A | :let @*=@a    : put last glob into paste buffer [N]
+:let @a=''|g/Barratt/y A |:let @*=@a
+&quot; filter lines to a file (file must already exist)
+:'a,'bg/^Error/ . w &gt;&gt; errors.txt
+&quot; duplicate every line in a file wrap a print '' around each duplicate
+:g/./yank|put|-1s/'/&quot;/g|s/.*/Print '&amp;'/
+&quot; replace string with contents of a file, -d deletes the &quot;mark&quot;
+:g/^MARK$/r tmp.txt | -d
+&quot; display prettily
+:g/&lt;pattern&gt;/z#.5           : display with context
+:g/&lt;pattern&gt;/z#.5|echo &quot;==========&quot;  : display beautifully
+&quot; Combining g// with normal mode commands
+:g/|/norm 2f|r*                      : replace 2nd | with a star
+&quot;send output of previous global command to a new window
+:nmap &lt;F3&gt;  :redir @a&lt;CR&gt;:g//&lt;CR&gt;:redir END&lt;CR&gt;:new&lt;CR&gt;:put! a&lt;CR&gt;&lt;CR&gt;
+&quot;----------------------------------------
+&quot; *Best-Global-combined-with-substitute* (*power-editing*)
+:'a,'bg/fred/s/joe/susan/gic :  can use memory to extend matching
+:/fred/,/joe/s/fred/joe/gic :  non-line based (ultra)
+:/biz/,/any/g/article/s/wheel/bucket/gic:  non-line based [N]
+----------------------------------------
+&quot; Find fred before beginning search for joe
+:/fred/;/joe/-2,/sid/+3s/sally/alley/gIC
+&quot;----------------------------------------
+&quot; create a new file for each line of file eg 1.txt,2.txt,3,txt etc
+:g/^/exe &quot;.w &quot;.line(&quot;.&quot;).&quot;.txt&quot;
+&quot;----------------------------------------
+&quot; chain an external command
+:.g/^/ exe &quot;.!sed 's/N/X/'&quot; | s/I/Q/    [N]
+&quot;----------------------------------------
+&quot; Operate until string found [N]
+d/fred/                                :delete until fred
+y/fred/                                :yank until fred
+c/fred/e                               :change until fred end
+v12|                                   : visualise/change/delete to column 12 [N]
+&quot;----------------------------------------
+&quot; Summary of editing repeats [N]
+.      last edit (magic dot)
+:&amp;     last substitute
+:%&amp;    last substitute every line
+:%&amp;gic last substitute every line confirm
+g%     normal mode repeat last substitute
+g&amp;     last substitute on all lines
+@@     last recording
+@:     last command-mode command
+:!!    last :! command
+:~     last substitute
+:help repeating
+----------------------------------------
+&quot; Summary of repeated searches
+;      last f, t, F or T
+,      last f, t, F or T in opposite direction
+n      last / or ? search
+N      last / or ? search in opposite direction
+----------------------------------------
+&quot; *Absolutely-essential*
+----------------------------------------
+* # g* g#           : find word under cursor (&lt;cword&gt;) (forwards/backwards)
+%                   : match brackets {}[]()
+.                   : repeat last modification 
+@:                  : repeat last : command (then @@)
+matchit.vim         : % now matches tags &lt;tr&gt;&lt;td&gt;&lt;script&gt; &lt;?php etc
+&lt;C-N&gt;&lt;C-P&gt;          : word completion in insert mode
+&lt;C-X&gt;&lt;C-L&gt;          : Line complete SUPER USEFUL
+/&lt;C-R&gt;&lt;C-W&gt;         : Pull &lt;cword&gt; onto search/command line
+/&lt;C-R&gt;&lt;C-A&gt;         : Pull &lt;CWORD&gt; onto search/command line
+:set ignorecase     : you nearly always want this
+:set smartcase      : overrides ignorecase if uppercase used in search string (cool)
+:syntax on          : colour syntax in Perl,HTML,PHP etc
+:set syntax=perl    : force syntax (usually taken from file extension)
+:h regexp&lt;C-D&gt;      : type control-D and get a list all help topics containing
+                      regexp (plus use TAB to Step thru list)
+----------------------------------------
+&quot; MAKE IT EASY TO UPDATE/RELOAD _vimrc
+:nmap ,s :source $VIM/_vimrc
+:nmap ,v :e $VIM/_vimrc
+:e $MYVIMRC         : edits your _vimrc whereever it might be  [N]
+&quot; How to have a variant in your .vimrc for different PCs [N]
+if $COMPUTERNAME == &quot;NEWPC&quot;
+ab mypc vista
+else
+ab mypc dell25
+endif
+----------------------------------------
+&quot; splitting windows
+:vsplit other.php       # vertically split current file with other.php [N]
+----------------------------------------
+&quot;VISUAL MODE (easy to add other HTML Tags)
+:vmap sb &quot;zdi&lt;b&gt;&lt;C-R&gt;z&lt;/b&gt;&lt;ESC&gt;  : wrap &lt;b&gt;&lt;/b&gt; around VISUALLY selected Text
+:vmap st &quot;zdi&lt;?= &lt;C-R&gt;z ?&gt;&lt;ESC&gt;  : wrap &lt;?=   ?&gt; around VISUALLY selected Text
+----------------------------------------
+&quot;vim 7 tabs
+vim -p fred.php joe.php             : open files in tabs
+:tabe fred.php                      : open fred.php in a new tab
+:tab ball                           : tab open files
+:close                              : close a tab but leave the buffer *N*
+&quot; vim 7 forcing use of tabs from .vimrc
+:nnoremap gf &lt;C-W&gt;gf
+:cab      e  tabe
+:tab sball                           : retab all files in buffer (repair) [N]
+----------------------------------------
+&quot; Exploring
+:e .                            : file explorer
+:Exp(lore)                      : file explorer note capital Ex
+:Sex(plore)                     : file explorer in split window
+:browse e                       : windows style browser
+:ls                             : list of buffers
+:cd ..                          : move to parent directory
+:args                           : list of files
+:pwd                            : Print Working Directory (current directory) [N]
+:args *.php                     : open list of files (you need this!)
+:lcd %:p:h                      : change to directory of current file
+:cd :h                      : change to directory of current file [N]
+:autocmd BufEnter * lcd %:p:h   : change to directory of current file automatically (put in _vimrc)
+----------------------------------------
+&quot; Changing Case
+guu                             : lowercase line
+gUU                             : uppercase line
+Vu                              : lowercase line
+VU                              : uppercase line
+g~~                             : flip case line
+vEU                             : Upper Case Word
+vE~                             : Flip Case Word
+ggguG                           : lowercase entire file
+&quot; Titlise Visually Selected Text (map for .vimrc)
+vmap ,c :s/\&lt;\(.\)\(\k*\)\&gt;/\u\1\L\2/g&lt;CR&gt;
+&quot; Title Case A Line Or Selection (better)
+vnoremap &lt;F6&gt; :s/\%V\&lt;\(\w\)\(\w*\)\&gt;/\u\1\L\2/ge&lt;cr&gt; [N]
+&quot; titlise a line
+nmap ,t :s/.*/\L&amp;/&lt;bar&gt;:s/\&lt;./\u&amp;/g&lt;cr&gt;  [N]
+&quot; Uppercase first letter of sentences
+:%s/[.!?]\_s\+\a/\U&amp;\E/g
+----------------------------------------
+gf                              : open file name under cursor (SUPER)
+:nnoremap gF :view &lt;cfile&gt;&lt;cr&gt;  : open file under cursor, create if necessary
+ga                              : display hex,ascii value of char under cursor
+ggVGg?                          : rot13 whole file
+ggg?G                           : rot13 whole file (quicker for large file)
+:8 | normal VGg?                : rot13 from line 8
+:normal 10GVGg?                 : rot13 from line 8
+&lt;C-A&gt;,&lt;C-X&gt;                     : increment,decrement number under cursor
+                                  win32 users must remap CNTRL-A
+&lt;C-R&gt;=5*5                       : insert 25 into text (mini-calculator)
+----------------------------------------
+&quot; Make all other tips superfluous
+:h 42            : also http://www.google.com/search?q=42
+:h holy-grail
+:h!
+----------------------------------------
+&quot; disguise text (watch out) [N]
+ggVGg?                          : rot13 whole file (toggles)
+:set rl!                        : reverse lines right to left (toggles)
+:g/^/m0                         : reverse lines top to bottom (toggles)
+:%s/\(\&lt;.\{-}\&gt;\)/\=join(reverse(split(submatch(1), '.\zs')), '')/g   : reverse all text *N*
+----------------------------------------
+&quot; History, Markers &amp; moving about (what Vim Remembers) [C]
+'.               : jump to last modification line (SUPER)
+`.               : jump to exact spot in last modification line
+g;               : cycle thru recent changes (oldest first)
+g,               : reverse direction 
+:changes
+:h changelist    : help for above
+&lt;C-O&gt;            : retrace your movements in file (starting from most recent)
+&lt;C-I&gt;            : retrace your movements in file (reverse direction)
+:ju(mps)         : list of your movements
+:help jump-motions
+:history         : list of all your commands
+:his c           : commandline history
+:his s           : search history
+q/               : Search history Window (puts you in full edit mode) (exit CTRL-C)
+q:               : commandline history Window (puts you in full edit mode) (exit CTRL-C)
+:&lt;C-F&gt;           : history Window (exit CTRL-C)
+----------------------------------------
+&quot; Abbreviations &amp; Maps
+&quot; Maps are commands put onto keys, abbreviations expand typed text [N]
+&quot; Following 4 maps enable text transfer between VIM sessions
+:map   &lt;f7&gt;   :'a,'bw! c:/aaa/x       : save text to file x
+:map   &lt;f8&gt;   :r c:/aaa/x             : retrieve text 
+:map   &lt;f11&gt;  :.w! c:/aaa/xr&lt;CR&gt;      : store current line
+:map   &lt;f12&gt;  :r c:/aaa/xr&lt;CR&gt;        : retrieve current line
+:ab php          : list of abbreviations beginning php
+:map ,           : list of maps beginning ,
+&quot; allow use of F10 for mapping (win32)
+set wak=no       : :h winaltkeys
+&quot; For use in Maps
+&lt;CR&gt;             : carriage Return for maps
+&lt;ESC&gt;            : Escape
+&lt;LEADER&gt;         : normally \
+&lt;BAR&gt;            : | pipe
+&lt;BACKSPACE&gt;      : backspace
+&lt;SILENT&gt;         : No hanging shell window
+&quot;display RGB colour under the cursor eg #445588
+:nmap &lt;leader&gt;c :hi Normal guibg=#&lt;c-r&gt;=expand(&quot;&lt;cword&gt;&quot;)&lt;cr&gt;&lt;cr&gt;
+map &lt;f2&gt; /price only\\|versus/ :in a map need to backslash the \
+&quot; type table,,, to get &lt;table&gt;&lt;/table&gt;       ### Cool ###
+imap ,,, &lt;esc&gt;bdwa&lt;&lt;esc&gt;pa&gt;&lt;cr&gt;&lt;/&lt;esc&gt;pa&gt;&lt;esc&gt;kA
+&quot; list current mappings of all your function keys
+:for i in range(1, 12) | execute(&quot;map &lt;F&quot;.i.&quot;&gt;&quot;) | endfor   [N]
+&quot; for your .vimrc
+:cab ,f :for i in range(1, 12) \| execute(&quot;map &lt;F&quot;.i.&quot;&gt;&quot;) \| endfor
+&quot;chain commands in abbreviation
+cabbrev vrep tabe class.inc \| tabe report.php   ## chain commands [N]
+----------------------------------------
+&quot; Simple PHP debugging display all variables yanked into register a
+iab phpdb exit(&quot;&lt;hr&gt;Debug &lt;C-R&gt;a  &quot;);
+----------------------------------------
+&quot; Using a register as a map (preload registers in .vimrc)
+:let @m=&quot;:'a,'bs/&quot;
+:let @s=&quot;:%!sort -u&quot;
+----------------------------------------
+&quot; Useful tricks
+&quot;ayy@a           : execute &quot;Vim command&quot; in a text file
+yy@&quot;             : same thing using unnamed register
+u@.              : execute command JUST typed in
+&quot;ddw             : store what you delete in register d [N]
+&quot;ccaw            : store what you change in register c [N]
+----------------------------------------
+&quot; Get output from other commands (requires external programs)
+:r!ls -R         : reads in output of ls
+:put=glob('**')  : same as above                 [N]
+:r !grep &quot;^ebay&quot; file.txt  : grepping in content   [N]
+:20,25 !rot13    : rot13 lines 20 to 25   [N]
+!!date           : same thing (but replaces/filters current line)
+&quot; Sorting with external sort
+:%!sort -u       : use an external program to filter content
+:'a,'b!sort -u   : use an external program to filter content
+!1} sort -u      : sorts paragraph (note normal mode!!)
+:g/^$/;/^$/-1!sort : Sort each block (note the crucial ;)
+&quot; Sorting with internal sort
+:sort /.*\%2v/   : sort all lines on second column [N]
+&quot; number lines  (linux or cygwin only)
+:new | r!nl #                  [N]
+----------------------------------------
+&quot; Multiple Files Management (Essential)
+:bn              : goto next buffer
+:bp              : goto previous buffer
+:wn              : save file and move to next (super)
+:wp              : save file and move to previous
+:bd              : remove file from buffer list (super)
+:bun             : Buffer unload (remove window but not from list)
+:badd file.c     : file from buffer list
+:b3              : go to buffer 3 [C]
+:b main          : go to buffer with main in name eg main.c (ultra)
+:sav php.html    : Save current file as php.html and &quot;move&quot; to php.html
+:sav! %&lt;.bak     : Save Current file to alternative extension (old way)
+:sav! %:r.cfm    : Save Current file to alternative extension
+:sav %:s/fred/joe/           : do a substitute on file name
+:sav %:s/fred/joe/:r.bak2    : do a substitute on file name &amp; ext.
+:!mv % %:r.bak   : rename current file (DOS use Rename or DEL)
+:help filename-modifiers
+:e!              : return to unmodified file
+:w c:/aaa/%      : save file elsewhere
+:e #             : edit alternative file (also cntrl-^)
+:rew             : return to beginning of edited files list (:args)
+:brew            : buffer rewind
+:sp fred.txt     : open fred.txt into a split
+:sball,:sb       : Split all buffers (super)
+:scrollbind      : in each split window
+:map   &lt;F5&gt; :ls&lt;CR&gt;:e # : Pressing F5 lists all buffer, just type number
+:set hidden      : Allows to change buffer w/o saving current buffer
+----------------------------------------
+&quot; Quick jumping between splits
+map &lt;C-J&gt; &lt;C-W&gt;j&lt;C-W&gt;_
+map &lt;C-K&gt; &lt;C-W&gt;k&lt;C-W&gt;_
+----------------------------------------
+&quot; Recording (BEST Feature of ALL)
+qq  # record to q
+your complex series of commands
+q   # end recording
+@q to execute
+@@ to Repeat
+5@@ to Repeat 5 times
+qQ@qq                             : Make an existing recording q recursive [N]
+&quot; editing a register/recording
+&quot;qp                               :display contents of register q (normal mode)
+&lt;ctrl-R&gt;q                         :display contents of register q (insert mode)
+&quot; you can now see recording contents, edit as required
+&quot;qdd                              :put changed contacts back into q
+@q                                :execute recording/register q
+&quot; Operating a Recording on a Visual BLOCK (blockwise)
+1) define recording/register
+qq:s/ to/ from/g^Mq
+2) Define Visual BLOCK
+V}
+3) hit : and the following appears
+:'&lt;,'&gt;
+4)Complete as follows
+:'&lt;,'&gt;norm @q
+----------------------------------------
+&quot;combining a recording with a map (to end up in command mode)
+&quot;here we operate on a file with a recording, then move to the next file [N]
+:nnoremap ] @q:update&lt;bar&gt;bd
+----------------------------------------
+&quot; Visual is the newest and usually the most intuitive editing mode
+&quot; Visual basics
+v                               : enter visual mode
+V                               : visual mode whole line
+&lt;C-V&gt;                           : enter VISUAL BLOCKWISE mode (remap on Windows to say C-Q *C*
+gv                              : reselect last visual area (ultra)
+o                               : navigate visual area
+&quot;*y or &quot;+y                      : yank visual area into paste buffer  [C]
+V%                              : visualise what you match
+V}J                             : Join Visual block (great)
+V}gJ                            : Join Visual block w/o adding spaces
+`[v`]                           : Highlight last insert
+:%s/\%Vold/new/g                : Do a substitute on last visual area [N]
+----------------------------------------
+&quot; Delete 8th and 9th characters of 10 successive lines [C]
+08l&lt;c-v&gt;10j2ld  (use Control Q on win32) [C]
+----------------------------------------
+&quot; how to copy a set of columns using VISUAL BLOCK
+&quot; visual block (AKA columnwise selection) (NOT BY ordinary v command)
+&lt;C-V&gt; then select &quot;column(s)&quot; with motion commands (win32 &lt;C-Q&gt;)
+then c,d,y,r etc
+----------------------------------------
+&quot; how to overwrite a visual-block of text with another such block [C]
+&quot; move with hjkl etc
+Pick the first block: ctrl-v move y
+Pick the second block: ctrl-v move P &lt;esc&gt;
+----------------------------------------
+&quot; text objects :h text-objects                                     [C]
+daW                                   : delete contiguous non whitespace
+di&lt;   yi&lt;  ci&lt;                        : Delete/Yank/Change HTML tag contents
+da&lt;   ya&lt;  ca&lt;                        : Delete/Yank/Change whole HTML tag
+dat   dit                             : Delete HTML tag pair
+diB   daB                             : Empty a function {}
+das                                   : delete a sentence
+----------------------------------------
+&quot; _vimrc essentials
+:imap &lt;TAB&gt; &lt;C-N&gt;                     : set tab to complete [N]
+:set incsearch : jumps to search word as you type (annoying but excellent)
+:set wildignore=*.o,*.obj,*.bak,*.exe : tab complete now ignores these
+:set shiftwidth=3                     : for shift/tabbing
+:set vb t_vb=&quot;.                       : set silent (no beep)
+:set browsedir=buffer                 : Maki GUI File Open use current directory
+----------------------------------------
+set iminsert=0  (or toggle CTRL-^)    : reset &quot;stuck&quot; caps lock key [N]
+----------------------------------------
+&quot; launching Win IE
+:nmap ,f :update&lt;CR&gt;:silent !start c:\progra~1\intern~1\iexplore.exe file://%:p&lt;CR&gt;
+:nmap ,i :update&lt;CR&gt;: !start c:\progra~1\intern~1\iexplore.exe &lt;cWORD&gt;&lt;CR&gt;
+----------------------------------------
+&quot; FTPing from VIM
+cmap ,r  :Nread ftp://209.51.134.122/public_html/index.html
+cmap ,w  :Nwrite ftp://209.51.134.122/public_html/index.html
+gvim ftp://www.somedomain.com/index.html # uses netrw.vim
+----------------------------------------
+&quot; appending to registers (use CAPITAL)
+&quot; yank 5 lines into &quot;a&quot; then add a further 5
+&quot;a5yy
+10j
+&quot;A5yy
+----------------------------------------
+[I     : show lines matching word under cursor &lt;cword&gt; (super)
+----------------------------------------
+&quot; Conventional Shifting/Indenting
+:'a,'b&gt;&gt;
+&quot; visual shifting (builtin-repeat)
+:vnoremap &lt; &lt;gv
+:vnoremap &gt; &gt;gv
+&quot; Block shifting (magic)
+&gt;i{
+&gt;a{
+&quot; also
+&gt;% and &lt;%
+==                            : index current line same as line above [N]
+----------------------------------------
+&quot; Redirection &amp; Paste register *
+:redir @*                    : redirect commands to paste buffer
+:redir END                   : end redirect
+:redir &gt;&gt; out.txt            : redirect to a file
+&quot; Working with Paste buffer
+&quot;*yy                         : yank current line to paste
+&quot;*p                          : insert from paste buffer
+&quot; yank to paste buffer (ex mode)
+:'a,'by*                     : Yank range into paste
+:%y*                         : Yank whole buffer into paste
+:.y*                         : Yank Current line to paster
+&quot; filter non-printable characters from the paste buffer
+&quot; useful when pasting from some gui application
+:nmap &lt;leader&gt;p :let @* = substitute(@*,'[^[:print:]]','','g')&lt;cr&gt;&quot;*p
+:set paste                    : prevent vim from formatting pasted in text *N*
+----------------------------------------
+&quot; Re-Formatting text
+gq}                          : Format a paragraph
+gqap                         : Format a paragraph
+ggVGgq                       : Reformat entire file
+Vgq                          : current line
+&quot; break lines at 70 chars, if possible after a ;
+:s/.\{,69\};\s*\|.\{,69\}\s\+/&amp;\r/g
+----------------------------------------
+&quot; Operate command over multiple files
+:argdo %s/foo/bar/e          : operate on all files in :args
+:bufdo %s/foo/bar/e
+:windo %s/foo/bar/e
+:argdo exe '%!sort'|w!       : include an external command
+:bufdo exe &quot;normal @q&quot; | w   : perform a recording on open files
+:silent bufdo !zip proj.zip %:p   : zip all current files
+----------------------------------------
+&quot; Command line tricks
+gvim -h                    : help
+ls | gvim -                : edit a stream!!
+cat xx | gvim - -c &quot;v/^\d\d\|^[3-9]/d &quot; : filter a stream
+gvim -o file1 file2        : open into a horizontal split (file1 on top, file2 on bottom) [C]
+gvim -O file1 file2        : open into a vertical split (side by side,for comparing code) [N]
+&quot; execute one command after opening file
+gvim.exe -c &quot;/main&quot; joe.c  : Open joe.c &amp; jump to &quot;main&quot;
+&quot; execute multiple command on a single file
+vim -c &quot;%s/ABC/DEF/ge | update&quot; file1.c
+&quot; execute multiple command on a group of files
+vim -c &quot;argdo %s/ABC/DEF/ge | update&quot; *.c
+&quot; remove blocks of text from a series of files
+vim -c &quot;argdo /begin/+1,/end/-1g/^/d | update&quot; *.c
+&quot; Automate editing of a file (Ex commands in convert.vim)
+vim -s &quot;convert.vim&quot; file.c
+&quot;load VIM without .vimrc and plugins (clean VIM) e.g. for HUGE files
+gvim -u NONE -U NONE -N
+&quot; Access paste buffer contents (put in a script/batch file)
+gvim -c 'normal ggdG&quot;*p' c:/aaa/xp
+&quot; print paste contents to default printer
+gvim -c 's/^/\=@*/|hardcopy!|q!'
+&quot; gvim's use of external grep (win32 or *nix)
+:!grep somestring *.php     : creates a list of all matching files [C]
+&quot; use :cn(ext) :cp(rev) to navigate list
+:h grep
+&quot; Using vimgrep with copen                              [N]
+:vimgrep /keywords/ *.php
+:copen
+----------------------------------------
+&quot; GVIM Difference Function (Brilliant)
+gvim -d file1 file2        : vimdiff (compare differences)
+dp                         : &quot;put&quot; difference under cursor to other file
+do                         : &quot;get&quot; difference under cursor from other file
+[c                         : jump backwards to changec
+]c                         : jump forwards to change
+:set diffopt+=icase        : switch case sensitivity on and off
+&quot; complex diff parts of same file [N]
+:1,2yank a | 7,8yank b
+:tabedit | put a | vnew | put b
+:windo diffthis 
+----------------------------------------
+&quot; Vim traps
+In regular expressions you must backslash + (match 1 or more)
+In regular expressions you must backslash | (or)
+In regular expressions you must backslash ( (group)
+In regular expressions you must backslash { (count)
+/fred\+/                   : matches fred/freddy but not free
+/\(fred\)\{2,3}/           : note what you have to break
+----------------------------------------
+&quot; \v or very magic (usually) reduces backslashing
+/codes\(\n\|\s\)*where  : normal regexp
+/\vcodes(\n|\s)*where   : very magic
+----------------------------------------
+&quot; pulling objects onto command/search line (SUPER)
+&lt;C-R&gt;&lt;C-W&gt; : pull word under the cursor into a command line or search
+&lt;C-R&gt;&lt;C-A&gt; : pull WORD under the cursor into a command line or search
+&lt;C-R&gt;-                  : pull small register (also insert mode)
+&lt;C-R&gt;[0-9a-z]           : pull named registers (also insert mode)
+&lt;C-R&gt;%                  : pull file name (also #) (also insert mode)
+&lt;C-R&gt;=somevar           : pull contents of a variable (eg :let sray=&quot;ray[0-9]&quot;)
+----------------------------------------
+&quot; List your Registers
+:reg             : display contents of all registers
+:reg a           : display content of register a
+:reg 12a         : display content of registers 1,2 &amp; a [N]
+&quot;5p              : retrieve 5th &quot;ring&quot; 
+&quot;1p....          : retrieve numeric registers one by one
+:let @y='yy@&quot;'   : pre-loading registers (put in .vimrc)
+qqq              : empty register &quot;q&quot;
+qaq              : empty register &quot;a&quot;
+:reg .-/%:*&quot;     : the seven special registers [N]
+:reg 0           : what you last yanked, not affected by a delete [N]
+&quot;_dd             : Delete to blackhole register &quot;_ , don't affect any register [N]
+----------------------------------------
+&quot; manipulating registers
+:let @a=@_              : clear register a
+:let @a=&quot;&quot;              : clear register a
+:let @a=@&quot;              : Save unnamed register [N]
+:let @*=@a              : copy register a to paste buffer
+:let @*=@:              : copy last command to paste buffer
+:let @*=@/              : copy last search to paste buffer
+:let @*=@%              : copy current filename to paste buffer
+----------------------------------------
+&quot; help for help (USE TAB)
+:h quickref             : VIM Quick Reference Sheet (ultra)
+:h tips                 : Vim's own Tips Help
+:h visual&lt;C-D&gt;&lt;tab&gt;     : obtain  list of all visual help topics
+                        : Then use tab to step thru them
+:h ctrl&lt;C-D&gt;            : list help of all control keys
+:helpg uganda           : grep HELP Files use :cn, :cp to find next
+:helpgrep edit.*director: grep help using regexp
+:h :r                   : help for :ex command
+:h CTRL-R               : normal mode
+:h /\r                  : what's \r in a regexp (matches a &lt;CR&gt;)
+:h \\zs                 : double up backslash to find \zs in help
+:h i_CTRL-R             : help for say &lt;C-R&gt; in insert mode
+:h c_CTRL-R             : help for say &lt;C-R&gt; in command mode
+:h v_CTRL-V             : visual mode
+:h tutor                : VIM Tutor
+&lt;C-]&gt;                   : jump to {keyword} under  cursor in help file [C]
+&lt;C-[&gt;, &lt;C-T&gt;            : Move back &amp; Forth in HELP History
+gvim -h                 : VIM Command Line Help
+:cabbrev h tab help     : open help in a tab [N]
+----------------------------------------
+&quot; where was an option set
+:scriptnames            : list all plugins, _vimrcs loaded (super)
+:verbose set history?   : reveals value of history and where set
+:function               : list functions
+:func SearchCompl       : List particular function
+----------------------------------------
+&quot; making your own VIM help
+:helptags /vim/vim64/doc  : rebuild all *.txt help files in /doc
+:help add-local-help
+&quot; save this page as a VIM Help File [N]
+:sav! $VIMRUNTIME/doc/vimtips.txt|:1,/^__BEGIN__/d|:/^__END__/,$d|:w!|:helptags $VIMRUNTIME/doc
+----------------------------------------
+&quot; running file thru an external program (eg php)
+map   &lt;f9&gt;   :update&lt;CR&gt;:!c:/php/php.exe %&lt;CR&gt;
+map   &lt;f2&gt;   :update&lt;CR&gt;:!perl -c %&lt;CR&gt;
+----------------------------------------
+&quot; capturing output of current script in a separate buffer
+:new | r!perl #                   : opens new buffer,read other buffer
+:new! x.out | r!perl #            : same with named file
+:new+read!ls
+----------------------------------------
+&quot; create a new buffer, paste a register &quot;q&quot; into it, then sort new buffer
+:new +put q|%!sort
+----------------------------------------
+&quot; Inserting DOS Carriage Returns
+:%s/$/\&lt;C-V&gt;&lt;C-M&gt;&amp;/g          :  that's what you type
+:%s/$/\&lt;C-Q&gt;&lt;C-M&gt;&amp;/g          :  for Win32
+:%s/$/\^M&amp;/g                  :  what you'll see where ^M is ONE character
+----------------------------------------
+&quot; automatically delete trailing Dos-returns,whitespace
+autocmd BufRead * silent! %s/[\r \t]\+$//
+autocmd BufEnter *.php :%s/[ \t\r]\+$//e
+----------------------------------------
+&quot; perform an action on a particular file or file type
+autocmd VimEnter c:/intranet/note011.txt normal! ggVGg?
+autocmd FileType *.pl exec('set fileformats=unix')
+----------------------------------------
+&quot; Retrieving last command line command for copy &amp; pasting into text
+i&lt;c-r&gt;:
+&quot; Retrieving last Search Command for copy &amp; pasting into text
+i&lt;c-r&gt;/
+----------------------------------------
+&quot; more completions
+&lt;C-X&gt;&lt;C-F&gt;                        :insert name of a file in current directory
+----------------------------------------
+&quot; Substituting a Visual area
+&quot; select visual area as usual (:h visual) then type :s/Emacs/Vim/ etc
+:'&lt;,'&gt;s/Emacs/Vim/g               : REMEMBER you dont type the '&lt;.'&gt;
+gv                                : Re-select the previous visual area (ULTRA)
+----------------------------------------
+&quot; inserting line number into file
+:g/^/exec &quot;s/^/&quot;.strpart(line(&quot;.&quot;).&quot;    &quot;, 0, 4)
+:%s/^/\=strpart(line(&quot;.&quot;).&quot;     &quot;, 0, 5)
+:%s/^/\=line('.'). ' '
+----------------------------------------
+&quot; *numbering lines VIM way*
+:set number                       : show line numbers
+:map &lt;F12&gt; :set number!&lt;CR&gt;       : Show linenumbers flip-flop
+:%s/^/\=strpart(line('.').&quot;        &quot;,0,&amp;ts)
+&quot; numbering lines (need Perl on PC) starting from arbitrary number
+:'a,'b!perl -pne 'BEGIN{$a=223} substr($_,2,0)=$a++'
+&quot; Produce a list of numbers
+&quot; Type in number on line say 223 in an empty file
+qqmnYP`n^Aq                       : in recording q repeat with @q
+&quot; increment existing numbers to end of file (type &lt;c-a&gt; as 5 characters)
+:.,$g/^\d/exe &quot;normal! \&lt;c-a&gt;&quot;
+&quot; advanced incrementing
+http://vim.sourceforge.net/tip_view.php?tip_id=150
+----------------------------------------
+&quot; *advanced incrementing* (really useful)
+&quot; put following in _vimrc
+let g:I=0
+function! INC(increment)
+let g:I =g:I + a:increment
+return g:I
+endfunction
+&quot; eg create list starting from 223 incrementing by 5 between markers a,b
+:let I=223
+:'a,'bs/^/\=INC(5)/
+&quot; create a map for INC
+cab viminc :let I=223 \| 'a,'bs/$/\=INC(5)/
+----------------------------------------
+&quot; *generate a list of numbers*  23-64
+o23&lt;ESC&gt;qqYp&lt;C-A&gt;q40@q
+unmap =                           : get the original vim command on a mapped key [N]
+----------------------------------------
+&quot; editing/moving within current insert (Really useful)
+&lt;C-U&gt;                             : delete all entered
+&lt;C-W&gt;                             : delete last word
+&lt;HOME&gt;&lt;END&gt;                       : beginning/end of line
+&lt;C-LEFTARROW&gt;&lt;C-RIGHTARROW&gt;       : jump one word backwards/forwards
+&lt;C-X&gt;&lt;C-E&gt;,&lt;C-X&gt;&lt;C-Y&gt;             : scroll while staying put in insert
+----------------------------------------
+#encryption (use with care: DON'T FORGET your KEY)
+:X                                : you will be prompted for a key
+:h :X
+----------------------------------------
+&quot; modeline (make a file readonly etc) must be in first/last 5 lines
+// vim:noai:ts=2:sw=4:readonly:
+&quot; vim:ft=html:                    : says use HTML Syntax highlighting
+:h modeline
+----------------------------------------
+&quot; Creating your own GUI Toolbar entry
+amenu  Modeline.Insert\ a\ VIM\ modeline &lt;Esc&gt;&lt;Esc&gt;ggOvim:ff=unix ts=4 ss=4&lt;CR&gt;vim60:fdm=marker&lt;esc&gt;gg
+----------------------------------------
+&quot; A function to save word under cursor to a file
+function! SaveWord()
+   normal yiw
+   exe ':!echo '.@0.' &gt;&gt; word.txt'
+endfunction
+map ,p :call SaveWord()
+----------------------------------------
+&quot; function to delete duplicate lines
+function! Del()
+ if getline(&quot;.&quot;) == getline(line(&quot;.&quot;) - 1)
+   norm dd
+ endif
+endfunction
+
+:g/^/ call Del()
+----------------------------------------
+&quot; Digraphs (non alpha-numerics)
+:digraphs                         : display table
+:h dig                            : help
+i&lt;C-K&gt;e'                          : enters é
+i&lt;C-V&gt;233                         : enters é (Unix)
+i&lt;C-Q&gt;233                         : enters é (Win32)
+ga                                : View hex value of any character
+#Deleting non-ascii characters (some invisible)
+:%s/[\x00-\x1f\x80-\xff]/ /g      : type this as you see it
+:%s/[&lt;C-V&gt;128-&lt;C-V&gt;255]//gi       : where you have to type the Control-V
+:%s/[€-ÿ]//gi                     : Should see a black square &amp; a dotted y
+:%s/[&lt;C-V&gt;128-&lt;C-V&gt;255&lt;C-V&gt;01-&lt;C-V&gt;31]//gi : All pesky non-asciis
+:exec &quot;norm /[\x00-\x1f\x80-\xff]/&quot;        : same thing
+#Pull a non-ascii character onto search bar
+yl/&lt;C-R&gt;&quot;                         :
+/[^a-zA-Z0-9_[:space:][:punct:]]  : search for all non-ascii
+----------------------------------------
+&quot; All file completions grouped (for example main_c.c)
+:e main_&lt;tab&gt;                     : tab completes
+gf                                : open file under cursor  (normal)
+main_&lt;C-X&gt;&lt;C-F&gt;                   : include NAME of file in text (insert mode)
+----------------------------------------
+&quot; Complex Vim
+&quot; swap two words
+:%s/\&lt;\(on\|off\)\&gt;/\=strpart(&quot;offon&quot;, 3 * (&quot;off&quot; == submatch(0)), 3)/g
+&quot; swap two words
+:vnoremap &lt;C-X&gt; &lt;Esc&gt;`.``gvP``P
+&quot; Swap word with next word
+nmap &lt;silent&gt; gw    &quot;_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/&lt;cr&gt;&lt;c-o&gt;&lt;c-l&gt; [N]
+----------------------------------------
+&quot; Convert Text File to HTML
+:runtime! syntax/2html.vim        : convert txt to html
+:h 2html
+----------------------------------------
+&quot; VIM has internal grep
+:grep some_keyword *.c            : get list of all c-files containing keyword
+:cn                               : go to next occurrence
+----------------------------------------
+&quot; Force Syntax coloring for a file that has no extension .pl
+:set syntax=perl
+&quot; Remove syntax coloring (useful for all sorts of reasons)
+:set syntax off
+&quot; change coloring scheme (any file in ~vim/vim??/colors)
+:colorscheme blue
+:colorscheme morning     : good fallback colorscheme *N*
+&quot; Force HTML Syntax highlighting by using a modeline
+# vim:ft=html:
+&quot; Force syntax automatically (for a file with non-standard extension)
+au BufRead,BufNewFile */Content.IE?/* setfiletype html
+&quot; make cursor standout against highlighted text for vim terminal (linux) [N]
+:highlight search term=reverse ctermbg=5  
+:highlight Normal guibg=white     : restore white background [N]
+----------------------------------------
+:set noma (non modifiable)        : Prevents modifications
+:set ro (Read Only)               : Protect a file from unintentional writes
+----------------------------------------
+&quot; Sessions (Open a set of files)
+gvim file1.c file2.c lib/lib.h lib/lib2.h : load files for &quot;session&quot;
+:mksession                        : Make a Session file (default Session.vim)
+:mksession MySession.vim          : Make a Session file named file [C]
+:q
+gvim -S                           : Reload all files (loads Session.vim) [C]
+gvim -S MySession.vim             : Reload all files from named session [C]
+----------------------------------------
+#tags (jumping to subroutines/functions)
+taglist.vim                       : popular plugin
+:Tlist                            : display Tags (list of functions)
+&lt;C-]&gt;                             : jump to function under cursor
+----------------------------------------
+&quot; columnise a csv file for display only as may crop wide columns
+:let width = 20
+:let fill=' ' | while strlen(fill) &lt; width | let fill=fill.fill | endwhile
+:%s/\([^;]*\);\=/\=strpart(submatch(1).fill, 0, width)/ge
+:%s/\s\+$//ge
+&quot; Highlight a particular csv column (put in .vimrc)
+function! CSVH(x)
+    execute 'match Keyword /^\([^,]*,\)\{'.a:x.'}\zs[^,]*/'
+    execute 'normal ^'.a:x.'f,'
+endfunction
+command! -nargs=1 Csv :call CSVH(&lt;args&gt;)
+&quot; call with
+:Csv 5                             : highlight fifth column
+----------------------------------------
+zf1G      : fold everything before this line [N]
+&quot; folding : hide sections to allow easier comparisons
+zf}                               : fold paragraph using motion
+v}zf                              : fold paragraph using visual
+zf'a                              : fold to mark
+zo                                : open fold
+zc                                : re-close fold
+&quot; also visualise a section of code then type zf [N]
+:help folding
+zfG      : fold everything after this line [N]
+----------------------------------------
+&quot; displaying &quot;non-asciis&quot;
+:set list
+:h listchars
+----------------------------------------
+&quot; How to paste &quot;normal vim commands&quot; w/o entering insert mode
+:norm qqy$jq
+----------------------------------------
+&quot; manipulating file names
+:h filename-modifiers             : help
+:w %                              : write to current file name
+:w %:r.cfm                        : change file extention to .cfm
+:!echo %:p                        : full path &amp; file name
+:!echo %:p:h                      : full path only
+:!echo %:t                        : filename only
+:reg %                            : display filename
+&lt;C-R&gt;%                            : insert filename (insert mode)
+&quot;%p                               : insert filename (normal mode)
+/&lt;C-R&gt;%                           : Search for file name in text
+----------------------------------------
+&quot; delete without destroying default buffer contents
+&quot;_d                               : what you've ALWAYS wanted
+&quot;_dw                              : eg delete word (use blackhole)
+----------------------------------------
+&quot; pull full path name into paste buffer for attachment to email etc
+nnoremap &lt;F2&gt; :let @*=expand(&quot;%:p&quot;)&lt;cr&gt; :unix
+nnoremap &lt;F2&gt; :let @*=substitute(expand(&quot;%:p&quot;), &quot;/&quot;, &quot;\\&quot;, &quot;g&quot;)&lt;cr&gt; :win32
+----------------------------------------
+&quot; Simple Shell script to rename files w/o leaving vim
+$ vim
+:r! ls *.c
+:%s/\(.*\).c/mv &amp; \1.bla
+:w !sh
+:q!
+----------------------------------------
+&quot; count words/lines in a text file
+g&lt;C-G&gt;                                 # counts words
+:echo line(&quot;'b&quot;)-line(&quot;'a&quot;)            # count lines between markers a and b [N]
+:'a,'bs/^//n                           # count lines between markers a and b
+:'a,'bs/somestring//gn                 # count occurences of a string
+:s/,/,/gn                              # count commas in a line (csv/parameters)
+----------------------------------------
+&quot; example of setting your own highlighting
+:syn match DoubleSpace &quot;  &quot;
+:hi def DoubleSpace guibg=#e0e0e0
+----------------------------------------
+&quot; reproduce previous line word by word
+imap ]  @@@&lt;ESC&gt;hhkyWjl?@@@&lt;CR&gt;P/@@@&lt;CR&gt;3s
+nmap ] i@@@&lt;ESC&gt;hhkyWjl?@@@&lt;CR&gt;P/@@@&lt;CR&gt;3s
+&quot; Programming keys depending on file type
+:autocmd bufenter *.tex map &lt;F1&gt; :!latex %&lt;CR&gt;
+:autocmd bufenter *.tex map &lt;F2&gt; :!xdvi -hush %&lt;.dvi&amp;&lt;CR&gt;
+&quot; allow yanking of php variables with their dollar [N]
+:autocmd bufenter *.php :set iskeyword+=\$ 
+----------------------------------------
+&quot; reading Ms-Word documents, requires antiword (not docx)
+:autocmd BufReadPre *.doc set ro
+:autocmd BufReadPre *.doc set hlsearch!
+:autocmd BufReadPost *.doc %!antiword &quot;%&quot;
+----------------------------------------
+&quot; a folding method
+vim: filetype=help foldmethod=marker foldmarker=&lt;&lt;&lt;,&gt;&gt;&gt;
+A really big section closed with a tag &lt;&lt;&lt; 
+--- remember folds can be nested --- 
+Closing tag &gt;&gt;&gt; 
+----------------------------------------
+&quot; Return to last edit position (You want this!) [N]
+autocmd BufReadPost *
+     \ if line(&quot;'\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;'\&quot;&quot;) &lt;= line(&quot;$&quot;) |
+     \   exe &quot;normal! g`\&quot;&quot; |
+     \ endif
+----------------------------------------
+&quot; store text that is to be changed or deleted in register a
+&quot;act&lt;                                 :  Change Till &lt; [N]
+----------------------------------------
+&quot;installing/getting latest version of vim on Linux (replace tiny-vim) [N]
+yum install vim-common vim-enhanced vim-minimal
+----------------------------------------
+# using gVIM with Cygwin on a Windows PC
+if has('win32')
+source $VIMRUNTIME/mswin.vim
+behave mswin
+set shell=c:\\cygwin\\bin\\bash.exe shellcmdflag=-c shellxquote=\&quot;
+endif
+----------------------------------------
+&quot; *Just Another Vim Hacker JAVH*
+vim -c &quot;:%s%s*%Cyrnfr)fcbafbe[Oenz(Zbbyranne%|:%s)[[()])-)Ig|norm Vg?&quot;
+----------------------------------------
+vim:tw=78:ts=8:ft=help:norl:
+__END__
+----------------------------------------
+&quot;Read Vimtips into a new vim buffer 
+:silent r ! lynx -dump &quot;http://zzapper.co.uk/vimtips.html&quot; [N]
+&quot; read webpage source html into vim
+gvim http://www.zzapper.co.uk/vimtips.html &amp;
+----------------------------------------
+updated version at http://www.zzapper.co.uk/vimtips.html
+----------------------------------------
+Please email any errors, tips etc to
+<a href="mailto:vim@rayninfo.co.uk" shape="rect" target="_blank">vim@rayninfo.co.uk</a>
+&quot; Information Sources
+----------------------------------------
+<a href="http://www.vim.org/" shape="rect" target="_blank">www.vim.org</a><a href="http://vim.wikia.com/" shape="rect" target="_blank">Vim Wiki</a> *** VERY GOOD *** [N]
+<a href="http://groups.google.com/group/vim_use" shape="rect" target="_blank">Vim Use</a> VIM newsgroup [N]
+<a href="http://groups.google.com/groups?group=comp.editors" shape="rect" target="_blank">comp.editors</a><a href="http://groups.yahoo.com/group/vim/" shape="rect" target="_blank">groups.yahoo.com/group/vim</a> &quot;VIM&quot; specific newsgroup
+<a shape="rect" target="_blank">VIM Webring</a><a href="http://gav.brokentrain.net/projects/vimtips/vimtips.pdf" shape="rect" target="_blank">VimTips PDF Version</a> (PRINTABLE!)
+<a href="http://webhostingrating.com/libs/vimtips-rayninfo-be" shape="rect" target="_blank">Vimtips in Belarusian</a> 
+----------------------------------------
+&quot; : commands to neutralise &lt; for HTML display and publish
+&quot; use yy@&quot; to execute following commands
+:w!|sav! vimtips.html|:/^__BEGIN__/,/^__END__/s#&lt;#\&lt;#g|:w!|:!vimtipsftp
+</pre><br clear="none"/></div></span>
+</div></body></html> 

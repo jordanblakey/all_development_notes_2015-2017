@@ -1,0 +1,1009 @@
+<html>
+<head>
+  <title>Learning C#</title>
+  <basefont face="Tahoma" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/303788 (en-US, DDL); Windows/10.0.14393 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Tahoma;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="7107"/>
+<h1>Learning C#</h1>
+
+<div><span><div><div style="float: right; text-align: center; background: rgb(238, 238, 238); padding: 0px 20px; border-radius: 3px; border-bottom: 2px solid rgb(221, 221, 221); color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div><span style="font-weight: bold; display: block;"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flearnxinyminutes.com%2Fdocs%2Fcsharp%2F&amp;text=Learn+X+in+Y+minutes%2C+where+X%3Dc%23">Share this page</a></span></div></div></div><div><b><span style="font-size: 24.928px;"><span style="font-family: helvetica, arial, san-serif;"><span style="color: rgb(0, 0, 0);">Hyperpolyglot</span></span></span></b></div><div><span style="color: rgb(0, 0, 0);"><span style="font-family: helvetica, arial, san-serif;"><span style="font-size: 24.928px;">Object-Oriented C Style Languages: C++, Objective-C, Java, C#</span></span></span></div><div><div style="margin: 22pt 0px 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 0); font-size: 13.12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><p style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><a name="top" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;"></a><em style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;">a side-by-side reference sheet</em></p><div><br/></div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><div><a href="http://hyperpolyglot.org/cpp#grammar-execution" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">grammar and execution</a> | <a href="http://hyperpolyglot.org/cpp#variables-expressions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">variables and expressions</a> | <a href="http://hyperpolyglot.org/cpp#arithmetic-logic" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">arithmetic and logic</a> | <a href="http://hyperpolyglot.org/cpp#strings" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">strings</a> | <a href="http://hyperpolyglot.org/cpp#regexes" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">regexes</a> | <a href="http://hyperpolyglot.org/cpp#dates-time" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dates and time</a> | <a href="http://hyperpolyglot.org/cpp#fixed-length-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">fixed-length arrays</a> | <a href="http://hyperpolyglot.org/cpp#resizable-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">resizable arrays</a> | <a href="http://hyperpolyglot.org/cpp#tuples" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">tuples</a> | <a href="http://hyperpolyglot.org/cpp#dictionaries" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dictionaries</a> | <a href="http://hyperpolyglot.org/cpp#functions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">functions</a> | <a href="http://hyperpolyglot.org/cpp#execution-control" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">execution control</a> | <a href="http://hyperpolyglot.org/cpp#exceptions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">exceptions</a> | <a href="http://hyperpolyglot.org/cpp#concurrency" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">concurrency</a> | <a href="http://hyperpolyglot.org/cpp#file-handles" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">file handles</a> | <a href="http://hyperpolyglot.org/cpp#files" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">files</a> | <a href="http://hyperpolyglot.org/cpp#file-fmt" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">file formats</a> | <a href="http://hyperpolyglot.org/cpp#directories" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">directories</a> | <a href="http://hyperpolyglot.org/cpp#processes-environment" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">processes and environment</a> | <a href="http://hyperpolyglot.org/cpp#libraries-namespaces" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">libraries and namespaces</a> | <a href="http://hyperpolyglot.org/cpp#user-defined-types" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">user-defined types</a> | <a href="http://hyperpolyglot.org/cpp#generic-types" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">generic types</a> | <a href="http://hyperpolyglot.org/cpp#objects" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">objects</a> | <a href="http://hyperpolyglot.org/cpp#inheritance-polymorphism" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">inheritance and polymorphism</a> | <a href="http://hyperpolyglot.org/cpp#reflection" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">reflection</a> | <a href="http://hyperpolyglot.org/cpp#net-web" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">net and web</a> | <a href="http://hyperpolyglot.org/cpp#unit-tests" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">unit tests</a> | <a href="http://hyperpolyglot.org/cpp#debugging-profiling" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">debugging and profiling</a></div><div><br/></div></div></div></div><div><hr/></div><div><span style="color: rgb(34, 34, 34);"><span style="font-size: 28px;"><span style="font-family: &quot;Roboto Slab&quot;, serif;"><b><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></b></span></span></span></div></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Where X=c#</h2><p style="margin: 22pt 0px 0px; padding: 0px; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Get the code: <a href="https://learnxinyminutes.com/docs/files/LearnCSharp.cs">LearnCSharp.cs</a></p><div style="font-size: 14pt; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><p style="margin: 22pt 0px 0px; padding: 0px;">C# is an elegant and type-safe object-oriented language that enables developers to build a variety of secure and robust applications that run on the .NET Framework.</p><p style="margin: 22pt 0px 0px; padding: 0px;"><a href="http://msdn.microsoft.com/en-us/library/vstudio/z1zx9t92.aspx">Read more here.</a></p><div style="background: rgb(238, 238, 238); padding: 18pt; overflow-x: auto; margin: 0px; font-family: &quot;Ubuntu Mono&quot;, monospace; display: block;"><pre style="margin: 1em 0px; font-family: monospace, serif; font-size: 1em; white-space: pre-wrap; word-wrap: break-word;"><span style="color: rgb(153, 153, 136); font-style: normal;">// Single-line comments start with //</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Multi-line comments look like this</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">/// &lt;summary&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">/// This is an XML documentation comment which can be used to generate external</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">/// documentation or provide context help within an IDE</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">/// &lt;/summary&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">/// &lt;param name=&quot;firstParam&quot;&gt;This is some parameter documentation for firstParam&lt;/param&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">/// &lt;returns&gt;Information on the returned value of a function&lt;/returns&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//public void MethodOrClassOrOtherWithParsableHelp(string firstParam) {}</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Specify the namespaces this source code will be using</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// The namespaces below are all part of the standard .NET Framework Class Library</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System.Collections.Generic</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System.Dynamic</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System.Linq</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System.Net</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System.Threading.Tasks</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System.IO</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// But this one is not:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> <span style="color: rgb(85, 85, 85);">System.Data.Entity</span>;
+<span style="color: rgb(153, 153, 136); font-style: normal;">// In order to be able to use it, you need to add a dll reference</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// This can be done with the NuGet package manager: `Install-Package EntityFramework`</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Namespaces define scope to organize code into &quot;packages&quot; or &quot;modules&quot;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Using this code from another source file: using Learning.CSharp;</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">namespace</span> <span style="color: rgb(85, 85, 85);">Learning.CSharp</span>
+{
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Each .cs file should at least contain a class with the same name as the file.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// You're allowed to do otherwise, but shouldn't for sanity.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">LearnCSharp</span>
+    {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// BASIC SYNTAX - skip to INTERESTING FEATURES if you have used Java or C++ before</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Syntax</span>()
+        {
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Use Console.WriteLine to print lines</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;Hello World&quot;</span>);
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(
+                <span style="color: rgb(208, 16, 64);">&quot;Integer: &quot;</span> + <span style="color: rgb(0, 153, 153);">10</span> +
+                <span style="color: rgb(208, 16, 64);">&quot; Double: &quot;</span> + <span style="color: rgb(0, 153, 153);">3.14</span> +
+                <span style="color: rgb(208, 16, 64);">&quot; Boolean: &quot;</span> + <span style="color: rgb(0, 0, 0); font-weight: 700;">true</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// To print without a new line, use Console.Write</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">Write</span>(<span style="color: rgb(208, 16, 64);">&quot;Hello &quot;</span>);
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">Write</span>(<span style="color: rgb(208, 16, 64);">&quot;World&quot;</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////////////////</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Types &amp; Variables</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Declare a variable using &lt;type&gt; &lt;name&gt;</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////////////////</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Sbyte - Signed 8-bit integer</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// (-128 &lt;= sbyte &lt;= 127)</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">sbyte</span> <span style="color: rgb(51, 51, 51);">fooSbyte</span> = <span style="color: rgb(0, 153, 153);">100</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Byte - Unsigned 8-bit integer</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// (0 &lt;= byte &lt;= 255)</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">byte</span> <span style="color: rgb(51, 51, 51);">fooByte</span> = <span style="color: rgb(0, 153, 153);">100</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Short - 16-bit integer</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Signed - (-32,768 &lt;= short &lt;= 32,767)</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Unsigned - (0 &lt;= ushort &lt;= 65,535)</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">short</span> <span style="color: rgb(51, 51, 51);">fooShort</span> = <span style="color: rgb(0, 153, 153);">10000</span>;
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">ushort</span> <span style="color: rgb(51, 51, 51);">fooUshort</span> = <span style="color: rgb(0, 153, 153);">10000</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Integer - 32-bit integer</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">fooInt</span> = <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// (-2,147,483,648 &lt;= int &lt;= 2,147,483,647)</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">uint</span> <span style="color: rgb(51, 51, 51);">fooUint</span> = <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// (0 &lt;= uint &lt;= 4,294,967,295)</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Long - 64-bit integer</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">fooLong</span> = <span style="color: rgb(0, 153, 153);">100000L</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// (-9,223,372,036,854,775,808 &lt;= long &lt;= 9,223,372,036,854,775,807)</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">ulong</span> <span style="color: rgb(51, 51, 51);">fooUlong</span> = <span style="color: rgb(0, 153, 153);">100000L</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// (0 &lt;= ulong &lt;= 18,446,744,073,709,551,615)</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Numbers default to being int or uint depending on size.</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// L is used to denote that this variable value is of type long or ulong</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Double - Double-precision 64-bit IEEE 754 Floating Point</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">double</span> <span style="color: rgb(51, 51, 51);">fooDouble</span> = <span style="color: rgb(0, 153, 153);">123.4</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Precision: 15-16 digits</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Float - Single-precision 32-bit IEEE 754 Floating Point</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">float</span> <span style="color: rgb(51, 51, 51);">fooFloat</span> = <span style="color: rgb(0, 153, 153);">234.5f</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Precision: 7 digits</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// f is used to denote that this variable value is of type float</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Decimal - a 128-bits data type, with more precision than other floating-point types,</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// suited for financial and monetary calculations</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">decimal</span> <span style="color: rgb(51, 51, 51);">fooDecimal</span> = <span style="color: rgb(0, 153, 153);">150.3</span><span style="color: rgb(51, 51, 51);">m</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Boolean - true &amp; false</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">fooBoolean</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">true</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// or false</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Char - A single 16-bit Unicode character</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">fooChar</span> = <span style="color: rgb(208, 16, 64);">'A'</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Strings -- unlike the previous base types which are all value types,</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// a string is a reference type. That is, you can set it to null</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">fooString</span> = <span style="color: rgb(208, 16, 64);">&quot;\&quot;escape\&quot; quotes and add \n (new lines) and \t (tabs)&quot;</span>;
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">fooString</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// You can access each character of the string with an indexer:</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">charFromString</span> = <span style="color: rgb(51, 51, 51);">fooString</span>[<span style="color: rgb(0, 153, 153);">1</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 'e'</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Strings are immutable: you can't do fooString[1] = 'X';</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Compare strings with current culture, ignoring case</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>.<span style="color: rgb(51, 51, 51);">Compare</span>(<span style="color: rgb(51, 51, 51);">fooString</span>, <span style="color: rgb(208, 16, 64);">&quot;x&quot;</span>, <span style="color: rgb(51, 51, 51);">StringComparison</span>.<span style="color: rgb(51, 51, 51);">CurrentCultureIgnoreCase</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Formatting, based on sprintf</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">fooFs</span> = <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>.<span style="color: rgb(51, 51, 51);">Format</span>(<span style="color: rgb(208, 16, 64);">&quot;Check Check, {0} {1}, {0} {1:0.0}&quot;</span>, <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">2</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Dates &amp; Formatting</span>
+            <span style="color: rgb(51, 51, 51);">DateTime</span> <span style="color: rgb(51, 51, 51);">fooDate</span> = <span style="color: rgb(51, 51, 51);">DateTime</span>.<span style="color: rgb(51, 51, 51);">Now</span>;
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">fooDate</span>.<span style="color: rgb(51, 51, 51);">ToString</span>(<span style="color: rgb(208, 16, 64);">&quot;hh:mm, dd MMM yyyy&quot;</span>));
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// You can split a string over two lines with the @ symbol. To escape &quot; use &quot;&quot;</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">bazString</span> = <span style="color: rgb(208, 16, 64);">@&quot;Here's some stuff</span>
+<span style="color: rgb(208, 16, 64);">on a new line! &quot;&quot;Wow!&quot;&quot;, the masses cried&quot;</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Use const or read-only to make a variable immutable</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// const values are calculated at compile time</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">const</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">HoursWorkPerWeek</span> = <span style="color: rgb(0, 153, 153);">9001</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////////////////</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Data Structures</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////////////////</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Arrays - zero indexed</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// The array size must be decided upon declaration</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// The format for declaring an array is follows:</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;datatype&gt;[] &lt;var name&gt; = new &lt;datatype&gt;[&lt;array size&gt;];</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>[] <span style="color: rgb(51, 51, 51);">intArray</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>[<span style="color: rgb(0, 153, 153);">10</span>];
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Another way to declare &amp; initialize an array</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>[] <span style="color: rgb(51, 51, 51);">y</span> = { <span style="color: rgb(0, 153, 153);">9000</span>, <span style="color: rgb(0, 153, 153);">1000</span>, <span style="color: rgb(0, 153, 153);">1337</span> };
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Indexing an array - Accessing an element</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;intArray @ 0: &quot;</span> + <span style="color: rgb(51, 51, 51);">intArray</span>[<span style="color: rgb(0, 153, 153);">0</span>]);
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Arrays are mutable.</span>
+            <span style="color: rgb(51, 51, 51);">intArray</span>[<span style="color: rgb(0, 153, 153);">1</span>] = <span style="color: rgb(0, 153, 153);">1</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Lists</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Lists are used more frequently than arrays as they are more flexible</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// The format for declaring a list is follows:</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// List&lt;datatype&gt; &lt;var name&gt; = new List&lt;datatype&gt;();</span>
+            <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt; <span style="color: rgb(51, 51, 51);">intList</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt;();
+            <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>&gt; <span style="color: rgb(51, 51, 51);">stringList</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>&gt;();
+            <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt; <span style="color: rgb(51, 51, 51);">z</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt; { <span style="color: rgb(0, 153, 153);">9000</span>, <span style="color: rgb(0, 153, 153);">1000</span>, <span style="color: rgb(0, 153, 153);">1337</span> }; <span style="color: rgb(153, 153, 136); font-style: normal;">// initialize</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// The &lt;&gt; are for generics - Check out the cool stuff section</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Lists don't default to a value;</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// A value must be added before accessing the index</span>
+            <span style="color: rgb(51, 51, 51);">intList</span>.<span style="color: rgb(51, 51, 51);">Add</span>(<span style="color: rgb(0, 153, 153);">1</span>);
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;intList @ 0: &quot;</span> + <span style="color: rgb(51, 51, 51);">intList</span>[<span style="color: rgb(0, 153, 153);">0</span>]);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Others data structures to check out:</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Stack/Queue</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Dictionary (an implementation of a hash map)</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// HashSet</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Read-only Collections</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Tuple (.Net 4+)</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Operators</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;\n-&gt;Operators&quot;</span>);
+
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i1</span> = <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(51, 51, 51);">i2</span> = <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Shorthand for multiple declarations</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Arithmetic is straightforward</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">i1</span> + <span style="color: rgb(51, 51, 51);">i2</span> - <span style="color: rgb(51, 51, 51);">i1</span> * <span style="color: rgb(0, 153, 153);">3</span> / <span style="color: rgb(0, 153, 153);">7</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 3</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Modulo</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;11%3 = &quot;</span> + (<span style="color: rgb(0, 153, 153);">11</span> % <span style="color: rgb(0, 153, 153);">3</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 2</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Comparison operators</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;3 == 2? &quot;</span> + (<span style="color: rgb(0, 153, 153);">3</span> == <span style="color: rgb(0, 153, 153);">2</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; false</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;3 != 2? &quot;</span> + (<span style="color: rgb(0, 153, 153);">3</span> != <span style="color: rgb(0, 153, 153);">2</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; true</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;3 &gt; 2? &quot;</span> + (<span style="color: rgb(0, 153, 153);">3</span> &gt; <span style="color: rgb(0, 153, 153);">2</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; true</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;3 &lt; 2? &quot;</span> + (<span style="color: rgb(0, 153, 153);">3</span> &lt; <span style="color: rgb(0, 153, 153);">2</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; false</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;2 &lt;= 2? &quot;</span> + (<span style="color: rgb(0, 153, 153);">2</span> &lt;= <span style="color: rgb(0, 153, 153);">2</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; true</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;2 &gt;= 2? &quot;</span> + (<span style="color: rgb(0, 153, 153);">2</span> &gt;= <span style="color: rgb(0, 153, 153);">2</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; true</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Bitwise operators!</span>
+            <span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">            ~       Unary bitwise complement</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">            &lt;&lt;      Signed left shift</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">            &gt;&gt;      Signed right shift</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">            &amp;       Bitwise AND</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">            ^       Bitwise exclusive OR</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">            |       Bitwise inclusive OR</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">            */</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Incrementations</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span> = <span style="color: rgb(0, 153, 153);">0</span>;
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;\n-&gt;Inc/Dec-rementation&quot;</span>);
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">i</span>++); <span style="color: rgb(153, 153, 136); font-style: normal;">//Prints &quot;0&quot;, i = 1. Post-Incrementation</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(++<span style="color: rgb(51, 51, 51);">i</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">//Prints &quot;2&quot;, i = 2. Pre-Incrementation</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">i</span>--); <span style="color: rgb(153, 153, 136); font-style: normal;">//Prints &quot;2&quot;, i = 1. Post-Decrementation</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(--<span style="color: rgb(51, 51, 51);">i</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">//Prints &quot;0&quot;, i = 0. Pre-Decrementation</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Control Structures</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;\n-&gt;Control Structures&quot;</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// If statements are c-like</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">j</span> = <span style="color: rgb(0, 153, 153);">10</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(51, 51, 51);">j</span> == <span style="color: rgb(0, 153, 153);">10</span>)
+            {
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;I get printed&quot;</span>);
+            }
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(51, 51, 51);">j</span> &gt; <span style="color: rgb(0, 153, 153);">10</span>)
+            {
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;I don't&quot;</span>);
+            }
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span>
+            {
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;I also don't&quot;</span>);
+            }
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Ternary operators</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// A simple if/else can be written as follows</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;condition&gt; ? &lt;true&gt; : &lt;false&gt;</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">toCompare</span> = <span style="color: rgb(0, 153, 153);">17</span>;
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">isTrue</span> = <span style="color: rgb(51, 51, 51);">toCompare</span> == <span style="color: rgb(0, 153, 153);">17</span> ? <span style="color: rgb(208, 16, 64);">&quot;True&quot;</span> : <span style="color: rgb(208, 16, 64);">&quot;False&quot;</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// While loop</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">fooWhile</span> = <span style="color: rgb(0, 153, 153);">0</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">while</span> (<span style="color: rgb(51, 51, 51);">fooWhile</span> &lt; <span style="color: rgb(0, 153, 153);">100</span>)
+            {
+                <span style="color: rgb(153, 153, 136); font-style: normal;">//Iterated 100 times, fooWhile 0-&gt;99</span>
+                <span style="color: rgb(51, 51, 51);">fooWhile</span>++;
+            }
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Do While Loop</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">fooDoWhile</span> = <span style="color: rgb(0, 153, 153);">0</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">do</span>
+            {
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// Start iteration 100 times, fooDoWhile 0-&gt;99</span>
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">false</span>)
+                    <span style="color: rgb(0, 0, 0); font-weight: 700;">continue</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// skip the current iteration</span>
+
+                <span style="color: rgb(51, 51, 51);">fooDoWhile</span>++;
+
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(51, 51, 51);">fooDoWhile</span> == <span style="color: rgb(0, 153, 153);">50</span>)
+                    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// breaks from the loop completely</span>
+
+            } <span style="color: rgb(0, 0, 0); font-weight: 700;">while</span> (<span style="color: rgb(51, 51, 51);">fooDoWhile</span> &lt; <span style="color: rgb(0, 153, 153);">100</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//for loop structure =&gt; for(&lt;start_statement&gt;; &lt;conditional&gt;; &lt;step&gt;)</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">fooFor</span> = <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">fooFor</span> &lt; <span style="color: rgb(0, 153, 153);">10</span>; <span style="color: rgb(51, 51, 51);">fooFor</span>++)
+            {
+                <span style="color: rgb(153, 153, 136); font-style: normal;">//Iterated 10 times, fooFor 0-&gt;9</span>
+            }
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// For Each Loop</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// foreach loop structure =&gt; foreach(&lt;iteratorType&gt; &lt;iteratorName&gt; in &lt;enumerable&gt;)</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// The foreach loop loops over any object implementing IEnumerable or IEnumerable&lt;T&gt;</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// All the collection types (Array, List, Dictionary...) in the .Net framework</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// implement one or both of these interfaces.</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// (The ToCharArray() could be removed, because a string also implements IEnumerable)</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">foreach</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">character</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">in</span> <span style="color: rgb(208, 16, 64);">&quot;Hello World&quot;</span>.<span style="color: rgb(51, 51, 51);">ToCharArray</span>())
+            {
+                <span style="color: rgb(153, 153, 136); font-style: normal;">//Iterated over all the characters in the string</span>
+            }
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Switch Case</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// A switch works with the byte, short, char, and int data types.</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// It also works with enumerated types (discussed in Enum Types),</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// the String class, and a few special classes that wrap</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// primitive types: Character, Byte, Short, and Integer.</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">month</span> = <span style="color: rgb(0, 153, 153);">3</span>;
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">monthString</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">switch</span> (<span style="color: rgb(51, 51, 51);">month</span>)
+            {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">1</span>:
+                    <span style="color: rgb(51, 51, 51);">monthString</span> = <span style="color: rgb(208, 16, 64);">&quot;January&quot;</span>;
+                    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">2</span>:
+                    <span style="color: rgb(51, 51, 51);">monthString</span> = <span style="color: rgb(208, 16, 64);">&quot;February&quot;</span>;
+                    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">3</span>:
+                    <span style="color: rgb(51, 51, 51);">monthString</span> = <span style="color: rgb(208, 16, 64);">&quot;March&quot;</span>;
+                    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// You can assign more than one case to an action</span>
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// But you can't add an action without a break before another case</span>
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// (if you want to do this, you would have to explicitly add a goto case x</span>
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">6</span>:
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">7</span>:
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">8</span>:
+                    <span style="color: rgb(51, 51, 51);">monthString</span> = <span style="color: rgb(208, 16, 64);">&quot;Summer time!!&quot;</span>;
+                    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">default</span>:
+                    <span style="color: rgb(51, 51, 51);">monthString</span> = <span style="color: rgb(208, 16, 64);">&quot;Some other month&quot;</span>;
+                    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+            }
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Converting Data Types And Typecasting</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Converting data</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Convert String To Integer</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// this will throw a FormatException on failure</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>.<span style="color: rgb(51, 51, 51);">Parse</span>(<span style="color: rgb(208, 16, 64);">&quot;123&quot;</span>);<span style="color: rgb(153, 153, 136); font-style: normal;">//returns an integer version of &quot;123&quot;</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// try parse will default to type default on failure</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// in this case: 0</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">tryInt</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>.<span style="color: rgb(51, 51, 51);">TryParse</span>(<span style="color: rgb(208, 16, 64);">&quot;123&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">out</span> <span style="color: rgb(51, 51, 51);">tryInt</span>)) <span style="color: rgb(153, 153, 136); font-style: normal;">// Function is boolean</span>
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">tryInt</span>);       <span style="color: rgb(153, 153, 136); font-style: normal;">// 123</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Convert Integer To String</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Convert class has a number of methods to facilitate conversions</span>
+            <span style="color: rgb(51, 51, 51);">Convert</span>.<span style="color: rgb(51, 51, 51);">ToString</span>(<span style="color: rgb(0, 153, 153);">123</span>);
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// or</span>
+            <span style="color: rgb(51, 51, 51);">tryInt</span>.<span style="color: rgb(51, 51, 51);">ToString</span>();
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Casting</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Cast decimal 15 to a int</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// and then implicitly cast to long</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">x</span> = (<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) <span style="color: rgb(0, 153, 153);">15</span><span style="color: rgb(51, 51, 51);">M</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// CLASSES - see definitions at end of file</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Classes</span>()
+        {
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// See Declaration of objects at end of file</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Use new to instantiate a class</span>
+            <span style="color: rgb(51, 51, 51);">Bicycle</span> <span style="color: rgb(51, 51, 51);">trek</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">Bicycle</span>();
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Call object methods</span>
+            <span style="color: rgb(51, 51, 51);">trek</span>.<span style="color: rgb(51, 51, 51);">SpeedUp</span>(<span style="color: rgb(0, 153, 153);">3</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// You should always use setter and getter methods</span>
+            <span style="color: rgb(51, 51, 51);">trek</span>.<span style="color: rgb(51, 51, 51);">Cadence</span> = <span style="color: rgb(0, 153, 153);">100</span>;
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// ToString is a convention to display the value of this Object.</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;trek info: &quot;</span> + <span style="color: rgb(51, 51, 51);">trek</span>.<span style="color: rgb(51, 51, 51);">Info</span>());
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Instantiate a new Penny Farthing</span>
+            <span style="color: rgb(51, 51, 51);">PennyFarthing</span> <span style="color: rgb(51, 51, 51);">funbike</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">PennyFarthing</span>(<span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">10</span>);
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;funbike info: &quot;</span> + <span style="color: rgb(51, 51, 51);">funbike</span>.<span style="color: rgb(51, 51, 51);">Info</span>());
+
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">Read</span>();
+        } <span style="color: rgb(153, 153, 136); font-style: normal;">// End main method</span>
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// CONSOLE ENTRY A console application must have a main method as an entry point</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Main</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>[] <span style="color: rgb(51, 51, 51);">args</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">OtherInterestingFeatures</span>();
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">//</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// INTERESTING FEATURES</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">//</span>
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// DEFAULT METHOD SIGNATURES</span>
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Visibility</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Allows for direct call on class without object</span>
+        <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Return Type,</span>
+        <span style="color: rgb(51, 51, 51);">MethodSignatures</span>(
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">maxCount</span>, <span style="color: rgb(153, 153, 136); font-style: normal;">// First variable, expects an int</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">count</span> = <span style="color: rgb(0, 153, 153);">0</span>, <span style="color: rgb(153, 153, 136); font-style: normal;">// will default the value to 0 if not passed in</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">another</span> = <span style="color: rgb(0, 153, 153);">3</span>,
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">params</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>[] <span style="color: rgb(51, 51, 51);">otherParams</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// captures all other parameters passed to method</span>
+        )
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> -<span style="color: rgb(0, 153, 153);">1</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Methods can have the same name, as long as the signature is unique</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// A method that differs only in return type is not unique</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">MethodSignatures</span>(
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">ref</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">maxCount</span>, <span style="color: rgb(153, 153, 136); font-style: normal;">// Pass by reference</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">out</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">count</span>)
+        {
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//the argument passed in as 'count' will hold the value of 15 outside of this function</span>
+            <span style="color: rgb(51, 51, 51);">count</span> = <span style="color: rgb(0, 153, 153);">15</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// out param must be assigned before control leaves the method</span>
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// GENERICS</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// The classes for TKey and TValue is specified by the user calling this function.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// This method emulates the SetDefault of Python</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(51, 51, 51);">TValue</span> <span style="color: rgb(51, 51, 51);">SetDefault</span>&lt;<span style="color: rgb(51, 51, 51);">TKey</span>, <span style="color: rgb(51, 51, 51);">TValue</span>&gt;(
+            <span style="color: rgb(51, 51, 51);">IDictionary</span>&lt;<span style="color: rgb(51, 51, 51);">TKey</span>, <span style="color: rgb(51, 51, 51);">TValue</span>&gt; <span style="color: rgb(51, 51, 51);">dictionary</span>,
+            <span style="color: rgb(51, 51, 51);">TKey</span> <span style="color: rgb(51, 51, 51);">key</span>,
+            <span style="color: rgb(51, 51, 51);">TValue</span> <span style="color: rgb(51, 51, 51);">defaultItem</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">TValue</span> <span style="color: rgb(51, 51, 51);">result</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (!<span style="color: rgb(51, 51, 51);">dictionary</span>.<span style="color: rgb(51, 51, 51);">TryGetValue</span>(<span style="color: rgb(51, 51, 51);">key</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">out</span> <span style="color: rgb(51, 51, 51);">result</span>))
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">dictionary</span>[<span style="color: rgb(51, 51, 51);">key</span>] = <span style="color: rgb(51, 51, 51);">defaultItem</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">result</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// You can narrow down the objects that are passed in</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(51, 51, 51);">IterateAndPrint</span>&lt;<span style="color: rgb(51, 51, 51);">T</span>&gt;(<span style="color: rgb(51, 51, 51);">T</span> <span style="color: rgb(51, 51, 51);">toPrint</span>) <span style="color: rgb(0, 0, 0); font-weight: 700;">where</span> <span style="color: rgb(51, 51, 51);">T</span>: <span style="color: rgb(51, 51, 51);">IEnumerable</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt;
+        {
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// We can iterate, since T is a IEnumerable</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">foreach</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">item</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">in</span> <span style="color: rgb(51, 51, 51);">toPrint</span>)
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// Item is an int</span>
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">item</span>.<span style="color: rgb(51, 51, 51);">ToString</span>());
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// YIELD</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Usage of the &quot;yield&quot; keyword indicates that the method it appears in is an Iterator</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// (this means you can use it in a foreach loop)</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(51, 51, 51);">IEnumerable</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt; <span style="color: rgb(51, 51, 51);">YieldCounter</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">limit</span> = <span style="color: rgb(0, 153, 153);">10</span>)
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">i</span> = <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">i</span> &lt; <span style="color: rgb(51, 51, 51);">limit</span>; <span style="color: rgb(51, 51, 51);">i</span>++)
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">yield</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">i</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// which you would call like this :</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">PrintYieldCounterToConsole</span>()
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">foreach</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">counter</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">in</span> <span style="color: rgb(51, 51, 51);">YieldCounter</span>())
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">counter</span>);
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// you can use more than one &quot;yield return&quot; in a method</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(51, 51, 51);">IEnumerable</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt; <span style="color: rgb(51, 51, 51);">ManyYieldCounter</span>()
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">yield</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">0</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">yield</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">1</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">yield</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">2</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">yield</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">3</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// you can also use &quot;yield break&quot; to stop the Iterator</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// this method would only return half of the values from 0 to limit.</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(51, 51, 51);">IEnumerable</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt; <span style="color: rgb(51, 51, 51);">YieldCounterWithBreak</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">limit</span> = <span style="color: rgb(0, 153, 153);">10</span>)
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">i</span> = <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">i</span> &lt; <span style="color: rgb(51, 51, 51);">limit</span>; <span style="color: rgb(51, 51, 51);">i</span>++)
+            {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(51, 51, 51);">i</span> &gt; <span style="color: rgb(51, 51, 51);">limit</span>/<span style="color: rgb(0, 153, 153);">2</span>) <span style="color: rgb(0, 0, 0); font-weight: 700;">yield</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">yield</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">i</span>;
+            }
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">OtherInterestingFeatures</span>()
+        {
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// OPTIONAL PARAMETERS</span>
+            <span style="color: rgb(51, 51, 51);">MethodSignatures</span>(<span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(208, 16, 64);">&quot;Some&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;Extra&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;Strings&quot;</span>);
+            <span style="color: rgb(51, 51, 51);">MethodSignatures</span>(<span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(51, 51, 51);">another</span>: <span style="color: rgb(0, 153, 153);">3</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// explicitly set a parameter, skipping optional ones</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// BY REF AND OUT PARAMETERS</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">maxCount</span> = <span style="color: rgb(0, 153, 153);">0</span>, <span style="color: rgb(51, 51, 51);">count</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// ref params must have value</span>
+            <span style="color: rgb(51, 51, 51);">MethodSignatures</span>(<span style="color: rgb(0, 0, 0); font-weight: 700;">ref</span> <span style="color: rgb(51, 51, 51);">maxCount</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">out</span> <span style="color: rgb(51, 51, 51);">count</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// EXTENSION METHODS</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span> = <span style="color: rgb(0, 153, 153);">3</span>;
+            <span style="color: rgb(51, 51, 51);">i</span>.<span style="color: rgb(51, 51, 51);">Print</span>(); <span style="color: rgb(153, 153, 136); font-style: normal;">// Defined below</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// NULLABLE TYPES - great for database interaction / return values</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// any value type (i.e. not a class) can be made nullable by suffixing a ?</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;type&gt;? &lt;var name&gt; = &lt;value&gt;</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int?</span> <span style="color: rgb(51, 51, 51);">nullable</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">null</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// short hand for Nullable&lt;int&gt;</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;Nullable variable: &quot;</span> + <span style="color: rgb(51, 51, 51);">nullable</span>);
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">hasValue</span> = <span style="color: rgb(51, 51, 51);">nullable</span>.<span style="color: rgb(51, 51, 51);">HasValue</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// true if not null</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// ?? is syntactic sugar for specifying default value (coalesce)</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// in case variable is null</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">notNullable</span> = <span style="color: rgb(51, 51, 51);">nullable</span> ?? <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// 0</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// ?. is an operator for null-propagation - a shorthand way of checking for null</span>
+            <span style="color: rgb(51, 51, 51);">nullable</span>?.<span style="color: rgb(51, 51, 51);">Print</span>(); <span style="color: rgb(153, 153, 136); font-style: normal;">// Use the Print() extension method if nullable isn't null</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// IMPLICITLY TYPED VARIABLES - you can let the compiler work out what the type is:</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">magic</span> = <span style="color: rgb(208, 16, 64);">&quot;magic is a string, at compile time, so you still get type safety&quot;</span>;
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// magic = 9; will not work as magic is a string, not an int</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// GENERICS</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">phonebook</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">Dictionary</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>&gt;() {
+                {<span style="color: rgb(208, 16, 64);">&quot;Sarah&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;212 555 5555&quot;</span>} <span style="color: rgb(153, 153, 136); font-style: normal;">// Add some entries to the phone book</span>
+            };
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Calling SETDEFAULT defined as a generic above</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">SetDefault</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>,<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>&gt;(<span style="color: rgb(51, 51, 51);">phonebook</span>, <span style="color: rgb(208, 16, 64);">&quot;Shaun&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;No Phone&quot;</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// No Phone</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// nb, you don't need to specify the TKey and TValue since they can be</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// derived implicitly</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">SetDefault</span>(<span style="color: rgb(51, 51, 51);">phonebook</span>, <span style="color: rgb(208, 16, 64);">&quot;Sarah&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;No Phone&quot;</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// 212 555 5555</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// LAMBDA EXPRESSIONS - allow you to write code in line</span>
+            <span style="color: rgb(51, 51, 51);">Func</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>&gt; <span style="color: rgb(51, 51, 51);">square</span> = (<span style="color: rgb(51, 51, 51);">x</span>) =&gt; <span style="color: rgb(51, 51, 51);">x</span> * <span style="color: rgb(51, 51, 51);">x</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Last T item is the return value</span>
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">square</span>(<span style="color: rgb(0, 153, 153);">3</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// 9</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// ERROR HANDLING - coping with an uncertain world</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">try</span>
+            {
+                <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">funBike</span> = <span style="color: rgb(51, 51, 51);">PennyFarthing</span>.<span style="color: rgb(51, 51, 51);">CreateWithGears</span>(<span style="color: rgb(0, 153, 153);">6</span>);
+
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// will no longer execute because CreateWithGears throws an exception</span>
+                <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">some</span> = <span style="color: rgb(208, 16, 64);">&quot;&quot;</span>;
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">true</span>) <span style="color: rgb(51, 51, 51);">some</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">null</span>;
+                <span style="color: rgb(51, 51, 51);">some</span>.<span style="color: rgb(51, 51, 51);">ToLower</span>(); <span style="color: rgb(153, 153, 136); font-style: normal;">// throws a NullReferenceException</span>
+            }
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">catch</span> (<span style="color: rgb(51, 51, 51);">NotSupportedException</span>)
+            {
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;Not so much fun now!&quot;</span>);
+            }
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">catch</span> (<span style="color: rgb(51, 51, 51);">Exception</span> <span style="color: rgb(51, 51, 51);">ex</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// catch all other exceptions</span>
+            {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">throw</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">ApplicationException</span>(<span style="color: rgb(208, 16, 64);">&quot;It hit the fan&quot;</span>, <span style="color: rgb(51, 51, 51);">ex</span>);
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// throw; // A rethrow that preserves the callstack</span>
+            }
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// catch { } // catch-all without capturing the Exception</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">finally</span>
+            {
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// executes after try or catch</span>
+            }
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// DISPOSABLE RESOURCES MANAGEMENT - let you handle unmanaged resources easily.</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Most of objects that access unmanaged resources (file handle, device contexts, etc.)</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// implement the IDisposable interface. The using statement takes care of</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// cleaning those IDisposable objects for you.</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">using</span> (<span style="color: rgb(51, 51, 51);">StreamWriter</span> <span style="color: rgb(51, 51, 51);">writer</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">StreamWriter</span>(<span style="color: rgb(208, 16, 64);">&quot;log.txt&quot;</span>))
+            {
+                <span style="color: rgb(51, 51, 51);">writer</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;Nothing suspicious here&quot;</span>);
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// At the end of scope, resources will be released.</span>
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// Even if an exception is thrown.</span>
+            }
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// PARALLEL FRAMEWORK</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// http://blogs.msdn.com/b/csharpfaq/archive/2010/06/01/parallel-programming-in-net-framework-4-getting-started.aspx</span>
+
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">words</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>&gt; {<span style="color: rgb(208, 16, 64);">&quot;dog&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;cat&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;horse&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;pony&quot;</span>};
+
+            <span style="color: rgb(51, 51, 51);">Parallel</span>.<span style="color: rgb(51, 51, 51);">ForEach</span>(<span style="color: rgb(51, 51, 51);">words</span>,
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">ParallelOptions</span>() { <span style="color: rgb(51, 51, 51);">MaxDegreeOfParallelism</span> = <span style="color: rgb(0, 153, 153);">4</span> },
+                <span style="color: rgb(51, 51, 51);">word</span> =&gt;
+                {
+                    <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">word</span>);
+                }
+            );
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//Running this will produce different outputs</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//since each thread finishes at different times.</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//Some example outputs are:</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//cat dog horse pony</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">//dog horse pony cat</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// DYNAMIC OBJECTS (great for working with other languages)</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">dynamic</span> <span style="color: rgb(51, 51, 51);">student</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">ExpandoObject</span>();
+            <span style="color: rgb(51, 51, 51);">student</span>.<span style="color: rgb(51, 51, 51);">FirstName</span> = <span style="color: rgb(208, 16, 64);">&quot;First Name&quot;</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// No need to define class first!</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// You can even add methods (returns a string, and takes in a string)</span>
+            <span style="color: rgb(51, 51, 51);">student</span>.<span style="color: rgb(51, 51, 51);">Introduce</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">Func</span>&lt;<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>&gt;(
+                (<span style="color: rgb(51, 51, 51);">introduceTo</span>) =&gt; <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>.<span style="color: rgb(51, 51, 51);">Format</span>(<span style="color: rgb(208, 16, 64);">&quot;Hey {0}, this is {1}&quot;</span>, <span style="color: rgb(51, 51, 51);">student</span>.<span style="color: rgb(51, 51, 51);">FirstName</span>, <span style="color: rgb(51, 51, 51);">introduceTo</span>));
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">student</span>.<span style="color: rgb(51, 51, 51);">Introduce</span>(<span style="color: rgb(208, 16, 64);">&quot;Beth&quot;</span>));
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// IQUERYABLE&lt;T&gt; - almost all collections implement this, which gives you a lot of</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// very useful Map / Filter / Reduce style methods</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">bikes</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">List</span>&lt;<span style="color: rgb(51, 51, 51);">Bicycle</span>&gt;();
+            <span style="color: rgb(51, 51, 51);">bikes</span>.<span style="color: rgb(51, 51, 51);">Sort</span>(); <span style="color: rgb(153, 153, 136); font-style: normal;">// Sorts the array</span>
+            <span style="color: rgb(51, 51, 51);">bikes</span>.<span style="color: rgb(51, 51, 51);">Sort</span>((<span style="color: rgb(51, 51, 51);">b1</span>, <span style="color: rgb(51, 51, 51);">b2</span>) =&gt; <span style="color: rgb(51, 51, 51);">b1</span>.<span style="color: rgb(51, 51, 51);">Wheels</span>.<span style="color: rgb(51, 51, 51);">CompareTo</span>(<span style="color: rgb(51, 51, 51);">b2</span>.<span style="color: rgb(51, 51, 51);">Wheels</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// Sorts based on wheels</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">result</span> = <span style="color: rgb(51, 51, 51);">bikes</span>
+                .<span style="color: rgb(51, 51, 51);">Where</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Wheels</span> &gt; <span style="color: rgb(0, 153, 153);">3</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Filters - chainable (returns IQueryable of previous type)</span>
+                .<span style="color: rgb(51, 51, 51);">Where</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">IsBroken</span> &amp;&amp; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">HasTassles</span>)
+                .<span style="color: rgb(51, 51, 51);">Select</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">ToString</span>()); <span style="color: rgb(153, 153, 136); font-style: normal;">// Map - we only this selects, so result is a IQueryable&lt;string&gt;</span>
+
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">sum</span> = <span style="color: rgb(51, 51, 51);">bikes</span>.<span style="color: rgb(51, 51, 51);">Sum</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Wheels</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Reduce - sums all the wheels in the collection</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Create a list of IMPLICIT objects based on some parameters of the bike</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">bikeSummaries</span> = <span style="color: rgb(51, 51, 51);">bikes</span>.<span style="color: rgb(51, 51, 51);">Select</span>(<span style="color: rgb(51, 51, 51);">b</span>=&gt;<span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> { <span style="color: rgb(51, 51, 51);">Name</span> = <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Name</span>, <span style="color: rgb(51, 51, 51);">IsAwesome</span> = !<span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">IsBroken</span> &amp;&amp; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">HasTassles</span> });
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Hard to show here, but you get type ahead completion since the compiler can implicitly work</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// out the types above!</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">foreach</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">bikeSummary</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">in</span> <span style="color: rgb(51, 51, 51);">bikeSummaries</span>.<span style="color: rgb(51, 51, 51);">Where</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">IsAwesome</span>))
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">bikeSummary</span>.<span style="color: rgb(51, 51, 51);">Name</span>);
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// ASPARALLEL</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// And this is where things get wicked - combines linq and parallel operations</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">threeWheelers</span> = <span style="color: rgb(51, 51, 51);">bikes</span>.<span style="color: rgb(51, 51, 51);">AsParallel</span>().<span style="color: rgb(51, 51, 51);">Where</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Wheels</span> == <span style="color: rgb(0, 153, 153);">3</span>).<span style="color: rgb(51, 51, 51);">Select</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Name</span>);
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// this will happen in parallel! Threads will automagically be spun up and the</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// results divvied amongst them! Amazing for large datasets when you have lots of</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// cores</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// LINQ - maps a store to IQueryable&lt;T&gt; objects, with delayed execution</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// e.g. LinqToSql - maps to a database, LinqToXml maps to an xml document</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">db</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">BikeRepository</span>();
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// execution is delayed, which is great when querying a database</span>
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">filter</span> = <span style="color: rgb(51, 51, 51);">db</span>.<span style="color: rgb(51, 51, 51);">Bikes</span>.<span style="color: rgb(51, 51, 51);">Where</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">HasTassles</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// no query run</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 153, 153);">42</span> &gt; <span style="color: rgb(0, 153, 153);">6</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// You can keep adding filters, even conditionally - great for &quot;advanced search&quot; functionality</span>
+                <span style="color: rgb(51, 51, 51);">filter</span> = <span style="color: rgb(51, 51, 51);">filter</span>.<span style="color: rgb(51, 51, 51);">Where</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">IsBroken</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// no query run</span>
+
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">query</span> = <span style="color: rgb(51, 51, 51);">filter</span>
+                .<span style="color: rgb(51, 51, 51);">OrderBy</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Wheels</span>)
+                .<span style="color: rgb(51, 51, 51);">ThenBy</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Name</span>)
+                .<span style="color: rgb(51, 51, 51);">Select</span>(<span style="color: rgb(51, 51, 51);">b</span> =&gt; <span style="color: rgb(51, 51, 51);">b</span>.<span style="color: rgb(51, 51, 51);">Name</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// still no query run</span>
+
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Now the query runs, but opens a reader, so only populates are you iterate through</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">foreach</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">bike</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">in</span> <span style="color: rgb(51, 51, 51);">query</span>)
+                <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">result</span>);
+
+
+
+        }
+
+    } <span style="color: rgb(153, 153, 136); font-style: normal;">// End LearnCSharp class</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// You can include other classes in a .cs file</span>
+
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Extensions</span>
+    {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// EXTENSION METHODS</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Print</span>(<span style="color: rgb(0, 0, 0); font-weight: 700;">this</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">object</span> <span style="color: rgb(51, 51, 51);">obj</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(51, 51, 51);">obj</span>.<span style="color: rgb(51, 51, 51);">ToString</span>());
+        }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Class Declaration Syntax:</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;public/private/protected/internal&gt; class &lt;class name&gt;{</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">//    //data fields, constructors, functions all inside.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">//    //functions are called as methods in Java.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// }</span>
+
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Bicycle</span>
+    {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Bicycle's Fields/Variables</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">Cadence</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Public: Can be accessed from anywhere</span>
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// get - define a method to retrieve the property</span>
+            {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">_cadence</span>;
+            }
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// set - define a method to set a property</span>
+            {
+                <span style="color: rgb(51, 51, 51);">_cadence</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">value</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Value is the value passed in to the setter</span>
+            }
+        }
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">private</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">_cadence</span>;
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">protected</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">virtual</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">Gear</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Protected: Accessible from the class and subclasses</span>
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// creates an auto property so you don't need a member field</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>;
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">internal</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">Wheels</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Internal: Accessible from within the assembly</span>
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>;
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">private</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// You can set modifiers on the get/set methods</span>
+        }
+
+        <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">_speed</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Everything is private by default: Only accessible from within this class.</span>
+                    <span style="color: rgb(153, 153, 136); font-style: normal;">// can also use keyword private</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">Name</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Properties also have a special syntax for when you want a readonly property</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// that simply returns the result of an expression</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">LongName</span> =&gt; <span style="color: rgb(51, 51, 51);">Name</span> + <span style="color: rgb(208, 16, 64);">&quot; &quot;</span> + <span style="color: rgb(51, 51, 51);">_speed</span> + <span style="color: rgb(208, 16, 64);">&quot; speed&quot;</span>; 
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Enum is a value type that consists of a set of named constants</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// It is really just mapping a name to a value (an int, unless specified otherwise).</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// The approved types for an enum are byte, sbyte, short, ushort, int, uint, long, or ulong.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// An enum can't contain the same value twice.</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">enum</span> <span style="color: rgb(51, 51, 51);">BikeBrand</span>
+        {
+            <span style="color: rgb(51, 51, 51);">AIST</span>,
+            <span style="color: rgb(51, 51, 51);">BMC</span>,
+            <span style="color: rgb(51, 51, 51);">Electra</span> = <span style="color: rgb(0, 153, 153);">42</span>, <span style="color: rgb(153, 153, 136); font-style: normal;">//you can explicitly set a value to a name</span>
+            <span style="color: rgb(51, 51, 51);">Gitane</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// 43</span>
+        }
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// We defined this type inside a Bicycle class, so it is a nested type</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Code outside of this class should reference this type as Bicycle.Brand</span>
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(51, 51, 51);">BikeBrand</span> <span style="color: rgb(51, 51, 51);">Brand</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// After declaring an enum type, we can declare the field of this type</span>
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Decorate an enum with the FlagsAttribute to indicate that multiple values can be switched on</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Any class derived from Attribute can be used to decorate types, methods, parameters etc</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Bitwise operators &amp; and | can be used to perform and/or operations</span>
+
+<span style="color: rgb(0, 128, 128);">        [Flags]</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">enum</span> <span style="color: rgb(51, 51, 51);">BikeAccessories</span>
+        {
+            <span style="color: rgb(51, 51, 51);">None</span> = <span style="color: rgb(0, 153, 153);">0</span>,
+            <span style="color: rgb(51, 51, 51);">Bell</span> = <span style="color: rgb(0, 153, 153);">1</span>,
+            <span style="color: rgb(51, 51, 51);">MudGuards</span> = <span style="color: rgb(0, 153, 153);">2</span>, <span style="color: rgb(153, 153, 136); font-style: normal;">// need to set the values manually!</span>
+            <span style="color: rgb(51, 51, 51);">Racks</span> = <span style="color: rgb(0, 153, 153);">4</span>,
+            <span style="color: rgb(51, 51, 51);">Lights</span> = <span style="color: rgb(0, 153, 153);">8</span>,
+            <span style="color: rgb(51, 51, 51);">FullPackage</span> = <span style="color: rgb(51, 51, 51);">Bell</span> | <span style="color: rgb(51, 51, 51);">MudGuards</span> | <span style="color: rgb(51, 51, 51);">Racks</span> | <span style="color: rgb(51, 51, 51);">Lights</span>
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Usage: aBike.Accessories.HasFlag(Bicycle.BikeAccessories.Bell)</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Before .NET 4: (aBike.Accessories &amp; Bicycle.BikeAccessories.Bell) == Bicycle.BikeAccessories.Bell</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(51, 51, 51);">BikeAccessories</span> <span style="color: rgb(51, 51, 51);">Accessories</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Static members belong to the type itself rather then specific object.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// You can access them without a reference to any object:</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Console.WriteLine(&quot;Bicycles created: &quot; + Bicycle.bicyclesCreated);</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">BicyclesCreated</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// readonly values are set at run time</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// they can only be assigned upon declaration or in a constructor</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">readonly</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">_hasCardsInSpokes</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">false</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// read-only private</span>
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Constructors are a way of creating classes</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// This is a default constructor</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Bicycle</span>()
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">this</span>.<span style="color: rgb(51, 51, 51);">Gear</span> = <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// you can access members of the object with the keyword this</span>
+            <span style="color: rgb(51, 51, 51);">Cadence</span> = <span style="color: rgb(0, 153, 153);">50</span>;  <span style="color: rgb(153, 153, 136); font-style: normal;">// but you don't always need it</span>
+            <span style="color: rgb(51, 51, 51);">_speed</span> = <span style="color: rgb(0, 153, 153);">5</span>;
+            <span style="color: rgb(51, 51, 51);">Name</span> = <span style="color: rgb(208, 16, 64);">&quot;Bontrager&quot;</span>;
+            <span style="color: rgb(51, 51, 51);">Brand</span> = <span style="color: rgb(51, 51, 51);">BikeBrand</span>.<span style="color: rgb(51, 51, 51);">AIST</span>;
+            <span style="color: rgb(51, 51, 51);">BicyclesCreated</span>++;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// This is a specified constructor (it contains arguments)</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Bicycle</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">startCadence</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">startSpeed</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">startGear</span>,
+                       <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">name</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">hasCardsInSpokes</span>, <span style="color: rgb(51, 51, 51);">BikeBrand</span> <span style="color: rgb(51, 51, 51);">brand</span>)
+            : <span style="color: rgb(0, 0, 0); font-weight: 700;">base</span>() <span style="color: rgb(153, 153, 136); font-style: normal;">// calls base first</span>
+        {
+            <span style="color: rgb(51, 51, 51);">Gear</span> = <span style="color: rgb(51, 51, 51);">startGear</span>;
+            <span style="color: rgb(51, 51, 51);">Cadence</span> = <span style="color: rgb(51, 51, 51);">startCadence</span>;
+            <span style="color: rgb(51, 51, 51);">_speed</span> = <span style="color: rgb(51, 51, 51);">startSpeed</span>;
+            <span style="color: rgb(51, 51, 51);">Name</span> = <span style="color: rgb(51, 51, 51);">name</span>;
+            <span style="color: rgb(51, 51, 51);">_hasCardsInSpokes</span> = <span style="color: rgb(51, 51, 51);">hasCardsInSpokes</span>;
+            <span style="color: rgb(51, 51, 51);">Brand</span> = <span style="color: rgb(51, 51, 51);">brand</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Constructors can be chained</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Bicycle</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">startCadence</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">startSpeed</span>, <span style="color: rgb(51, 51, 51);">BikeBrand</span> <span style="color: rgb(51, 51, 51);">brand</span>) :
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">this</span>(<span style="color: rgb(51, 51, 51);">startCadence</span>, <span style="color: rgb(51, 51, 51);">startSpeed</span>, <span style="color: rgb(0, 153, 153);">0</span>, <span style="color: rgb(208, 16, 64);">&quot;big wheels&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">true</span>, <span style="color: rgb(51, 51, 51);">brand</span>)
+        {
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Function Syntax:</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;public/private/protected&gt; &lt;return type&gt; &lt;function name&gt;(&lt;args&gt;)</span>
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// classes can implement getters and setters for their fields</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// or they can implement properties (this is the preferred way in C#)</span>
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Method parameters can have default values.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// In this case, methods can be called with these parameters omitted</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">SpeedUp</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">increment</span> = <span style="color: rgb(0, 153, 153);">1</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">_speed</span> += <span style="color: rgb(51, 51, 51);">increment</span>;
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">SlowDown</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">decrement</span> = <span style="color: rgb(0, 153, 153);">1</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">_speed</span> -= <span style="color: rgb(51, 51, 51);">decrement</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// properties get/set values</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// when only data needs to be accessed, consider using properties.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// properties may have either get or set, or both</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">private</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">_hasTassles</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// private variable</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">HasTassles</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// public accessor</span>
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">_hasTassles</span>; }
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span> { <span style="color: rgb(51, 51, 51);">_hasTassles</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">value</span>; }
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// You can also define an automatic property in one line</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// this syntax will create a backing field automatically.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// You can set an access modifier on either the getter or the setter (or both)</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// to restrict its access:</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">IsBroken</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">private</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Properties can be auto-implemented</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">FrameSize</span>
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>;
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// you are able to specify access modifiers for either get or set</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// this means only Bicycle class can call set on Framesize</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">private</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// It's also possible to define custom Indexers on objects.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// All though this is not entirely useful in this example, you</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// could do bicycle[0] which returns &quot;chris&quot; to get the first passenger or</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// bicycle[1] = &quot;lisa&quot; to set the passenger. (of this apparent quattrocycle)</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">private</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>[] <span style="color: rgb(51, 51, 51);">passengers</span> = { <span style="color: rgb(208, 16, 64);">&quot;chris&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;phil&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;darren&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;regina&quot;</span> };
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">this</span>[<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span>]
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span> {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">passengers</span>[<span style="color: rgb(51, 51, 51);">i</span>];
+            }
+
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span> {
+                <span style="color: rgb(51, 51, 51);">passengers</span>[<span style="color: rgb(51, 51, 51);">i</span>] = <span style="color: rgb(0, 0, 0); font-weight: 700;">value</span>;
+            }
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">//Method to display the attribute values of this Object.</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">virtual</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Info</span>()
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(208, 16, 64);">&quot;Gear: &quot;</span> + <span style="color: rgb(51, 51, 51);">Gear</span> +
+                    <span style="color: rgb(208, 16, 64);">&quot; Cadence: &quot;</span> + <span style="color: rgb(51, 51, 51);">Cadence</span> +
+                    <span style="color: rgb(208, 16, 64);">&quot; Speed: &quot;</span> + <span style="color: rgb(51, 51, 51);">_speed</span> +
+                    <span style="color: rgb(208, 16, 64);">&quot; Name: &quot;</span> + <span style="color: rgb(51, 51, 51);">Name</span> +
+                    <span style="color: rgb(208, 16, 64);">&quot; Cards in Spokes: &quot;</span> + (<span style="color: rgb(51, 51, 51);">_hasCardsInSpokes</span> ? <span style="color: rgb(208, 16, 64);">&quot;yes&quot;</span> : <span style="color: rgb(208, 16, 64);">&quot;no&quot;</span>) +
+                    <span style="color: rgb(208, 16, 64);">&quot;\n------------------------------\n&quot;</span>
+                    ;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Methods can also be static. It can be useful for helper methods</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">DidWeCreateEnoughBicycles</span>()
+        {
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Within a static method, we only can reference static class members</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">BicyclesCreated</span> &gt; <span style="color: rgb(0, 153, 153);">9000</span>;
+        } <span style="color: rgb(153, 153, 136); font-style: normal;">// If your class only needs static members, consider marking the class itself as static.</span>
+
+
+    } <span style="color: rgb(153, 153, 136); font-style: normal;">// end class Bicycle</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// PennyFarthing is a subclass of Bicycle</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">PennyFarthing</span> : <span style="color: rgb(51, 51, 51);">Bicycle</span>
+    {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// (Penny Farthings are those bicycles with the big front wheel.</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// They have no gears.)</span>
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// calling parent constructor</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">PennyFarthing</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">startCadence</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">startSpeed</span>) :
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">base</span>(<span style="color: rgb(51, 51, 51);">startCadence</span>, <span style="color: rgb(51, 51, 51);">startSpeed</span>, <span style="color: rgb(0, 153, 153);">0</span>, <span style="color: rgb(208, 16, 64);">&quot;PennyFarthing&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">true</span>, <span style="color: rgb(51, 51, 51);">BikeBrand</span>.<span style="color: rgb(51, 51, 51);">Electra</span>)
+        {
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">protected</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">override</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">Gear</span>
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>
+            {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">0</span>;
+            }
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>
+            {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">throw</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">InvalidOperationException</span>(<span style="color: rgb(208, 16, 64);">&quot;You can't change gears on a PennyFarthing&quot;</span>);
+            }
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(51, 51, 51);">PennyFarthing</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">CreateWithGears</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">gears</span>)
+        {
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">var</span> <span style="color: rgb(51, 51, 51);">penny</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">PennyFarthing</span>(<span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">1</span>);
+            <span style="color: rgb(51, 51, 51);">penny</span>.<span style="color: rgb(51, 51, 51);">Gear</span> = <span style="color: rgb(51, 51, 51);">gears</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Oops, can't do this!</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">penny</span>;
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">override</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Info</span>()
+        {
+            <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">result</span> = <span style="color: rgb(208, 16, 64);">&quot;PennyFarthing bicycle &quot;</span>;
+            <span style="color: rgb(51, 51, 51);">result</span> += <span style="color: rgb(0, 0, 0); font-weight: 700;">base</span>.<span style="color: rgb(51, 51, 51);">ToString</span>(); <span style="color: rgb(153, 153, 136); font-style: normal;">// Calling the base version of the method</span>
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">result</span>;
+        }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Interfaces only contain signatures of the members, without the implementation.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">interface</span> <span style="color: rgb(51, 51, 51);">IJumpable</span>
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Jump</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">meters</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// all interface members are implicitly public</span>
+    }
+
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">interface</span> <span style="color: rgb(51, 51, 51);">IBreakable</span>
+    {
+        <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">Broken</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; } <span style="color: rgb(153, 153, 136); font-style: normal;">// interfaces can contain properties as well as methods &amp; events</span>
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Classes can inherit only one other class, but can implement any amount of interfaces,</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// however the base class name must be the first in the list and all interfaces follow</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">MountainBike</span> : <span style="color: rgb(51, 51, 51);">Bicycle</span>, <span style="color: rgb(51, 51, 51);">IJumpable</span>, <span style="color: rgb(51, 51, 51);">IBreakable</span>
+    {
+        <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">damage</span> = <span style="color: rgb(0, 153, 153);">0</span>;
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Jump</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">meters</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">damage</span> += <span style="color: rgb(51, 51, 51);">meters</span>;
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">Broken</span>
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>
+            {
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">damage</span> &gt; <span style="color: rgb(0, 153, 153);">100</span>;
+            }
+        }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">/// &lt;summary&gt;</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">/// Used to connect to DB for LinqToSql example.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">/// EntityFramework Code First is awesome (similar to Ruby's ActiveRecord, but bidirectional)</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">/// http://msdn.microsoft.com/en-us/data/jj193542.aspx</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">/// &lt;/summary&gt;</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">BikeRepository</span> : <span style="color: rgb(51, 51, 51);">DbContext</span>
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">BikeRepository</span>()
+            : <span style="color: rgb(0, 0, 0); font-weight: 700;">base</span>()
+        {
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(51, 51, 51);">DbSet</span>&lt;<span style="color: rgb(51, 51, 51);">Bicycle</span>&gt; <span style="color: rgb(51, 51, 51);">Bikes</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Classes can be split across multiple .cs files</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// A1.cs</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">partial</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">A</span>
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">A1</span>()
+        {
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;Method A1 in class A&quot;</span>);
+        }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// A2.cs</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">partial</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">A</span>
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">A2</span>()
+        {
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(208, 16, 64);">&quot;Method A2 in class A&quot;</span>);
+        }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Program using the partial class &quot;A&quot;</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Program</span>
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Main</span>()
+        {
+            <span style="color: rgb(51, 51, 51);">A</span>.<span style="color: rgb(51, 51, 51);">A1</span>();
+            <span style="color: rgb(51, 51, 51);">A</span>.<span style="color: rgb(51, 51, 51);">A2</span>();
+        }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// String interpolation by prefixing the string with $</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// and wrapping the expression you want to interpolate with { braces }</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Rectangle</span>
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">Length</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; }
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">Width</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; }
+    }
+
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Program</span>
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Main</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>[] <span style="color: rgb(51, 51, 51);">args</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">Rectangle</span> <span style="color: rgb(51, 51, 51);">rect</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(51, 51, 51);">Rectangle</span> { <span style="color: rgb(51, 51, 51);">Length</span> = <span style="color: rgb(0, 153, 153);">5</span>, <span style="color: rgb(51, 51, 51);">Width</span> = <span style="color: rgb(0, 153, 153);">3</span> };
+            <span style="color: rgb(51, 51, 51);">Console</span>.<span style="color: rgb(51, 51, 51);">WriteLine</span>(<span style="color: rgb(166, 23, 23); background-color: rgb(227, 210, 210);">$</span><span style="color: rgb(208, 16, 64);">&quot;The length is {rect.Length} and the width is {rect.Width}&quot;</span>);
+        }
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// New C# 6 features</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">GlassBall</span> : <span style="color: rgb(51, 51, 51);">IJumpable</span>, <span style="color: rgb(51, 51, 51);">IBreakable</span>
+    {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Autoproperty initializers</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">Damage</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; <span style="color: rgb(0, 0, 0); font-weight: 700;">private</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">set</span>; } = <span style="color: rgb(0, 153, 153);">0</span>;
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Autoproperty initializers on getter-only properties</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">Name</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; } = <span style="color: rgb(208, 16, 64);">&quot;Glass ball&quot;</span>;
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Getter-only autoproperty that is initialized in constructor</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">GenieName</span> { <span style="color: rgb(0, 0, 0); font-weight: 700;">get</span>; }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">GlassBall</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(51, 51, 51);">genieName</span> = <span style="color: rgb(0, 0, 0); font-weight: 700;">null</span>)
+        {
+            <span style="color: rgb(51, 51, 51);">GenieName</span> = <span style="color: rgb(51, 51, 51);">genieName</span>;
+        }
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">Jump</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">meters</span>)
+        {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(51, 51, 51);">meters</span> &lt; <span style="color: rgb(0, 153, 153);">0</span>)
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// New nameof() expression; compiler will check that the identifier exists</span>
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// nameof(x) == &quot;x&quot;</span>
+                <span style="color: rgb(153, 153, 136); font-style: normal;">// Prevents e.g. parameter names changing but not updated in error messages</span>
+                <span style="color: rgb(0, 0, 0); font-weight: 700;">throw</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">new</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">ArgumentException</span>(<span style="color: rgb(208, 16, 64);">&quot;Cannot jump negative amount!&quot;</span>, <span style="color: rgb(51, 51, 51);">nameof</span>(<span style="color: rgb(51, 51, 51);">meters</span>));
+
+            <span style="color: rgb(51, 51, 51);">Damage</span> += <span style="color: rgb(51, 51, 51);">meters</span>;
+        }
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Expression-bodied properties ...</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">Broken</span>
+            =&gt; <span style="color: rgb(51, 51, 51);">Damage</span> &gt; <span style="color: rgb(0, 153, 153);">100</span>;
+
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// ... and methods</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">override</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">ToString</span>()
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Interpolated string</span>
+            =&gt; <span style="color: rgb(166, 23, 23); background-color: rgb(227, 210, 210);">$</span><span style="color: rgb(208, 16, 64);">&quot;{Name}. Damage taken: {Damage}&quot;</span>;
+
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">public</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">SummonGenie</span>()
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// Null-conditional operators</span>
+            <span style="color: rgb(153, 153, 136); font-style: normal;">// x?.y will return null immediately if x is null; y is not evaluated</span>
+            =&gt; <span style="color: rgb(51, 51, 51);">GenieName</span>?.<span style="color: rgb(51, 51, 51);">ToUpper</span>();
+    }
+} <span style="color: rgb(153, 153, 136); font-style: normal;">// End Namespace</span>
+</pre></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px;">Topics Not Covered</h2><ul style="margin: 1em 0px; padding: 0px 0px 0px 40px;"><li style="padding: 0px; margin: 22pt 0px 0px;">Attributes</li><li style="padding: 0px; margin: 0px;">async/await, pragma directives</li><li style="padding: 0px; margin: 0px;">Exception filters</li><li style="padding: 0px; margin: 0px;"><code style="font-family: monospace, serif; font-size: 1em;">using static</code></li><li style="padding: 0px; margin: 0px;">Web Development<ul style="margin: 1em 0px; padding: 0px 0px 0px 40px;"><li style="padding: 0px; margin: 22pt 0px 0px;">ASP.NET MVC &amp; WebApi (new)</li><li style="padding: 0px; margin: 0px;">ASP.NET Web Forms (old)</li><li style="padding: 0px; margin: 0px;">WebMatrix (tool)</li></ul></li><li style="padding: 0px; margin: 0px;">Desktop Development<ul style="margin: 1em 0px; padding: 0px 0px 0px 40px;"><li style="padding: 0px; margin: 22pt 0px 0px;">Windows Presentation Foundation (WPF) (new)</li><li style="padding: 0px; margin: 0px;">Winforms (old)</li></ul></li></ul><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px;">Further Reading</h2><ul style="margin: 1em 0px; padding: 0px 0px 0px 40px;"><li style="padding: 0px; margin: 22pt 0px 0px;"><a href="http://www.dotnetperls.com/">DotNetPerls</a></li><li style="padding: 0px; margin: 0px;"><a href="http://manning.com/skeet2">C# in Depth</a></li><li style="padding: 0px; margin: 0px;"><a href="http://shop.oreilly.com/product/0636920024064.do">Programming C#</a></li><li style="padding: 0px; margin: 0px;"><a href="http://shop.oreilly.com/product/9780596519254.do">LINQ</a></li><li style="padding: 0px; margin: 0px;"><a href="http://msdn.microsoft.com/en-us/library/618ayhy6.aspx">MSDN Library</a></li><li style="padding: 0px; margin: 0px;"><a href="http://www.asp.net/mvc/tutorials">ASP.NET MVC Tutorials</a></li><li style="padding: 0px; margin: 0px;"><a href="http://www.asp.net/web-pages/tutorials">ASP.NET Web Matrix Tutorials</a></li><li style="padding: 0px; margin: 0px;"><a href="http://www.asp.net/web-forms/tutorials">ASP.NET Web Forms Tutorials</a></li><li style="padding: 0px; margin: 0px;"><a href="http://www.amazon.com/Windows-Forms-Programming-Chris-Sells/dp/0321116208">Windows Forms Programming in C#</a></li><li style="padding: 0px; margin: 0px;"><a href="http://msdn.microsoft.com/en-us/library/vstudio/ff926074.aspx">C# Coding Conventions</a></li></ul><hr style="display: block; height: 1px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 22pt 0px 0px; padding: 0px;"/><p style="margin: 22pt 0px 0px; padding: 0px;">Got a suggestion? A correction, perhaps? <a href="https://github.com/adambard/learnxinyminutes-docs/issues/new">Open an Issue</a> on the Github Repo, or make a pull request yourself!</p><p style="margin: 22pt 0px 0px; padding: 0px;">Originally contributed by Irfan Charania, and updated by <a href="https://github.com/adambard/learnxinyminutes-docs/blame/master/csharp.html.markdown">33 contributor(s)</a>.</p><div style="display: block; margin-top: 60px; text-align: right; color: rgb(119, 119, 119);"><a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US" rel="license" style="float: left;"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border: 0px; vertical-align: middle; max-width: 100%; height: auto;"></img></a><div><br/></div><div style="margin: 22pt 0px 0px; padding: 0px;"><div>© 2017 <a href="https://github.com/irfancharania">Irfan Charania</a>, <a href="https://github.com/golergka">Max Yankov</a>, <a href="http://x2a.yt/">Melvyn Laïly</a>, <a href="http://www.shaunmccarthy.com/">Shaun McCarthy</a>, <a href="http://github.com/laoujin">Wouter Van Schandevijl</a>, <a href="http://github.com/jdpearce">Jo Pearce</a>, <a href="https://github.com/chriszimmerman">Chris Zimmerman</a>, <a href="https://github.com/bigbash">Shawn McGuire</a></div></div></div></div></div></span>
+</div></body></html> 

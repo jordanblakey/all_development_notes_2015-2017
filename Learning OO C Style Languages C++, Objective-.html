@@ -1,0 +1,807 @@
+<html>
+<head>
+  <title>Learning OO C Style Languages: C++, Objective-C, Java, C#</title>
+  <basefont face="Tahoma" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/303788 (en-US, DDL); Windows/10.0.14393 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Tahoma;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="7113"/>
+<h1>Learning OO C Style Languages: C++, Objective-C, Java, C#</h1>
+
+<div><span><div><div style="float: right; text-align: center; background: rgb(238, 238, 238); padding: 0px 20px; border-radius: 3px; border-bottom: 2px solid rgb(221, 221, 221); color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><span style="font-weight: bold; display: block;"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flearnxinyminutes.com%2Fdocs%2Fobjective-c%2F&amp;text=Learn+X+in+Y+minutes%2C+where+X%3DObjective-C">Share this page</a></span></div></div><div><br/></div><div><div style="margin: 22pt 0px 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; position: relative; z-index: 30; height: 2em; margin: 10px 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 13.12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><h1 style="font-family: &quot;Trebuchet MS&quot;, Trebuchet, Verdana, Arial, Helvetica; font-size: 24.928px; font-weight: normal; border: none; margin: 0px; padding: 4px 10px 0px 0px; color: rgb(0, 0, 0);"><a href="http://hyperpolyglot.org/" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease; text-decoration: none;"><span style="font-family: helvetica, arial, san-serif;">Hyperpolyglot</span></a></h1></div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; padding: 0px; margin: 0px; min-height: 1px; color: rgb(0, 0, 0); font-size: 13.12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; margin-left: 0em; padding: 2px;"><div style="font-family: helvetica, arial, san-serif; margin: 0px 0px 0.5em; padding-top: 0.5em; font-size: 24.928px; border-bottom: none;">Object-Oriented C Style Languages: C++, Objective-C, Java, C#</div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;"><p style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><a name="top" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;"></a><em style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;">a side-by-side reference sheet</em></p><p style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><a href="http://hyperpolyglot.org/cpp#grammar-execution" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">grammar and execution</a> | <a href="http://hyperpolyglot.org/cpp#variables-expressions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">variables and expressions</a> | <a href="http://hyperpolyglot.org/cpp#arithmetic-logic" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">arithmetic and logic</a> | <a href="http://hyperpolyglot.org/cpp#strings" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">strings</a> | <a href="http://hyperpolyglot.org/cpp#regexes" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">regexes</a> | <a href="http://hyperpolyglot.org/cpp#dates-time" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dates and time</a> | <a href="http://hyperpolyglot.org/cpp#fixed-length-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">fixed-length arrays</a> | <a href="http://hyperpolyglot.org/cpp#resizable-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">resizable arrays</a> | <a href="http://hyperpolyglot.org/cpp#tuples" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">tuples</a> | <a href="http://hyperpolyglot.org/cpp#dictionaries" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dictionaries</a> | <a href="http://hyperpolyglot.org/cpp#functions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">functions</a> | <a href="http://hyperpolyglot.org/cpp#execution-control" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">execution control</a> | <a href="http://hyperpolyglot.org/cpp#exceptions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">exceptions</a> | <a href="http://hyperpolyglot.org/cpp#concurrency" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">concurrency</a> | <a href="http://hyperpolyglot.org/cpp#file-handles" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">file handles</a> | <a href="http://hyperpolyglot.org/cpp#files" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">files</a> | <a href="http://hyperpolyglot.org/cpp#file-fmt" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">file formats</a> | <a href="http://hyperpolyglot.org/cpp#directories" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">directories</a> | <a href="http://hyperpolyglot.org/cpp#processes-environment" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">processes and environment</a> | <a href="http://hyperpolyglot.org/cpp#libraries-namespaces" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">libraries and namespaces</a> | <a href="http://hyperpolyglot.org/cpp#user-defined-types" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">user-defined types</a> | <a href="http://hyperpolyglot.org/cpp#generic-types" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">generic types</a> | <a href="http://hyperpolyglot.org/cpp#objects" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">objects</a> | <a href="http://hyperpolyglot.org/cpp#inheritance-polymorphism" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">inheritance and polymorphism</a> | <a href="http://hyperpolyglot.org/cpp#reflection" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">reflection</a> | <a href="http://hyperpolyglot.org/cpp#net-web" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">net and web</a> | <a href="http://hyperpolyglot.org/cpp#unit-tests" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">unit tests</a> | <a href="http://hyperpolyglot.org/cpp#debugging-profiling" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">debugging and profiling</a></p></div></div></div></div><div><br/></div><div><hr/></div><div><a href="https://learnxinyminutes.com/docs/objective-c/">https://learnxinyminutes.com/docs/objective-c/</a></div><div><span style="color: rgb(34, 34, 34);"><span style="font-size: 28px;"><span style="font-family: &quot;Roboto Slab&quot;, serif;"><b><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></b></span></span></span></div></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Where X=Objective-C</h2><p style="margin: 22pt 0px 0px; padding: 0px; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Get the code: <a href="https://learnxinyminutes.com/docs/files/LearnObjectiveC.m">LearnObjectiveC.m</a></p><div style="font-size: 14pt; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><p style="margin: 22pt 0px 0px; padding: 0px;">Objective-C is the main programming language used by Apple for the OS X and iOS operating systems and their respective frameworks, Cocoa and Cocoa Touch. It is a general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C programming language.</p><div style="background: rgb(238, 238, 238); padding: 18pt; overflow-x: auto; margin: 0px; font-family: &quot;Ubuntu Mono&quot;, monospace; display: block;"><pre style="margin: 1em 0px; font-family: monospace, serif; font-size: 1em; white-space: pre-wrap; word-wrap: break-word;"><span style="color: rgb(153, 153, 136); font-style: normal;">// Single-line comments start with //</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Multi-line comments look like this</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// XCode supports pragma mark directive that improve jump bar readability</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#pragma mark Navigation Functions </span><span style="color: rgb(153, 153, 136); font-style: normal;">// New tag on jump bar named 'Navigation Functions'</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#pragma mark - Navigation Functions </span><span style="color: rgb(153, 153, 136); font-style: normal;">// Same tag, now with a separator</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Imports the Foundation headers with #import</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Use &lt;&gt; to import global files (in general frameworks)</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Use &quot;&quot; to import local files (from project)</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &lt;Foundation/Foundation.h&gt;</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;MyClass.h&quot;</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// If you enable modules for iOS &gt;= 7.0 or OS X &gt;= 10.9 projects in</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Xcode 5 you can import frameworks like that:</span>
+@<span style="color: rgb(51, 51, 51);">import</span> <span style="color: rgb(51, 51, 51);">Foundation</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Your program's entry point is a function called</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// main with an integer return type</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">main</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">argc</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">const</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">argv</span>[])
+{
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Create an autorelease pool to manage the memory into the program</span>
+    <span style="color: rgb(153, 153, 153);">NSAutoreleasePool</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">pool</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [[<span style="color: rgb(153, 153, 153);">NSAutoreleasePool</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>];
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// If using automatic reference counting (ARC), use @autoreleasepool instead:</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">@autoreleasepool</span> {
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Use NSLog to print lines to the console</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Hello World!&quot;</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Print the string &quot;Hello World!&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Types &amp; Variables</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Primitive declarations</span>
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">myPrimitive1</span>  <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">1</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">myPrimitive2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">234554664565</span>;
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Object declarations</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Put the * in front of the variable names for strongly-typed object declarations</span>
+    <span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">myObject1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">nil</span>;  <span style="color: rgb(153, 153, 136); font-style: normal;">// Strong typing</span>
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">id</span>       <span style="color: rgb(51, 51, 51);">myObject2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">nil</span>;  <span style="color: rgb(153, 153, 136); font-style: normal;">// Weak typing</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// %@ is an object</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// 'description' is a convention to display the value of the Objects</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@ and %@&quot;</span>, <span style="color: rgb(51, 51, 51);">myObject1</span>, [<span style="color: rgb(51, 51, 51);">myObject2</span> <span style="color: rgb(51, 51, 51);">description</span>]); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;(null) and (null)&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// String</span>
+    <span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">worldString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">@&quot;World&quot;</span>;
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Hello %@!&quot;</span>, <span style="color: rgb(51, 51, 51);">worldString</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;Hello World!&quot;</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSMutableString is a mutable version of the NSString object</span>
+    <span style="color: rgb(153, 153, 153);">NSMutableString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">mutableString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSMutableString</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">stringWithString</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableString</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">appendString</span>:<span style="color: rgb(208, 16, 64);">@&quot; World!&quot;</span>];
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@&quot;</span>, <span style="color: rgb(51, 51, 51);">mutableString</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;Hello World!&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Character literals</span>
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">theLetterZNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">@'Z'</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">theLetterZ</span>            <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">theLetterZNumber</span> <span style="color: rgb(51, 51, 51);">charValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 'Z'</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%c&quot;</span>, <span style="color: rgb(51, 51, 51);">theLetterZ</span>);
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Integral literals</span>
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">fortyTwoNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@42</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">fortyTwo</span>             <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">fortyTwoNumber</span> <span style="color: rgb(51, 51, 51);">intValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 42</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%i&quot;</span>, <span style="color: rgb(51, 51, 51);">fortyTwo</span>);
+
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">fortyTwoUnsignedNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@42</span><span style="color: rgb(51, 51, 51);">U</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">unsigned</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">fortyTwoUnsigned</span>    <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">fortyTwoUnsignedNumber</span> <span style="color: rgb(51, 51, 51);">unsignedIntValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 42</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%u&quot;</span>, <span style="color: rgb(51, 51, 51);">fortyTwoUnsigned</span>);
+
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">fortyTwoShortNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">numberWithShort</span>:<span style="color: rgb(0, 153, 153);">42</span>];
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">short</span> <span style="color: rgb(51, 51, 51);">fortyTwoShort</span>           <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">fortyTwoShortNumber</span> <span style="color: rgb(51, 51, 51);">shortValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 42</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%hi&quot;</span>, <span style="color: rgb(51, 51, 51);">fortyTwoShort</span>);
+
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">fortyOneShortNumber</span>   <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">numberWithShort</span>:<span style="color: rgb(0, 153, 153);">41</span>];
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">unsigned</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">short</span> <span style="color: rgb(51, 51, 51);">fortyOneUnsigned</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">fortyOneShortNumber</span> <span style="color: rgb(51, 51, 51);">unsignedShortValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 41</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%u&quot;</span>, <span style="color: rgb(51, 51, 51);">fortyOneUnsigned</span>);
+
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">fortyTwoLongNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@42L</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">fortyTwoLong</span>            <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">fortyTwoLongNumber</span> <span style="color: rgb(51, 51, 51);">longValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 42</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%li&quot;</span>, <span style="color: rgb(51, 51, 51);">fortyTwoLong</span>);
+
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">fiftyThreeLongNumber</span>   <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@53L</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">unsigned</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">fiftyThreeUnsigned</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">fiftyThreeLongNumber</span> <span style="color: rgb(51, 51, 51);">unsignedLongValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 53</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%lu&quot;</span>, <span style="color: rgb(51, 51, 51);">fiftyThreeUnsigned</span>);
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Floating point literals</span>
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">piFloatNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@3.141592654F</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">float</span> <span style="color: rgb(51, 51, 51);">piFloat</span>           <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">piFloatNumber</span> <span style="color: rgb(51, 51, 51);">floatValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 3.141592654f</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%f&quot;</span>, <span style="color: rgb(51, 51, 51);">piFloat</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; 3.141592654</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%5.2f&quot;</span>, <span style="color: rgb(51, 51, 51);">piFloat</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot; 3.14&quot;</span>
+
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">piDoubleNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@3.1415926535</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">double</span> <span style="color: rgb(51, 51, 51);">piDouble</span>          <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">piDoubleNumber</span> <span style="color: rgb(51, 51, 51);">doubleValue</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// or 3.1415926535</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%f&quot;</span>, <span style="color: rgb(51, 51, 51);">piDouble</span>);
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%4.2f&quot;</span>, <span style="color: rgb(51, 51, 51);">piDouble</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;3.14&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSDecimalNumber is a fixed-point class that's more precise than float or double</span>
+    <span style="color: rgb(153, 153, 153);">NSDecimalNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">oneDecNum</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSDecimalNumber</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">decimalNumberWithString</span>:<span style="color: rgb(208, 16, 64);">@&quot;10.99&quot;</span>];
+    <span style="color: rgb(153, 153, 153);">NSDecimalNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">twoDecNum</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSDecimalNumber</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">decimalNumberWithString</span>:<span style="color: rgb(208, 16, 64);">@&quot;5.002&quot;</span>];
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSDecimalNumber isn't able to use standard +, -, *, / operators so it provides its own:</span>
+    [<span style="color: rgb(51, 51, 51);">oneDecNum</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">decimalNumberByAdding</span>:<span style="color: rgb(51, 51, 51);">twoDecNum</span>];
+    [<span style="color: rgb(51, 51, 51);">oneDecNum</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">decimalNumberBySubtracting</span>:<span style="color: rgb(51, 51, 51);">twoDecNum</span>];
+    [<span style="color: rgb(51, 51, 51);">oneDecNum</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">decimalNumberByMultiplyingBy</span>:<span style="color: rgb(51, 51, 51);">twoDecNum</span>];
+    [<span style="color: rgb(51, 51, 51);">oneDecNum</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">decimalNumberByDividingBy</span>:<span style="color: rgb(51, 51, 51);">twoDecNum</span>];
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@&quot;</span>, <span style="color: rgb(51, 51, 51);">oneDecNum</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; 10.99 as NSDecimalNumber is immutable</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// BOOL literals</span>
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">yesNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@YES</span>;
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">noNumber</span>  <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">@NO</span>;
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// or</span>
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">BOOL</span> <span style="color: rgb(51, 51, 51);">yesBool</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">YES</span>;
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">BOOL</span> <span style="color: rgb(51, 51, 51);">noBool</span>  <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">NO</span>;
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%i&quot;</span>, <span style="color: rgb(51, 51, 51);">yesBool</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; 1</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Array object</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// May contain different data types, but must be an Objective-C object</span>
+    <span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">anArray</span>      <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> @[<span style="color: rgb(0, 153, 153);">@1</span>, <span style="color: rgb(0, 153, 153);">@2</span>, <span style="color: rgb(0, 153, 153);">@3</span>, <span style="color: rgb(0, 153, 153);">@4</span>];
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">thirdNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">anArray</span>[<span style="color: rgb(0, 153, 153);">2</span>];
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Third number = %@&quot;</span>, <span style="color: rgb(51, 51, 51);">thirdNumber</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;Third number = 3&quot;</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Since Xcode 7, NSArray objects can be typed (Generics)</span>
+    <span style="color: rgb(153, 153, 153);">NSArray</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*&gt;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">stringArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> @[<span style="color: rgb(208, 16, 64);">@&quot;hello&quot;</span>, <span style="color: rgb(208, 16, 64);">@&quot;world&quot;</span>];
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSMutableArray is a mutable version of NSArray, allowing you to change</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// the items in the array and to extend or shrink the array object.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Convenient, but not as efficient as NSArray.</span>
+    <span style="color: rgb(153, 153, 153);">NSMutableArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">mutableArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSMutableArray</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">arrayWithCapacity</span>:<span style="color: rgb(0, 153, 153);">2</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableArray</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">addObject</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableArray</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">addObject</span>:<span style="color: rgb(208, 16, 64);">@&quot;World&quot;</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableArray</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">removeObjectAtIndex</span>:<span style="color: rgb(0, 153, 153);">0</span>];
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@&quot;</span>, [<span style="color: rgb(51, 51, 51);">mutableArray</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">objectAtIndex</span>:<span style="color: rgb(0, 153, 153);">0</span>]); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;World&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Dictionary object</span>
+    <span style="color: rgb(153, 153, 153);">NSDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">aDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> @{ <span style="color: rgb(208, 16, 64);">@&quot;key1&quot;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">:</span> <span style="color: rgb(208, 16, 64);">@&quot;value1&quot;</span>, <span style="color: rgb(208, 16, 64);">@&quot;key2&quot;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">:</span> <span style="color: rgb(208, 16, 64);">@&quot;value2&quot;</span> };
+    <span style="color: rgb(153, 153, 153);">NSObject</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">valueObject</span>     <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">aDictionary</span>[<span style="color: rgb(208, 16, 64);">@&quot;A Key&quot;</span>];
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Object = %@&quot;</span>, <span style="color: rgb(51, 51, 51);">valueObject</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;Object = (null)&quot;</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Since Xcode 7, NSDictionary objects can be typed (Generics)</span>
+    <span style="color: rgb(153, 153, 153);">NSDictionary</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>, <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*&gt;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">numberDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> @{<span style="color: rgb(208, 16, 64);">@&quot;a&quot;</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span> <span style="color: rgb(0, 153, 153);">@1</span>, <span style="color: rgb(208, 16, 64);">@&quot;b&quot;</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span> <span style="color: rgb(0, 153, 153);">@2</span>};
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSMutableDictionary also available as a mutable dictionary object</span>
+    <span style="color: rgb(153, 153, 153);">NSMutableDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">mutableDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSMutableDictionary</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">dictionaryWithCapacity</span>:<span style="color: rgb(0, 153, 153);">2</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableDictionary</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">setObject</span>:<span style="color: rgb(208, 16, 64);">@&quot;value1&quot;</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">forKey</span>:<span style="color: rgb(208, 16, 64);">@&quot;key1&quot;</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableDictionary</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">setObject</span>:<span style="color: rgb(208, 16, 64);">@&quot;value2&quot;</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">forKey</span>:<span style="color: rgb(208, 16, 64);">@&quot;key2&quot;</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableDictionary</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">removeObjectForKey</span>:<span style="color: rgb(208, 16, 64);">@&quot;key1&quot;</span>];
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Change types from Mutable To Immutable</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">//In general [object mutableCopy] will make the object mutable whereas [object copy] will make the object immutable</span>
+    <span style="color: rgb(153, 153, 153);">NSMutableDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">aMutableDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">aDictionary</span> <span style="color: rgb(51, 51, 51);">mutableCopy</span>];
+    <span style="color: rgb(153, 153, 153);">NSDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">mutableDictionaryChanged</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">mutableDictionary</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">copy</span>];
+
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Set object</span>
+    <span style="color: rgb(153, 153, 153);">NSSet</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">set</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSSet</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">setWithObjects</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>, <span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>, <span style="color: rgb(208, 16, 64);">@&quot;World&quot;</span>, <span style="color: rgb(0, 134, 179); font-weight: 700;">nil</span>];
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@&quot;</span>, <span style="color: rgb(51, 51, 51);">set</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; {(Hello, World)} (may be in different order)</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Since Xcode 7, NSSet objects can be typed (Generics)</span>
+    <span style="color: rgb(153, 153, 153);">NSSet</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*&gt;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">stringSet</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSSet</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">setWithObjects</span>:<span style="color: rgb(208, 16, 64);">@&quot;hello&quot;</span>, <span style="color: rgb(208, 16, 64);">@&quot;world&quot;</span>, <span style="color: rgb(0, 134, 179); font-weight: 700;">nil</span>];
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSMutableSet also available as a mutable set object</span>
+    <span style="color: rgb(153, 153, 153);">NSMutableSet</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">mutableSet</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSMutableSet</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">setWithCapacity</span>:<span style="color: rgb(0, 153, 153);">2</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableSet</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">addObject</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>];
+    [<span style="color: rgb(51, 51, 51);">mutableSet</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">addObject</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>];
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@&quot;</span>, <span style="color: rgb(51, 51, 51);">mutableSet</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; {(Hello)}</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Operators</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The operators works like in the C language</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// For example:</span>
+    <span style="color: rgb(0, 153, 153);">2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">5</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 7</span>
+    <span style="color: rgb(0, 153, 153);">4.2f</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">5.1f</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 9.3f</span>
+    <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">==</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0 (NO)</span>
+    <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">!=</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1 (YES)</span>
+    <span style="color: rgb(0, 153, 153);">1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;&amp;</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1 (Logical and)</span>
+    <span style="color: rgb(0, 153, 153);">0</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">||</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1 (Logical or)</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">~</span><span style="color: rgb(0, 153, 153);">0x0F</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0xF0 (bitwise negation)</span>
+    <span style="color: rgb(0, 153, 153);">0x0F</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span> <span style="color: rgb(0, 153, 153);">0xF0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0x00 (bitwise AND)</span>
+    <span style="color: rgb(0, 153, 153);">0x01</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;&lt;</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0x02 (bitwise left shift (by 1))</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Control Structures</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// If-Else statement</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 134, 179); font-weight: 700;">NO</span>)
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;I am never run&quot;</span>);
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 153, 153);">0</span>)
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;I am also never run&quot;</span>);
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span>
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;I print&quot;</span>);
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Switch statement</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">switch</span> (<span style="color: rgb(0, 153, 153);">2</span>)
+    {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">0</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span>
+        {
+            <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;I am never run&quot;</span>);
+        } <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">1</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span>
+        {
+            <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;I am also never run&quot;</span>);
+        } <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">default</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span>
+        {
+            <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;I print&quot;</span>);
+        } <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// While loops statements</span>
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">while</span> (<span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">4</span>)
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%d,&quot;</span>, <span style="color: rgb(51, 51, 51);">ii</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// ii++ increments ii in-place, after using its value</span>
+    } <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;0,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;1,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;2,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;3,&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// For loops statements</span>
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">jj</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">jj</span><span style="color: rgb(0, 0, 0); font-weight: bold;">=</span><span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">jj</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">4</span>; <span style="color: rgb(51, 51, 51);">jj</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>)
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%d,&quot;</span>, <span style="color: rgb(51, 51, 51);">jj</span>);
+    } <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;0,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;1,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;2,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;3,&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Foreach statements</span>
+    <span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">values</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> @[<span style="color: rgb(0, 153, 153);">@0</span>, <span style="color: rgb(0, 153, 153);">@1</span>, <span style="color: rgb(0, 153, 153);">@2</span>, <span style="color: rgb(0, 153, 153);">@3</span>];
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">value</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">in</span> <span style="color: rgb(51, 51, 51);">values</span>)
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@,&quot;</span>, <span style="color: rgb(51, 51, 51);">value</span>);
+    } <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;0,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;1,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;2,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;3,&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Object for loop statement. Can be used with any Objective-C object type</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span> <span style="color: rgb(51, 51, 51);">item</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">in</span> <span style="color: rgb(51, 51, 51);">values</span>) {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%@,&quot;</span>, <span style="color: rgb(51, 51, 51);">item</span>);
+    } <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;0,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;1,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;2,&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;3,&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Try-Catch-Finally statements</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">@try</span>
+    {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Your statements here</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">@throw</span> [<span style="color: rgb(153, 153, 153);">NSException</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">exceptionWithName</span>:<span style="color: rgb(208, 16, 64);">@&quot;FileNotFoundException&quot;</span>
+                            <span style="color: rgb(153, 0, 0); font-weight: bold;">reason</span>:<span style="color: rgb(208, 16, 64);">@&quot;File Not Found on System&quot;</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">userInfo</span>:<span style="color: rgb(0, 134, 179); font-weight: 700;">nil</span>];
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">@catch</span> (<span style="color: rgb(153, 153, 153);">NSException</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">e</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// use: @catch (id exceptionName) to catch all objects.</span>
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Exception: %@&quot;</span>, <span style="color: rgb(51, 51, 51);">e</span>);
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">@finally</span>
+    {
+        <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Finally. Time to clean up.&quot;</span>);
+    } <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;Exception: File Not Found on System&quot;</span>
+      <span style="color: rgb(153, 153, 136); font-style: normal;">//           &quot;Finally. Time to clean up.&quot;</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSError objects are useful for function arguments to populate on user mistakes.</span>
+    <span style="color: rgb(153, 153, 153);">NSError</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">error</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSError</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">errorWithDomain</span>:<span style="color: rgb(208, 16, 64);">@&quot;Invalid email.&quot;</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">code</span>:<span style="color: rgb(0, 153, 153);">4</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">userInfo</span>:<span style="color: rgb(0, 134, 179); font-weight: 700;">nil</span>];
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Objects</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Create an object instance by allocating memory and initializing it</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// An object is not fully functional until both steps have been completed</span>
+    <span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">myObject</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [[<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>];
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The Objective-C model of object-oriented programming is based on message</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// passing to object instances</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// In Objective-C one does not simply call a method; one sends a message</span>
+    [<span style="color: rgb(51, 51, 51);">myObject</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">instanceMethodWithParameter</span>:<span style="color: rgb(208, 16, 64);">@&quot;Steve Jobs&quot;</span>];
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Clean up the memory you used into your program</span>
+    [<span style="color: rgb(51, 51, 51);">pool</span> <span style="color: rgb(51, 51, 51);">drain</span>];
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// End of @autoreleasepool</span>
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// End the program</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">0</span>;
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Classes And Functions</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Declare your class in a header file (MyClass.h):</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Class declaration syntax:</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @interface ClassName : ParentClassName &lt;ImplementedProtocols&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// {</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//    type name; &lt;= variable declarations;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// }</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @property type name; &lt;= property declarations</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// -/+ (type) Method declarations; &lt;= Method declarations</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @end</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">MyClass</span> : <span style="color: rgb(153, 153, 153);">NSObject</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">MyProtocol</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// NSObject is Objective-C's base object class.</span>
+{
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Instance variable declarations (can exist in either interface or implementation file)</span>
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">count</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Protected access by default.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">@private</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">id</span> <span style="color: rgb(51, 51, 51);">data</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Private access (More convenient to declare in implementation file)</span>
+    <span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">name</span>;
+}
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Convenient notation for public access variables to auto generate a setter method</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// By default, setter method name is 'set' followed by @property variable name</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">propInt</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Setter method name = 'setPropInt'</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">copy</span>) <span style="color: rgb(68, 85, 136); font-weight: bold;">id</span> <span style="color: rgb(51, 51, 51);">copyId</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// (copy) =&gt; Copy the object during assignment</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// (readonly) =&gt; Cannot set value outside @interface</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">readonly</span>) <span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">roString</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Use @synthesize in @implementation to create accessor</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// You can customize the getter and setter names instead of using default 'set' name:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">getter</span><span style="color: rgb(0, 0, 0); font-weight: bold;">=</span><span style="color: rgb(51, 51, 51);">lengthGet</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">setter</span><span style="color: rgb(0, 0, 0); font-weight: bold;">=</span><span style="color: rgb(153, 0, 0); font-weight: bold;">lengthSet</span>:) <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">length</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Methods</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">+/-</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">type</span>)<span style="color: rgb(153, 0, 0); font-weight: bold;">methodSignature</span>:(<span style="color: rgb(51, 51, 51);">Parameter</span> <span style="color: rgb(51, 51, 51);">Type</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(51, 51, 51);">parameterName</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// + for class methods:</span>
++ (<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">classMethod</span>;
++ (<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">myClassFromHeight:</span>(<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">defaultHeight</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// - for instance methods:</span>
+- (<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">instanceMethodWithParameter:</span>(<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">string</span>;
+- (<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">methodAParameterAsString:</span>(<span style="color: rgb(153, 153, 153);">NSString</span><span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">string</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">andAParameterAsNumber:</span>(<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">number</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Constructor methods with arguments:</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">initWithDistance:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>)<span style="color: rgb(0, 128, 128);">defaultDistance</span>;
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Objective-C method names are very descriptive. Always name methods according to their arguments</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// States the end of the interface</span>
+
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// To access public variables from the implementation file, @property generates a setter method</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// automatically. Method name is 'set' followed by @property variable name:</span>
+<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [[<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// create MyClass object instance</span>
+[<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">setCount</span>:<span style="color: rgb(0, 153, 153);">10</span>];
+<span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%d&quot;</span>, [<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(51, 51, 51);">count</span>]); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; 10</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Or using the custom getter and setter method defined in @interface:</span>
+[<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">lengthSet</span>:<span style="color: rgb(0, 153, 153);">32</span>];
+<span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%i&quot;</span>, [<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(51, 51, 51);">lengthGet</span>]); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; 32</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// For convenience, you may use dot notation to set and access object instance variables:</span>
+<span style="color: rgb(51, 51, 51);">myClass</span>.<span style="color: rgb(51, 51, 51);">count</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">45</span>;
+<span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;%i&quot;</span>, <span style="color: rgb(51, 51, 51);">myClass</span>.<span style="color: rgb(51, 51, 51);">count</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; 45</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Call class methods:</span>
+<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">classMethodString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(51, 51, 51);">classMethod</span>];
+<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">classFromName</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">myClassFromName</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>];
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Call instance methods:</span>
+<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [[<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// Create MyClass object instance</span>
+<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">stringFromInstanceMethod</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">instanceMethodWithParameter</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>];
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Selectors</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Way to dynamically represent methods. Used to call methods of a class, pass methods</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// through functions to tell other classes they should call it, and to save methods</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// as a variable</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// SEL is the data type. @selector() returns a selector from method name provided</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// methodAParameterAsString:andAParameterAsNumber: is method name for method in MyClass</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">SEL</span> <span style="color: rgb(51, 51, 51);">selectorVar</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">@selector</span>(<span style="color: rgb(153, 0, 0); font-weight: bold;">methodAParameterAsString</span>:<span style="color: rgb(153, 0, 0); font-weight: bold;">andAParameterAsNumber</span>:);
+<span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> ([<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">respondsToSelector</span>:<span style="color: rgb(51, 51, 51);">selectorVar</span>]) { <span style="color: rgb(153, 153, 136); font-style: normal;">// Checks if class contains method</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Must put all method arguments into one object to send to performSelector function</span>
+    <span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">arguments</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">arrayWithObjects</span>:<span style="color: rgb(208, 16, 64);">@&quot;Hello&quot;</span>, <span style="color: rgb(0, 153, 153);">@4</span>, <span style="color: rgb(0, 134, 179); font-weight: 700;">nil</span>];
+    [<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">performSelector</span>:<span style="color: rgb(51, 51, 51);">selectorVar</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">withObject</span>:<span style="color: rgb(51, 51, 51);">arguments</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// Calls the method</span>
+} <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// NSStringFromSelector() returns a NSString of the method name of a given selector</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;MyClass does not have method: %@&quot;</span>, <span style="color: rgb(51, 51, 51);">NSStringFromSelector</span>(<span style="color: rgb(51, 51, 51);">selectedVar</span>));
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Implement the methods in an implementation (MyClass.m) file:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">MyClass</span> {
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">distance</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Private access instance variable</span>
+    <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(51, 51, 51);">height</span>;
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// To access a public variable from the interface file, use '_' followed by variable name:</span>
+<span style="color: rgb(51, 51, 51);">_count</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">5</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// References &quot;int count&quot; from MyClass interface</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Access variables defined in implementation file:</span>
+<span style="color: rgb(51, 51, 51);">distance</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">18</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// References &quot;long distance&quot; from MyClass implementation</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// To use @property variable in implementation, use @synthesize to create accessor variable:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@synthesize</span> <span style="color: rgb(51, 51, 51);">roString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">_roString</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// _roString available now in @implementation</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Called before calling any class methods or instantiating any objects</span>
++ (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">initialize</span>
+{
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 134, 179); font-weight: 700;">self</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">==</span> [<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">class</span>]) {
+        <span style="color: rgb(51, 51, 51);">distance</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+    }
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Counterpart to initialize method. Called when an object's reference count is zero</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">dealloc</span>
+{
+    [<span style="color: rgb(51, 51, 51);">height</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">release</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// If not using ARC, make sure to release class variable objects</span>
+    [<span style="color: rgb(0, 134, 179); font-weight: 700;">super</span> <span style="color: rgb(51, 51, 51);">dealloc</span>];  <span style="color: rgb(153, 153, 136); font-style: normal;">// and call parent class dealloc</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Constructors are a way of creating instances of a class</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// This is a default constructor which is called when the object is initialized.</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">init</span>
+{
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> ((<span style="color: rgb(0, 134, 179); font-weight: 700;">self</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(0, 134, 179); font-weight: 700;">super</span> <span style="color: rgb(51, 51, 51);">init</span>])) <span style="color: rgb(153, 153, 136); font-style: normal;">// 'super' used to access methods from parent class</span>
+    {
+        <span style="color: rgb(0, 134, 179); font-weight: 700;">self</span>.<span style="color: rgb(51, 51, 51);">count</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// 'self' used for object to call itself</span>
+    }
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">self</span>;
+}
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Can create constructors that contain arguments:</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">initWithDistance:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>)<span style="color: rgb(0, 128, 128);">defaultDistance</span>
+{
+    <span style="color: rgb(51, 51, 51);">distance</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">defaultDistance</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">self</span>;
+}
+
++ (<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">classMethod</span>
+{
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(208, 16, 64);">@&quot;Some string&quot;</span>;
+}
+
++ (<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">myClassFromHeight:</span>(<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">defaultHeight</span>
+{
+    <span style="color: rgb(51, 51, 51);">height</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">defaultHeight</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> [[<span style="color: rgb(0, 134, 179); font-weight: 700;">self</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>];
+}
+
+- (<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">instanceMethodWithParameter:</span>(<span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">string</span>
+{
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(208, 16, 64);">@&quot;New string&quot;</span>;
+}
+
+- (<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">methodAParameterAsString:</span>(<span style="color: rgb(153, 153, 153);">NSString</span><span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">string</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">andAParameterAsNumber:</span>(<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 128, 128);">number</span>
+{
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">@42</span>;
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Objective-C does not have private method declarations, but you can simulate them.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// To simulate a private method, create the method in the @implementation but not in the @interface.</span>
+- (<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">secretPrivateMethod</span> {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">@72</span>;
+}
+[<span style="color: rgb(0, 134, 179); font-weight: 700;">self</span> <span style="color: rgb(51, 51, 51);">secretPrivateMethod</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// Calls private method</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Methods declared into MyProtocol</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">myProtocolMethod</span>
+{
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// statements</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// States the end of the implementation</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Categories</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A category is a group of methods designed to extend a class. They allow you to add new methods</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// to an existing class for organizational purposes. This is not to be mistaken with subclasses.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Subclasses are meant to CHANGE functionality of an object while categories instead ADD</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// functionality to an object.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Categories allow you to:</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// -- Add methods to an existing class for organizational purposes.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// -- Allow you to extend Objective-C object classes (ex: NSString) to add your own methods.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// -- Add ability to create protected and private methods to classes.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// NOTE: Do not override methods of the base class in a category even though you have the ability</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// to. Overriding methods may cause compiler errors later between different categories and it</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ruins the purpose of categories to only ADD functionality. Subclass instead to override methods.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Here is a simple Car base class.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span> : <span style="color: rgb(153, 153, 153);">NSObject</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> <span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">make</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> <span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">color</span>;
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">turnOn</span>;
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">accelerate</span>;
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// And the simple Car base class implementation:</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Car.h&quot;</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@synthesize</span> <span style="color: rgb(51, 51, 51);">make</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">_make</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@synthesize</span> <span style="color: rgb(51, 51, 51);">color</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">_color</span>;
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">turnOn</span> {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Car is on.&quot;</span>);
+}
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">accelerate</span> {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Accelerating.&quot;</span>);
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Now, if we wanted to create a Truck object, we would instead create a subclass of Car as it would</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// be changing the functionality of the Car to behave like a truck. But lets say we want to just add</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// functionality to this existing Car. A good example would be to clean the car. So we would create</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// a category to add these cleaning methods:</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @interface filename: Car+Clean.h (BaseClassName+CategoryName.h)</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Car.h&quot; </span><span style="color: rgb(153, 153, 136); font-style: normal;">// Make sure to import base class to extend.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">(Clean)</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// The category name is inside () following the name of the base class.</span>
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">washWindows</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Names of the new methods we are adding to our Car object.</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">wax</span>;
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @implementation filename: Car+Clean.m (BaseClassName+CategoryName.m)</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Car+Clean.h&quot; </span><span style="color: rgb(153, 153, 136); font-style: normal;">// Import the Clean category's @interface file.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">(Clean)</span>
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">washWindows</span> {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Windows washed.&quot;</span>);
+}
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">wax</span> {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Waxed.&quot;</span>);
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Any Car object instance has the ability to use a category. All they need to do is import it:</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Car+Clean.h&quot; </span><span style="color: rgb(153, 153, 136); font-style: normal;">// Import as many different categories as you want to use.</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Car.h&quot; </span><span style="color: rgb(153, 153, 136); font-style: normal;">// Also need to import base class to use it's original functionality.</span>
+
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">main</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">argc</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">const</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">argv</span>[]) {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">@autoreleasepool</span> {
+        <span style="color: rgb(51, 51, 51);">Car</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">mustang</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [[<span style="color: rgb(51, 51, 51);">Car</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>];
+        <span style="color: rgb(51, 51, 51);">mustang</span>.<span style="color: rgb(51, 51, 51);">color</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">@&quot;Red&quot;</span>;
+        <span style="color: rgb(51, 51, 51);">mustang</span>.<span style="color: rgb(51, 51, 51);">make</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">@&quot;Ford&quot;</span>;
+
+        [<span style="color: rgb(51, 51, 51);">mustang</span> <span style="color: rgb(51, 51, 51);">turnOn</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// Use methods from base Car class.</span>
+        [<span style="color: rgb(51, 51, 51);">mustang</span> <span style="color: rgb(51, 51, 51);">washWindows</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// Use methods from Car's Clean category.</span>
+    }
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 153, 153);">0</span>;
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Objective-C does not have protected method declarations but you can simulate them.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Create a category containing all of the protected methods, then import it ONLY into the</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @implementation file of a class belonging to the Car class:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">(Protected)</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Naming category 'Protected' to remember methods are protected.</span>
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">lockCar</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Methods listed here may only be created by Car objects.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//To use protected methods, import the category, then implement the methods:</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Car+Protected.h&quot; </span><span style="color: rgb(153, 153, 136); font-style: normal;">// Remember, import in the @implementation file only.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span>
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">lockCar</span> {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Car locked.&quot;</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Instances of Car can't use lockCar because it's not in the @interface.</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Extensions</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Extensions allow you to override public access property attributes and methods of an @interface.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @interface filename: Shape.h</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Shape</span> : <span style="color: rgb(153, 153, 153);">NSObject</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Base Shape class extension overrides below.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">readonly</span>) <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">numOfSides</span>;
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">getNumOfSides</span>;
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// You can override numOfSides variable or getNumOfSides method to edit them with an extension:</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @implementation filename: Shape.m</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Shape.h&quot;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Extensions live in the same file as the class @implementation.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Shape</span> () <span style="color: rgb(153, 153, 136); font-style: normal;">// () after base class name declares an extension.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">copy</span>) <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">numOfSides</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Make numOfSides copy instead of readonly.</span>
+-(<span style="color: rgb(153, 153, 153);">NSNumber</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">getNumOfSides</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Make getNumOfSides return a NSNumber instead of an int.</span>
+-(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">privateMethod</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// You can also create new private methods inside of extensions.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// The main @implementation:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Shape</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@synthesize</span> <span style="color: rgb(51, 51, 51);">numOfSides</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">_numOfSides</span>;
+
+-(<span style="color: rgb(153, 153, 153);">NSNumber</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">getNumOfSides</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// All statements inside of extension must be in the @implementation.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">_numOfSides</span>;
+}
+-(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">privateMethod</span> {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Private method created by extension. Shape instances cannot call me.&quot;</span>);
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Starting in Xcode 7.0, you can create Generic classes,</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// allowing you to provide greater type safety and clarity</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// without writing excessive boilerplate.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Result</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">__covariant</span> <span style="color: rgb(51, 51, 51);">A</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">:</span> <span style="color: rgb(153, 153, 153);">NSObject</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: bold;">handleSuccess</span>:(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(51, 51, 51);">A</span>))<span style="color: rgb(51, 51, 51);">success</span>
+              <span style="color: rgb(153, 0, 0); font-weight: bold;">failure</span>:(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(153, 153, 153);">NSError</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>))<span style="color: rgb(51, 51, 51);">failure</span>;
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">nonatomic</span>) <span style="color: rgb(51, 51, 51);">A</span> <span style="color: rgb(51, 51, 51);">object</span>;
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// we can now declare instances of this class like</span>
+<span style="color: rgb(51, 51, 51);">Result</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*&gt;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">result</span>;
+<span style="color: rgb(51, 51, 51);">Result</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*&gt;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">result</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Each of these cases would be equivalent to rewriting Result's interface</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// and substituting the appropriate type for A</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Result</span> : <span style="color: rgb(153, 153, 153);">NSObject</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">handleSuccess:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>))<span style="color: rgb(0, 128, 128);">success</span>
+              <span style="color: rgb(153, 0, 0); font-weight: 700;">failure:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(153, 153, 153);">NSError</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>))<span style="color: rgb(0, 128, 128);">failure</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">nonatomic</span>) <span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">object</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Result</span> : <span style="color: rgb(153, 153, 153);">NSObject</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">handleSuccess:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>))<span style="color: rgb(0, 128, 128);">success</span>
+              <span style="color: rgb(153, 0, 0); font-weight: 700;">failure:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(153, 153, 153);">NSError</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>))<span style="color: rgb(0, 128, 128);">failure</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">nonatomic</span>) <span style="color: rgb(153, 153, 153);">NSNumber</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">object</span>;
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// It should be obvious, however, that writing one</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//  Class to solve a problem is always preferable to writing two</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Note that Clang will not accept generic types in @implementations,</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// so your @implemnation of Result would have to look like this:</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Result</span>
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">handleSuccess:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span>))<span style="color: rgb(0, 128, 128);">success</span>
+              <span style="color: rgb(153, 0, 0); font-weight: 700;">failure:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(153, 153, 153);">NSError</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>))<span style="color: rgb(0, 128, 128);">failure</span> {
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Do something</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Protocols</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A protocol declares methods that can be implemented by any class.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Protocols are not classes themselves. They simply define an interface</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// that other objects are responsible for implementing.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @protocol filename: &quot;CarUtilities.h&quot;</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@protocol</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">CarUtilities</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSObject</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;NSObject&gt; =&gt; Name of another protocol this protocol includes.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">BOOL</span> <span style="color: rgb(51, 51, 51);">engineOn</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Adopting class must @synthesize all defined @properties and</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(51, 51, 51);">turnOnEngine</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// all defined methods.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Below is an example class implementing the protocol.</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;CarUtilities.h&quot; </span><span style="color: rgb(153, 153, 136); font-style: normal;">// Import the @protocol file.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@interface</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span> : <span style="color: rgb(153, 153, 153);">NSObject</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">CarUtilities</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Name of protocol goes inside &lt;&gt;</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// You don't need the @property or method names here for CarUtilities. Only @implementation does.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: bold;">turnOnEngineWithUtilities</span>:(<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">CarUtilities</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>)<span style="color: rgb(51, 51, 51);">car</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// You can use protocols as data too.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// The @implementation needs to implement the @properties and methods for the protocol.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Car</span> : <span style="color: rgb(153, 153, 153);">NSObject</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">CarUtilities</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@synthesize</span> <span style="color: rgb(51, 51, 51);">engineOn</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">_engineOn</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Create a @synthesize statement for the engineOn @property.</span>
+
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">turnOnEngine</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// Implement turnOnEngine however you would like. Protocols do not define</span>
+    <span style="color: rgb(51, 51, 51);">_engineOn</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">YES</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// how you implement a method, it just requires that you do implement it.</span>
+}
+<span style="color: rgb(153, 153, 136); font-style: normal;">// You may use a protocol as data as you know what methods and variables it has implemented.</span>
+- (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: 700;">turnOnEngineWithCarUtilities:</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">CarUtilities</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>)<span style="color: rgb(0, 128, 128);">objectOfSomeKind</span> {
+    [<span style="color: rgb(51, 51, 51);">objectOfSomeKind</span> <span style="color: rgb(51, 51, 51);">engineOn</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// You have access to object variables</span>
+    [<span style="color: rgb(51, 51, 51);">objectOfSomeKind</span> <span style="color: rgb(51, 51, 51);">turnOnEngine</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// and the methods inside.</span>
+    [<span style="color: rgb(51, 51, 51);">objectOfSomeKind</span> <span style="color: rgb(51, 51, 51);">engineOn</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// May or may not be YES. Class implements it however it wants.</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Instances of Car now have access to the protocol.</span>
+<span style="color: rgb(51, 51, 51);">Car</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">carInstance</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [[<span style="color: rgb(51, 51, 51);">Car</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>];
+[<span style="color: rgb(51, 51, 51);">carInstance</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">setEngineOn</span>:<span style="color: rgb(0, 134, 179); font-weight: 700;">NO</span>];
+[<span style="color: rgb(51, 51, 51);">carInstance</span> <span style="color: rgb(51, 51, 51);">turnOnEngine</span>];
+<span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> ([<span style="color: rgb(51, 51, 51);">carInstance</span> <span style="color: rgb(51, 51, 51);">engineOn</span>]) {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Car engine is on.&quot;</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// prints =&gt; &quot;Car engine is on.&quot;</span>
+}
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Make sure to check if an object of type 'id' implements a protocol before calling protocol methods:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> ([<span style="color: rgb(51, 51, 51);">myClass</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">conformsToProtocol</span>:@<span style="color: rgb(51, 51, 51);">protocol</span>(<span style="color: rgb(51, 51, 51);">CarUtilities</span>)]) {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;This does not run as the MyClass class does not implement the CarUtilities protocol.&quot;</span>);
+} <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> ([<span style="color: rgb(51, 51, 51);">carInstance</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">conformsToProtocol</span>:@<span style="color: rgb(51, 51, 51);">protocol</span>(<span style="color: rgb(51, 51, 51);">CarUtilities</span>)]) {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;This does run as the Car class implements the CarUtilities protocol.&quot;</span>);
+}
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Categories may implement protocols as well: @interface Car (CarCategory) &lt;CarUtilities&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// You may implement many protocols: @interface Car : NSObject &lt;CarUtilities, CarCleaning&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// NOTE: If two or more protocols rely on each other, make sure to forward-declare them:</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Brother.h&quot;</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@protocol</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Brother</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Forward-declare statement. Without it, compiler will throw error.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@protocol</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Sister</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSObject</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: bold;">beNiceToBrother</span>:(<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">Brother</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>)<span style="color: rgb(51, 51, 51);">brother</span>;
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// See the problem is that Sister relies on Brother, and Brother relies on Sister.</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#import &quot;Sister.h&quot;</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@protocol</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Sister</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// These lines stop the recursion, resolving the issue.</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@protocol</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">Brother</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(153, 153, 153);">NSObject</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: bold;">beNiceToSister</span>:(<span style="color: rgb(68, 85, 136); font-weight: bold;">id</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(51, 51, 51);">Sister</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>)<span style="color: rgb(51, 51, 51);">sister</span>;
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Blocks</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Blocks are statements of code, just like a function, that are able to be used as data.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Below is a simple block with an integer argument that returns the argument plus 4.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span><span style="color: rgb(51, 51, 51);">addUp</span>)(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">n</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Declare a variable to store the block.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span><span style="color: rgb(51, 51, 51);">noParameterBlockVar</span>)(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Example variable declaration of block with no arguments.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Blocks have access to variables in the same scope. But the variables are readonly and the</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// value passed to the block is the value of the variable when the block is created.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">outsideVar</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">17</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// If we edit outsideVar after declaring addUp, outsideVar is STILL 17.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">__block</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">mutableVar</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">3</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// __block makes variables writable to blocks, unlike outsideVar.</span>
+<span style="color: rgb(51, 51, 51);">addUp</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">n</span>) { <span style="color: rgb(153, 153, 136); font-style: normal;">// Remove (int n) to have a block that doesn't take in any parameters.</span>
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;You may have as many lines in a block as you would like.&quot;</span>);
+    <span style="color: rgb(153, 153, 153);">NSSet</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">blockSet</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Also, you can declare local variables.</span>
+    <span style="color: rgb(51, 51, 51);">mutableVar</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">32</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Assigning new value to __block variable.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">n</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(51, 51, 51);">outsideVar</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Return statements are optional.</span>
+}
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">addUp</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">addUp</span>(<span style="color: rgb(0, 153, 153);">10</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">16</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Calls block code with arguments.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Blocks are often used as arguments to functions to be called later, or for callbacks.</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@implementation</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">BlockExample</span> : <span style="color: rgb(153, 153, 153);">NSObject</span>
+
+ <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>)<span style="color: rgb(153, 0, 0); font-weight: bold;">runBlock</span>:(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">^</span>)(<span style="color: rgb(153, 153, 153);">NSString</span>))<span style="color: rgb(51, 51, 51);">block</span> {
+    <span style="color: rgb(51, 51, 51);">NSLog</span>(<span style="color: rgb(208, 16, 64);">@&quot;Block argument returns nothing and takes in a NSString object.&quot;</span>);
+    <span style="color: rgb(51, 51, 51);">block</span>(<span style="color: rgb(208, 16, 64);">@&quot;Argument given to block to execute.&quot;</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Calling block.</span>
+ }
+
+ <span style="color: rgb(0, 0, 0); font-weight: 700;">@end</span>
+
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Memory Management</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">For each object used in an application, memory must be allocated for that object. When the application</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">is done using that object, memory must be deallocated to ensure application efficiency.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Objective-C does not use garbage collection and instead uses reference counting. As long as</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">there is at least one reference to an object (also called &quot;owning&quot; an object), then the object</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">will be available to use (known as &quot;ownership&quot;).</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">When an instance owns an object, its reference counter is increments by one. When the</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">object is released, the reference counter decrements by one. When reference count is zero,</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">the object is removed from memory.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">With all object interactions, follow the pattern of:</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">(1) create the object, (2) use the object, (3) then free the object from memory.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">classVar</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(51, 51, 51);">alloc</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// 'alloc' sets classVar's reference count to one. Returns pointer to object</span>
+[<span style="color: rgb(51, 51, 51);">classVar</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">release</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// Decrements classVar's reference count</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// 'retain' claims ownership of existing object instance and increments reference count. Returns pointer to object</span>
+<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">newVar</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [<span style="color: rgb(51, 51, 51);">classVar</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">retain</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// If classVar is released, object is still in memory because newVar is owner</span>
+[<span style="color: rgb(51, 51, 51);">classVar</span> <span style="color: rgb(51, 51, 51);">autorelease</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// Removes ownership of object at end of @autoreleasepool block. Returns pointer to object</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// @property can use 'retain' and 'assign' as well for small convenient definitions</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">retain</span>) <span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">instance</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Release old value and retain a new one (strong reference)</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">assign</span>) <span style="color: rgb(153, 153, 153);">NSSet</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">set</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Pointer to new value without retaining/releasing old (weak reference)</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Automatic Reference Counting (ARC)</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Because memory management can be a pain, Xcode 4.2 and iOS 4 introduced Automatic Reference Counting (ARC).</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ARC is a compiler feature that inserts retain, release, and autorelease automatically for you, so when using ARC,</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// you must not use retain, relase, or autorelease</span>
+<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">arcMyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> [[<span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(51, 51, 51);">alloc</span>] <span style="color: rgb(51, 51, 51);">init</span>];
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ... code using arcMyClass</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Without ARC, you will need to call: [arcMyClass release] after you're done using arcMyClass. But with ARC,</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// there is no need. It will insert this release statement for you</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// As for the 'assign' and 'retain' @property attributes, with ARC you use 'weak' and 'strong'</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">weak</span>) <span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">weakVar</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// 'weak' does not take ownership of object. If original instance's reference count</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// is set to zero, weakVar will automatically receive value of nil to avoid application crashing</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">@property</span> (<span style="color: rgb(0, 0, 0); font-weight: 700;">strong</span>) <span style="color: rgb(51, 51, 51);">MyClass</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">strongVar</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// 'strong' takes ownership of object. Ensures object will stay in memory to use</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// For regular variables (not @property declared variables), use the following:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">__strong</span> <span style="color: rgb(153, 153, 153);">NSString</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">strongString</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Default. Variable is retained in memory until it leaves it's scope</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">__weak</span> <span style="color: rgb(153, 153, 153);">NSSet</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">weakSet</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Weak reference to existing object. When existing object is released, weakSet is set to nil</span>
+<span style="color: rgb(51, 51, 51);">__unsafe_unretained</span> <span style="color: rgb(153, 153, 153);">NSArray</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">unsafeArray</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Like __weak, but unsafeArray not set to nil when existing object is released</span>
+</pre></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px;">Further Reading</h2><p style="margin: 22pt 0px 0px; padding: 0px;"><a href="http://en.wikipedia.org/wiki/Objective-C">Wikipedia Objective-C</a></p><p style="margin: 22pt 0px 0px; padding: 0px;"><a href="https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/ProgrammingWithObjectiveC.pdf">Programming with Objective-C. Apple PDF book</a></p><p style="margin: 22pt 0px 0px; padding: 0px;"><a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/ObjectiveC.html">Programming with Objective-C for iOS</a></p><p style="margin: 22pt 0px 0px; padding: 0px;"><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Programming with Objective-C for Mac OSX</a></p><p style="margin: 22pt 0px 0px; padding: 0px;"><a href="http://www.raywenderlich.com/5600/ios-for-high-school-students-getting-started">iOS For High School Students: Getting Started</a></p><hr style="display: block; height: 1px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 22pt 0px 0px; padding: 0px;"/><p style="margin: 22pt 0px 0px; padding: 0px;">Got a suggestion? A correction, perhaps? <a href="https://github.com/adambard/learnxinyminutes-docs/issues/new">Open an Issue</a> on the Github Repo, or make a pull request yourself!</p><p style="margin: 22pt 0px 0px; padding: 0px;">Originally contributed by Eugene Yagrushkin, and updated by <a href="https://github.com/adambard/learnxinyminutes-docs/blame/master/objective-c.html.markdown">16 contributor(s)</a>.</p><div style="display: block; margin-top: 60px; text-align: right; color: rgb(119, 119, 119);"><a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US" rel="license" style="float: left;"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border: 0px; vertical-align: middle; max-width: 100%; height: auto;"></img></a><div><br/></div><div style="margin: 22pt 0px 0px; padding: 0px;"><div>© 2017 <a href="https://learnxinyminutes.com/docs/objective-c/www.about.me/yagrushkin">Eugene Yagrushkin</a>, <a href="https://github.com/YannickL">Yannick Loriot</a>, <a href="https://github.com/levibostian">Levi Bostian</a>, <a href="https://github.com/cwalk">Clayton Walker</a>, <a href="http://visualcosita.xyz/">Fernando Valverde</a></div></div></div></div></div></span>
+</div></body></html> 

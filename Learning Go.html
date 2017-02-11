@@ -1,0 +1,803 @@
+<html>
+<head>
+  <title>Learning Go</title>
+  <basefont face="Tahoma" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/303788 (en-US, DDL); Windows/10.0.14393 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Tahoma;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="7110"/>
+<h1>Learning Go</h1>
+
+<div><span><div><div style="margin: 22pt 0px 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div><div style="padding: 0px; margin: 0px; min-height: 1px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div style="margin-left: 0em; padding: 2px;"><div style="margin: 0px 0px 0.5em; padding-top: 0.5em; border-bottom: none;"><div><div style="margin: 22pt 0px 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;font-family:helvetica, arial, san-serif;font-size:24.928px;"><div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; padding: 0px; margin: 0px; min-height: 1px; color: rgb(0, 0, 0); font-size: 13.12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; margin-left: 0em; padding: 2px;"><div style="font-family: helvetica, arial, san-serif; margin: 0px 0px 0.5em; padding-top: 0.5em; font-size: 24.928px; border-bottom: none;"><div><b><br/></b></div><div><hr/></div><div><b>Hyperpolyglot</b></div><div>C, Go</div></div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;"><p style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><a name="top" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;"></a><em style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;">a side-by-side reference sheet</em></p></div><div><br/></div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;"><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><div><a href="http://hyperpolyglot.org/c#grammar-invocation" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">grammar and invocation</a> | <a href="http://hyperpolyglot.org/c#variables-expressions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">variables and expressions</a> | <a href="http://hyperpolyglot.org/c#arithmetic-logic" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">arithmetic and logic</a> | <a href="http://hyperpolyglot.org/c#strings" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">strings</a> | <a href="http://hyperpolyglot.org/c#regexes" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">regexes</a> | <a href="http://hyperpolyglot.org/c#dates-time" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dates and time</a> | <a href="http://hyperpolyglot.org/c#fixed-length-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">fixed-length-arrays</a> | <a href="http://hyperpolyglot.org/c#resizable-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">resizable arrays</a> | <a href="http://hyperpolyglot.org/c#dictionaries" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dictionaries</a> | <a href="http://hyperpolyglot.org/c#functions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">functions</a> | <a href="http://hyperpolyglot.org/c#execution-control" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">execution control</a> | <a href="http://hyperpolyglot.org/c#concurrency" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">concurrency</a> | <a href="http://hyperpolyglot.org/c#file-handles" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">file handles</a> | <a href="http://hyperpolyglot.org/c#files" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">files</a> | <a href="http://hyperpolyglot.org/c#directories" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">directories</a> | <a href="http://hyperpolyglot.org/c#processes-environment" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">processes and environment</a> | <a href="http://hyperpolyglot.org/c#option-parsing" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">option parsing</a> | <a href="http://hyperpolyglot.org/c#libraries-namespaces" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">libraries and namespaces</a> | <a href="http://hyperpolyglot.org/c#user-defined-types" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">user-defined types</a> | <a href="http://hyperpolyglot.org/c#cpp-macros" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">c preprocessor macros</a> | <a href="http://hyperpolyglot.org/c#net-web" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">net and web</a> | <a href="http://hyperpolyglot.org/c#unit-tests" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">unit tests</a> | <a href="http://hyperpolyglot.org/c#debugging-profiling" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">debugging and profiling</a></div><div><br/></div></div></div></div></div></div><div><hr/></div><div><span style="color: rgb(34, 34, 34);"><span style="font-size: 28px;"><span style="font-family: &quot;Roboto Slab&quot;, serif;"><b><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></b></span></span></span></div></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Where X=Go</h2><p style="margin: 22pt 0px 0px; padding: 0px; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Get the code: <a href="https://learnxinyminutes.com/docs/files/learngo.go">learngo.go</a></p><div style="font-size: 14pt; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><p style="margin: 22pt 0px 0px; padding: 0px;">Go was created out of the need to get work done. It’s not the latest trend in computer science, but it is the newest fastest way to solve real-world problems.</p><p style="margin: 22pt 0px 0px; padding: 0px;">It has familiar concepts of imperative languages with static typing. It’s fast to compile and fast to execute, it adds easy-to-understand concurrency to leverage today’s multi-core CPUs, and has features to help with large-scale programming.</p><p style="margin: 22pt 0px 0px; padding: 0px;">Go comes with a great standard library and an enthusiastic community.</p><div style="background: rgb(238, 238, 238); padding: 18pt; overflow-x: auto; margin: 0px; font-family: &quot;Ubuntu Mono&quot;, monospace; display: block;"><pre style="margin: 1em 0px; font-family: monospace, serif; font-size: 1em; white-space: pre-wrap; word-wrap: break-word;"><span style="color: rgb(153, 153, 136); font-style: normal;">// Single line comment</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Multi-</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;"> line comment */</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A package clause starts every source file.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Main is a special name declaring an executable rather than a library.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">package</span> main
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Import declaration declares library packages referenced in this file.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> (
+    <span style="color: rgb(208, 16, 64);">&quot;fmt&quot;</span>       <span style="color: rgb(153, 153, 136); font-style: normal;">// A package in the Go standard library.</span>
+    <span style="color: rgb(208, 16, 64);">&quot;io/ioutil&quot;</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Implements some I/O utility functions.</span>
+    m <span style="color: rgb(208, 16, 64);">&quot;math&quot;</span>    <span style="color: rgb(153, 153, 136); font-style: normal;">// Math library with local alias m.</span>
+    <span style="color: rgb(208, 16, 64);">&quot;net/http&quot;</span>  <span style="color: rgb(153, 153, 136); font-style: normal;">// Yes, a web server!</span>
+    <span style="color: rgb(208, 16, 64);">&quot;os&quot;</span>        <span style="color: rgb(153, 153, 136); font-style: normal;">// OS functions like working with the file system</span>
+    <span style="color: rgb(208, 16, 64);">&quot;strconv&quot;</span>   <span style="color: rgb(153, 153, 136); font-style: normal;">// String conversions.</span>
+)
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A function definition. Main is special. It is the entry point for the</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// executable program. Love it or hate it, Go uses brace brackets.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> main() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Println outputs a line to stdout.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Qualify it with the package name, fmt.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;Hello world!&quot;</span>)
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Call another function within this package.</span>
+    beyondHello()
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Functions have parameters in parentheses.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// If there are no parameters, empty parentheses are still required.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> beyondHello() {
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> x <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Variable declaration. Variables must be declared before use.</span>
+    x = <span style="color: rgb(0, 153, 153);">3</span>     <span style="color: rgb(153, 153, 136); font-style: normal;">// Variable assignment.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// &quot;Short&quot; declarations use := to infer the type, declare, and assign.</span>
+    y <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">4</span>
+    sum, prod <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> learnMultiple(x, y)        <span style="color: rgb(153, 153, 136); font-style: normal;">// Function returns two values.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;sum:&quot;</span>, sum, <span style="color: rgb(208, 16, 64);">&quot;prod:&quot;</span>, prod) <span style="color: rgb(153, 153, 136); font-style: normal;">// Simple output.</span>
+    learnTypes()                            <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt; y minutes, learn more!</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* &lt;- multiline comment</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Functions can have parameters and (multiple!) return values.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Here `x`, `y` are the arguments and `sum`, `prod` is the signature (what's returned).</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Note that `x` and `sum` receive the type `int`.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnMultiple(x, y <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) (sum, prod <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> x <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> y, x <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> y <span style="color: rgb(153, 153, 136); font-style: normal;">// Return two values.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Some built-in types and literals.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnTypes() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Short declaration usually gives you what you want.</span>
+    str <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(208, 16, 64);">&quot;Learn Go!&quot;</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// string type.</span>
+
+    s2 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(208, 16, 64);">`A &quot;raw&quot; string literal</span>
+<span style="color: rgb(208, 16, 64);">can include line breaks.`</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Same string type.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Non-ASCII literal. Go source is UTF-8.</span>
+    g <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(208, 16, 64);">'Σ'</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// rune type, an alias for int32, holds a unicode code point.</span>
+
+    f <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">3.14195</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// float64, an IEEE-754 64-bit floating point number.</span>
+    c <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">4i</span>  <span style="color: rgb(153, 153, 136); font-style: normal;">// complex128, represented internally with two float64's.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// var syntax with initializers.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> u <span style="color: rgb(68, 85, 136); font-weight: bold;">uint</span> = <span style="color: rgb(0, 153, 153);">7</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Unsigned, but implementation dependent size as with int.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> pi <span style="color: rgb(68, 85, 136); font-weight: bold;">float32</span> = <span style="color: rgb(0, 153, 153);">22.</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span> <span style="color: rgb(0, 153, 153);">7</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Conversion syntax with a short declaration.</span>
+    n <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">byte</span>(<span style="color: rgb(208, 16, 64);">'\n'</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// byte is an alias for uint8.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Arrays have size fixed at compile time.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> a4 [<span style="color: rgb(0, 153, 153);">4</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>           <span style="color: rgb(153, 153, 136); font-style: normal;">// An array of 4 ints, initialized to all 0.</span>
+    a3 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> [<span style="color: rgb(0, 0, 0); font-weight: bold;">...</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">5</span>} <span style="color: rgb(153, 153, 136); font-style: normal;">// An array initialized with a fixed size of three</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// elements, with values 3, 1, and 5.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Slices have dynamic size. Arrays and slices each have advantages</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// but use cases for slices are much more common.</span>
+    s3 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> []<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">4</span>, <span style="color: rgb(0, 153, 153);">5</span>, <span style="color: rgb(0, 153, 153);">9</span>}    <span style="color: rgb(153, 153, 136); font-style: normal;">// Compare to a3. No ellipsis here.</span>
+    s4 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>([]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>, <span style="color: rgb(0, 153, 153);">4</span>)    <span style="color: rgb(153, 153, 136); font-style: normal;">// Allocates slice of 4 ints, initialized to all 0.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> d2 [][]<span style="color: rgb(68, 85, 136); font-weight: bold;">float64</span>      <span style="color: rgb(153, 153, 136); font-style: normal;">// Declaration only, nothing allocated here.</span>
+    bs <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> []<span style="color: rgb(0, 134, 179); font-weight: 700;">byte</span>(<span style="color: rgb(208, 16, 64);">&quot;a slice&quot;</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Type conversion syntax.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Because they are dynamic, slices can be appended to on-demand.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// To append elements to a slice, the built-in append() function is used.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// First argument is a slice to which we are appending. Commonly,</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// the array variable is updated in place, as in example below.</span>
+    s <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> []<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">2</span>, <span style="color: rgb(0, 153, 153);">3</span>}     <span style="color: rgb(153, 153, 136); font-style: normal;">// Result is a slice of length 3.</span>
+    s = <span style="color: rgb(0, 134, 179); font-weight: 700;">append</span>(s, <span style="color: rgb(0, 153, 153);">4</span>, <span style="color: rgb(0, 153, 153);">5</span>, <span style="color: rgb(0, 153, 153);">6</span>)  <span style="color: rgb(153, 153, 136); font-style: normal;">// Added 3 elements. Slice now has length of 6.</span>
+    fmt.Println(s) <span style="color: rgb(153, 153, 136); font-style: normal;">// Updated slice is now [1 2 3 4 5 6]</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// To append another slice, instead of list of atomic elements we can</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// pass a reference to a slice or a slice literal like this, with a</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// trailing ellipsis, meaning take a slice and unpack its elements,</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// appending them to slice s.</span>
+    s = <span style="color: rgb(0, 134, 179); font-weight: 700;">append</span>(s, []<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">7</span>, <span style="color: rgb(0, 153, 153);">8</span>, <span style="color: rgb(0, 153, 153);">9</span>}<span style="color: rgb(0, 0, 0); font-weight: bold;">...</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Second argument is a slice literal.</span>
+    fmt.Println(s)  <span style="color: rgb(153, 153, 136); font-style: normal;">// Updated slice is now [1 2 3 4 5 6 7 8 9]</span>
+
+    p, q <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> learnMemory() <span style="color: rgb(153, 153, 136); font-style: normal;">// Declares p, q to be type pointer to int.</span>
+    fmt.Println(<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>p, <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>q)   <span style="color: rgb(153, 153, 136); font-style: normal;">// * follows a pointer. This prints two ints.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Maps are a dynamically growable associative array type, like the</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// hash or dictionary types of some other languages.</span>
+    m <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">map</span>[<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(208, 16, 64);">&quot;three&quot;</span>: <span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(208, 16, 64);">&quot;four&quot;</span>: <span style="color: rgb(0, 153, 153);">4</span>}
+    m[<span style="color: rgb(208, 16, 64);">&quot;one&quot;</span>] = <span style="color: rgb(0, 153, 153);">1</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Unused variables are an error in Go.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The underscore lets you &quot;use&quot; a variable but discard its value.</span>
+    _, _, _, _, _, _, _, _, _, _ = str, s2, g, f, u, pi, n, a3, s4, bs
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Usually you use it to ignore one of the return values of a function</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// For example, in a quick and dirty script you might ignore the</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// error value returned from os.Create, and expect that the file</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// will always be created.</span>
+    file, _ <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> os.Create(<span style="color: rgb(208, 16, 64);">&quot;output.txt&quot;</span>)
+    fmt.Fprint(file, <span style="color: rgb(208, 16, 64);">&quot;This is how you write to a file, by the way&quot;</span>)
+    file.Close()
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Output of course counts as using a variable.</span>
+    fmt.Println(s, c, a4, s3, d2, m)
+
+    learnFlowControl() <span style="color: rgb(153, 153, 136); font-style: normal;">// Back in the flow.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// It is possible, unlike in many other languages for functions in go</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// to have named return values.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Assigning a name to the type being returned in the function declaration line</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// allows us to easily return from multiple points in a function as well as to</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// only use the return keyword, without anything further.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnNamedReturns(x, y <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) (z <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    z = x <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> y
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// z is implicit here, because we named it earlier.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Go is fully garbage collected. It has pointers but no pointer arithmetic.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// You can make a mistake with a nil pointer, but not by incrementing a pointer.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnMemory() (p, q <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Named return values p and q have type pointer to int.</span>
+    p = <span style="color: rgb(0, 134, 179); font-weight: 700;">new</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Built-in function new allocates memory.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The allocated int is initialized to 0, p is no longer nil.</span>
+    s <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>([]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>, <span style="color: rgb(0, 153, 153);">20</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Allocate 20 ints as a single block of memory.</span>
+    s[<span style="color: rgb(0, 153, 153);">3</span>] = <span style="color: rgb(0, 153, 153);">7</span>             <span style="color: rgb(153, 153, 136); font-style: normal;">// Assign one of them.</span>
+    r <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span><span style="color: rgb(0, 153, 153);">2</span>              <span style="color: rgb(153, 153, 136); font-style: normal;">// Declare another local variable.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span>s[<span style="color: rgb(0, 153, 153);">3</span>], <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span>r     <span style="color: rgb(153, 153, 136); font-style: normal;">// &amp; takes the address of an object.</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> expensiveComputation() <span style="color: rgb(68, 85, 136); font-weight: bold;">float64</span> {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> m.Exp(<span style="color: rgb(0, 153, 153);">10</span>)
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnFlowControl() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// If statements require brace brackets, and do not require parentheses.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">true</span> {
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;told ya&quot;</span>)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Formatting is standardized by the command line command &quot;go fmt.&quot;</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">false</span> {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Pout.</span>
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Gloat.</span>
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Use switch in preference to chained if statements.</span>
+    x <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">42.0</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">switch</span> x {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">0</span>:
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">1</span>:
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">42</span>:
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Cases don't &quot;fall through&quot;.</span>
+        <span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">        There is a `fallthrough` keyword however, see:</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">          https://github.com/golang/go/wiki/Switch#fall-through</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">        */</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">43</span>:
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Unreached.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">default</span>:
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Default case is optional.</span>
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Like if, for doesn't use parens either.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Variables declared in for and if are local to their scope.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> x <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">0</span>; x &lt; <span style="color: rgb(0, 153, 153);">3</span>; x<span style="color: rgb(0, 0, 0); font-weight: bold;">++</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// ++ is a statement.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;iteration&quot;</span>, x)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// x == 42 here.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// For is the only loop statement in Go, but it has alternate forms.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// Infinite loop.</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>    <span style="color: rgb(153, 153, 136); font-style: normal;">// Just kidding.</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">continue</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Unreached.</span>
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// You can use range to iterate over an array, a slice, a string, a map, or a channel.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// range returns one (channel) or two values (array, slice, string and map).</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> key, value <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">range</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">map</span>[<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(208, 16, 64);">&quot;one&quot;</span>: <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(208, 16, 64);">&quot;two&quot;</span>: <span style="color: rgb(0, 153, 153);">2</span>, <span style="color: rgb(208, 16, 64);">&quot;three&quot;</span>: <span style="color: rgb(0, 153, 153);">3</span>} {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// for each pair in the map, print key and value</span>
+        fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;key=%s, value=%d\n&quot;</span>, key, value)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// If you only need the value, use the underscore as the key</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> _, name <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">range</span> []<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>{<span style="color: rgb(208, 16, 64);">&quot;Bob&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;Bill&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;Joe&quot;</span>} {
+        fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;Hello, %s\n&quot;</span>, name)
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// As with for, := in an if statement means to declare and assign</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// y first, then test y &gt; x.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> y <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> expensiveComputation(); y &gt; x {
+        x = y
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Function literals are closures.</span>
+    xBig <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> x &gt; <span style="color: rgb(0, 153, 153);">10000</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// References x declared above switch statement.</span>
+    }
+    x = <span style="color: rgb(0, 153, 153);">99999</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;xBig:&quot;</span>, xBig()) <span style="color: rgb(153, 153, 136); font-style: normal;">// true</span>
+    x = <span style="color: rgb(0, 153, 153);">1.3e3</span>                    <span style="color: rgb(153, 153, 136); font-style: normal;">// This makes x == 1300</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;xBig:&quot;</span>, xBig()) <span style="color: rgb(153, 153, 136); font-style: normal;">// false now.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// What's more is function literals may be defined and called inline,</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// acting as an argument to function, as long as:</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// a) function literal is called immediately (),</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// b) result type matches expected type of argument.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;Add + double two numbers: &quot;</span>,
+        <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>(a, b <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> (a <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> b) <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(0, 153, 153);">2</span>
+        }(<span style="color: rgb(0, 153, 153);">10</span>, <span style="color: rgb(0, 153, 153);">2</span>)) <span style="color: rgb(153, 153, 136); font-style: normal;">// Called with args 10 and 2</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Add + double two numbers: 24</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// When you need it, you'll love it.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">goto</span> love
+love:
+
+    learnFunctionFactory() <span style="color: rgb(153, 153, 136); font-style: normal;">// func returning func is fun(3)(3)</span>
+    learnDefer()      <span style="color: rgb(153, 153, 136); font-style: normal;">// A quick detour to an important keyword.</span>
+    learnInterfaces() <span style="color: rgb(153, 153, 136); font-style: normal;">// Good stuff coming up!</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnFunctionFactory() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Next two are equivalent, with second being more practical</span>
+    fmt.Println(sentenceFactory(<span style="color: rgb(208, 16, 64);">&quot;summer&quot;</span>)(<span style="color: rgb(208, 16, 64);">&quot;A beautiful&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;day!&quot;</span>))
+
+    d <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> sentenceFactory(<span style="color: rgb(208, 16, 64);">&quot;summer&quot;</span>)
+    fmt.Println(d(<span style="color: rgb(208, 16, 64);">&quot;A beautiful&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;day!&quot;</span>))
+    fmt.Println(d(<span style="color: rgb(208, 16, 64);">&quot;A lazy&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;afternoon!&quot;</span>))
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Decorators are common in other languages. Same can be done in Go</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// with function literals that accept arguments.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> sentenceFactory(mystring <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>(before, after <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>(before, after <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> fmt.Sprintf(<span style="color: rgb(208, 16, 64);">&quot;%s %s %s&quot;</span>, before, mystring, after) <span style="color: rgb(153, 153, 136); font-style: normal;">// new string</span>
+    }
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnDefer() (ok <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span>) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Deferred statements are executed just before the function returns.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">defer</span> fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;deferred statements execute in reverse (LIFO) order.&quot;</span>)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">defer</span> fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;\nThis line is being printed first because&quot;</span>)
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Defer is commonly used to close a file, so the function closing the</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// file stays close to the function opening the file.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">true</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Define Stringer as an interface type with one method, String.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">type</span> Stringer <span style="color: rgb(0, 0, 0); font-weight: bold;">interface</span> {
+    String() <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Define pair as a struct with two fields, ints named x and y.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">type</span> pair <span style="color: rgb(0, 0, 0); font-weight: bold;">struct</span> {
+    x, y <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Define a method on type pair. Pair now implements Stringer.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> (p pair) String() <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// p is called the &quot;receiver&quot;</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Sprintf is another public function in package fmt.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Dot syntax references fields of p.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> fmt.Sprintf(<span style="color: rgb(208, 16, 64);">&quot;(%d, %d)&quot;</span>, p.x, p.y)
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnInterfaces() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Brace syntax is a &quot;struct literal&quot;. It evaluates to an initialized</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// struct. The := syntax declares and initializes p to this struct.</span>
+    p <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> pair{<span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(0, 153, 153);">4</span>}
+    fmt.Println(p.String()) <span style="color: rgb(153, 153, 136); font-style: normal;">// Call String method of p, of type pair.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> i Stringer          <span style="color: rgb(153, 153, 136); font-style: normal;">// Declare i of interface type Stringer.</span>
+    i = p                   <span style="color: rgb(153, 153, 136); font-style: normal;">// Valid because pair implements Stringer</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Call String method of i, of type Stringer. Output same as above.</span>
+    fmt.Println(i.String())
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Functions in the fmt package call the String method to ask an object</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// for a printable representation of itself.</span>
+    fmt.Println(p) <span style="color: rgb(153, 153, 136); font-style: normal;">// Output same as above. Println calls String method.</span>
+    fmt.Println(i) <span style="color: rgb(153, 153, 136); font-style: normal;">// Output same as above.</span>
+
+    learnVariadicParams(<span style="color: rgb(208, 16, 64);">&quot;great&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;learning&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;here!&quot;</span>)
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Functions can have variadic parameters.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnVariadicParams(myStrings <span style="color: rgb(0, 0, 0); font-weight: bold;">...</span><span style="color: rgb(0, 0, 0); font-weight: bold;">interface</span>{}) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Iterate each value of the variadic.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The underbar here is ignoring the index argument of the array.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> _, param <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">range</span> myStrings {
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;param:&quot;</span>, param)
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Pass variadic value as a variadic parameter.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;params:&quot;</span>, fmt.Sprintln(myStrings<span style="color: rgb(0, 0, 0); font-weight: bold;">...</span>))
+
+    learnErrorHandling()
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnErrorHandling() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// &quot;, ok&quot; idiom used to tell if something worked or not.</span>
+    m <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">map</span>[<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>{<span style="color: rgb(0, 153, 153);">3</span>: <span style="color: rgb(208, 16, 64);">&quot;three&quot;</span>, <span style="color: rgb(0, 153, 153);">4</span>: <span style="color: rgb(208, 16, 64);">&quot;four&quot;</span>}
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> x, ok <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> m[<span style="color: rgb(0, 153, 153);">1</span>]; !ok { <span style="color: rgb(153, 153, 136); font-style: normal;">// ok will be false because 1 is not in the map.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;no one there&quot;</span>)
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> {
+        fmt.Print(x) <span style="color: rgb(153, 153, 136); font-style: normal;">// x would be the value, if it were in the map.</span>
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// An error value communicates not just &quot;ok&quot; but more about the problem.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> _, err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> strconv.Atoi(<span style="color: rgb(208, 16, 64);">&quot;non-int&quot;</span>); err <span style="color: rgb(0, 0, 0); font-weight: bold;">!=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// _ discards value</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// prints 'strconv.ParseInt: parsing &quot;non-int&quot;: invalid syntax'</span>
+        fmt.Println(err)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// We'll revisit interfaces a little later. Meanwhile,</span>
+    learnConcurrency()
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// c is a channel, a concurrency-safe communication object.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> inc(i <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>, c <span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    c <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span> i <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">1</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;- is the &quot;send&quot; operator when a channel appears on the left.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// We'll use inc to increment some numbers concurrently.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnConcurrency() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Same make function used earlier to make a slice. Make allocates and</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// initializes slices, maps, and channels.</span>
+    c <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>)
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Start three concurrent goroutines. Numbers will be incremented</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// concurrently, perhaps in parallel if the machine is capable and</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// properly configured. All three send to the same channel.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> inc(<span style="color: rgb(0, 153, 153);">0</span>, c) <span style="color: rgb(153, 153, 136); font-style: normal;">// go is a statement that starts a new goroutine.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> inc(<span style="color: rgb(0, 153, 153);">10</span>, c)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> inc(<span style="color: rgb(0, 0, 0); font-weight: bold;">-</span><span style="color: rgb(0, 153, 153);">805</span>, c)
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Read three results from the channel and print them out.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// There is no telling in what order the results will arrive!</span>
+    fmt.Println(<span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c, <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c, <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c) <span style="color: rgb(153, 153, 136); font-style: normal;">// channel on right, &lt;- is &quot;receive&quot; operator.</span>
+
+    cs <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>)       <span style="color: rgb(153, 153, 136); font-style: normal;">// Another channel, this one handles strings.</span>
+    ccs <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// A channel of string channels.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() { c <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span> <span style="color: rgb(0, 153, 153);">84</span> }()       <span style="color: rgb(153, 153, 136); font-style: normal;">// Start a new goroutine just to send a value.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() { cs <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span> <span style="color: rgb(208, 16, 64);">&quot;wordy&quot;</span> }() <span style="color: rgb(153, 153, 136); font-style: normal;">// Again, for cs this time.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Select has syntax like a switch statement but each case involves</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// a channel operation. It selects a case at random out of the cases</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// that are ready to communicate.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">select</span> {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> i <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c: <span style="color: rgb(153, 153, 136); font-style: normal;">// The value received can be assigned to a variable,</span>
+        fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;it's a %T&quot;</span>, i)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>cs: <span style="color: rgb(153, 153, 136); font-style: normal;">// or the value received can be discarded.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;it's a string&quot;</span>)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>ccs: <span style="color: rgb(153, 153, 136); font-style: normal;">// Empty channel, not ready for communication.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;didn't happen.&quot;</span>)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// At this point a value was taken from either c or cs. One of the two</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// goroutines started above has completed, the other will remain blocked.</span>
+
+    learnWebProgramming() <span style="color: rgb(153, 153, 136); font-style: normal;">// Go does it. You want to do it too.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A single function from package http starts a web server.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnWebProgramming() {
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// First parameter of ListenAndServe is TCP address to listen to.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Second parameter is an interface, specifically http.Handler.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() {
+        err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> http.ListenAndServe(<span style="color: rgb(208, 16, 64);">&quot;:8080&quot;</span>, pair{})
+        fmt.Println(err) <span style="color: rgb(153, 153, 136); font-style: normal;">// don't ignore errors</span>
+    }()
+
+    requestServer()
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Make pair an http.Handler by implementing its only method, ServeHTTP.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> (p pair) ServeHTTP(w http.ResponseWriter, r <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>http.Request) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Serve data with a method of http.ResponseWriter.</span>
+    w.Write([]<span style="color: rgb(0, 134, 179); font-weight: 700;">byte</span>(<span style="color: rgb(208, 16, 64);">&quot;You learned Go in Y minutes!&quot;</span>))
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> requestServer() {
+    resp, err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> http.Get(<span style="color: rgb(208, 16, 64);">&quot;http://localhost:8080&quot;</span>)
+    fmt.Println(err)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">defer</span> resp.Body.Close()
+    body, err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> ioutil.ReadAll(resp.Body)
+    fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;\nWebserver said: `%s`&quot;</span>, <span style="color: rgb(0, 134, 179); font-weight: 700;">string</span>(body))
+}
+</pre></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px;">Further Reading</h2><p style="margin: 22pt 0px 0px; padding: 0px;">The root of all things Go is the <a href="http://golang.org/">official Go web site</a>. There you can follow the tutorial, play interactively, and read lots. Aside from a tour, <a href="https://golang.org/doc/">the docs</a> contain information on how to write clean and effective Go code, package and command docs, and release history.</p><p style="margin: 22pt 0px 0px; padding: 0px;">The language definition itself is highly recommended. It’s easy to read and amazingly short (as language definitions go these days.)</p><p style="margin: 22pt 0px 0px; padding: 0px;">You can play around with the code on <a href="https://play.golang.org/p/tnWMjr16Mm">Go playground</a>. Try to change it and run it from your browser! Note that you can use <a href="https://play.golang.org/">https://play.golang.org</a> as a <a href="https://en.wikipedia.org/wiki/Read-eval-print_loop">REPL</a> to test things and code in your browser, without even installing Go.</p><p style="margin: 22pt 0px 0px; padding: 0px;">On the reading list for students of Go is the <a href="http://golang.org/src/pkg/">source code to the standard library</a>. Comprehensively documented, it demonstrates the best of readable and understandable Go, Go style, and Go idioms. Or you can click on a function name in <a href="http://golang.org/pkg/">the documentation</a> and the source code comes up!</p><p style="margin: 22pt 0px 0px; padding: 0px;">Another great resource to learn Go is <a href="https://gobyexample.com/">Go by example</a>.</p><p style="margin: 22pt 0px 0px; padding: 0px;">Go Mobile adds support for mobile platforms (Android and iOS). You can write all-Go native mobile apps or write a library that contains bindings from a Go package, which can be invoked via Java (Android) and Objective-C (iOS). Check out the <a href="https://github.com/golang/go/wiki/Mobile">Go Mobile page</a> for more information.</p><hr style="display: block; height: 1px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 22pt 0px 0px; padding: 0px;"/><p style="margin: 22pt 0px 0px; padding: 0px;">Got a suggestion? A correction, perhaps? <a href="https://github.com/adambard/learnxinyminutes-docs/issues/new">Open an Issue</a> on the Github Repo, or make a pull request yourself!</p><p style="margin: 22pt 0px 0px; padding: 0px;">Originally contributed by Sonia Keys, and updated by <a href="https://github.com/adambard/learnxinyminutes-docs/blame/master/go.html.markdown">30 contributor(s)</a>.</p><div style="display: block; margin-top: 60px; text-align: right; color: rgb(119, 119, 119);"><a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US" rel="license" style="float: left;"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border: 0px; vertical-align: middle; max-width: 100%; height: auto;"></img></a><div><br/></div><div style="margin: 22pt 0px 0px; padding: 0px;"><div>© 2017 <a href="https://github.com/soniakeys">Sonia Keys</a>, <a href="https://github.com/cbess">Christopher Bess</a>, <a href="https://github.com/holocronweaver">Jesse Johnson</a>, <a href="https://github.com/qguv">Quint Guvernator</a>, <a href="https://github.com/josedonizetti">Jose Donizetti</a>, <a href="https://github.com/heyalexej">Alexej Friesen</a>, <a href="https://github.com/cwalk">Clayton Walker</a>, <a href="https://github.com/leonid-shevtsov">Leonid Shevtsov</a></div></div></div></div></div><div><span style="color: rgb(0, 0, 0);"><span style="font-size: 24.928px;"><span style="font-family: helvetica, arial, san-serif;">C, Go</span></span></span></div></div><div><span style="color: rgb(0, 0, 0);"><span style="font-size: 13.12px;"><em style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;">a side-by-side reference sheet</em></span></span></div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;"><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><div><span style="color: rgb(0, 0, 0);"><span style="font-size: 13.12px;"><a href="http://hyperpolyglot.org/c#grammar-invocation" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">grammar and invocation</a> | <a href="http://hyperpolyglot.org/c#variables-expressions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">variables and expressions</a> | <a href="http://hyperpolyglot.org/c#arithmetic-logic" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">arithmetic and logic</a> | <a href="http://hyperpolyglot.org/c#strings" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">strings</a> | <a href="http://hyperpolyglot.org/c#regexes" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">regexes</a> | <a href="http://hyperpolyglot.org/c#dates-time" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dates and time</a> | <a href="http://hyperpolyglot.org/c#fixed-length-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">fixed-length-arrays</a> | <a href="http://hyperpolyglot.org/c#resizable-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">resizable arrays</a> | <a href="http://hyperpolyglot.org/c#dictionaries" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dictionaries</a> | <a href="http://hyperpolyglot.org/c#functions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">functions</a> | <a href="http://hyperpolyglot.org/c#execution-control" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">execution control</a> | <a href="http://hyperpolyglot.org/c#concurrency" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">concurrency</a> | <a href="http://hyperpolyglot.org/c#file-handles" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">file handles</a> | <a href="http://hyperpolyglot.org/c#files" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">files</a> | <a href="http://hyperpolyglot.org/c#directories" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">directories</a> | <a href="http://hyperpolyglot.org/c#processes-environment" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">processes and environment</a> | <a href="http://hyperpolyglot.org/c#option-parsing" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">option parsing</a> | <a href="http://hyperpolyglot.org/c#libraries-namespaces" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">libraries and namespaces</a> | <a href="http://hyperpolyglot.org/c#user-defined-types" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">user-defined types</a> | <a href="http://hyperpolyglot.org/c#cpp-macros" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">c preprocessor macros</a> | <a href="http://hyperpolyglot.org/c#net-web" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">net and web</a> | <a href="http://hyperpolyglot.org/c#unit-tests" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">unit tests</a> | <a href="http://hyperpolyglot.org/c#debugging-profiling" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">debugging and profiling</a></span></span></div><div><span style="color: rgb(0, 0, 0);"><span style="font-size: 13.12px;"><br/></span></span></div></div></div></div></div></div><div><hr/></div><div><span style="font-size: 24.928px;"><span style="font-family: helvetica, arial, san-serif;"><span style="color: rgb(34, 34, 34);"><span style="font-size: 28px;"><span style="font-family: &quot;Roboto Slab&quot;, serif;"><b><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></b></span></span></span></span></span></div></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Where X=Go</h2><p style="margin: 22pt 0px 0px; padding: 0px; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Get the code: <a href="https://learnxinyminutes.com/docs/files/learngo.go">learngo.go</a></p><div style="font-size: 14pt; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><p style="margin: 22pt 0px 0px; padding: 0px;">Go was created out of the need to get work done. It’s not the latest trend in computer science, but it is the newest fastest way to solve real-world problems.</p><p style="margin: 22pt 0px 0px; padding: 0px;">It has familiar concepts of imperative languages with static typing. It’s fast to compile and fast to execute, it adds easy-to-understand concurrency to leverage today’s multi-core CPUs, and has features to help with large-scale programming.</p><p style="margin: 22pt 0px 0px; padding: 0px;">Go comes with a great standard library and an enthusiastic community.</p><div style="background: rgb(238, 238, 238); padding: 18pt; overflow-x: auto; margin: 0px; font-family: &quot;Ubuntu Mono&quot;, monospace; display: block;"><pre style="margin: 1em 0px; font-family: monospace, serif; font-size: 1em; white-space: pre-wrap; word-wrap: break-word;"><span style="color: rgb(153, 153, 136); font-style: normal;">// Single line comment</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Multi-</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;"> line comment */</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A package clause starts every source file.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Main is a special name declaring an executable rather than a library.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">package</span> main
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Import declaration declares library packages referenced in this file.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> (
+    <span style="color: rgb(208, 16, 64);">&quot;fmt&quot;</span>       <span style="color: rgb(153, 153, 136); font-style: normal;">// A package in the Go standard library.</span>
+    <span style="color: rgb(208, 16, 64);">&quot;io/ioutil&quot;</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Implements some I/O utility functions.</span>
+    m <span style="color: rgb(208, 16, 64);">&quot;math&quot;</span>    <span style="color: rgb(153, 153, 136); font-style: normal;">// Math library with local alias m.</span>
+    <span style="color: rgb(208, 16, 64);">&quot;net/http&quot;</span>  <span style="color: rgb(153, 153, 136); font-style: normal;">// Yes, a web server!</span>
+    <span style="color: rgb(208, 16, 64);">&quot;os&quot;</span>        <span style="color: rgb(153, 153, 136); font-style: normal;">// OS functions like working with the file system</span>
+    <span style="color: rgb(208, 16, 64);">&quot;strconv&quot;</span>   <span style="color: rgb(153, 153, 136); font-style: normal;">// String conversions.</span>
+)
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A function definition. Main is special. It is the entry point for the</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// executable program. Love it or hate it, Go uses brace brackets.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> main() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Println outputs a line to stdout.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Qualify it with the package name, fmt.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;Hello world!&quot;</span>)
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Call another function within this package.</span>
+    beyondHello()
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Functions have parameters in parentheses.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// If there are no parameters, empty parentheses are still required.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> beyondHello() {
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> x <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Variable declaration. Variables must be declared before use.</span>
+    x = <span style="color: rgb(0, 153, 153);">3</span>     <span style="color: rgb(153, 153, 136); font-style: normal;">// Variable assignment.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// &quot;Short&quot; declarations use := to infer the type, declare, and assign.</span>
+    y <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">4</span>
+    sum, prod <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> learnMultiple(x, y)        <span style="color: rgb(153, 153, 136); font-style: normal;">// Function returns two values.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;sum:&quot;</span>, sum, <span style="color: rgb(208, 16, 64);">&quot;prod:&quot;</span>, prod) <span style="color: rgb(153, 153, 136); font-style: normal;">// Simple output.</span>
+    learnTypes()                            <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt; y minutes, learn more!</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* &lt;- multiline comment</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Functions can have parameters and (multiple!) return values.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Here `x`, `y` are the arguments and `sum`, `prod` is the signature (what's returned).</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Note that `x` and `sum` receive the type `int`.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnMultiple(x, y <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) (sum, prod <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> x <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> y, x <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> y <span style="color: rgb(153, 153, 136); font-style: normal;">// Return two values.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Some built-in types and literals.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnTypes() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Short declaration usually gives you what you want.</span>
+    str <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(208, 16, 64);">&quot;Learn Go!&quot;</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// string type.</span>
+
+    s2 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(208, 16, 64);">`A &quot;raw&quot; string literal</span>
+<span style="color: rgb(208, 16, 64);">can include line breaks.`</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Same string type.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Non-ASCII literal. Go source is UTF-8.</span>
+    g <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(208, 16, 64);">'Σ'</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// rune type, an alias for int32, holds a unicode code point.</span>
+
+    f <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">3.14195</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// float64, an IEEE-754 64-bit floating point number.</span>
+    c <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">4i</span>  <span style="color: rgb(153, 153, 136); font-style: normal;">// complex128, represented internally with two float64's.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// var syntax with initializers.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> u <span style="color: rgb(68, 85, 136); font-weight: bold;">uint</span> = <span style="color: rgb(0, 153, 153);">7</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Unsigned, but implementation dependent size as with int.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> pi <span style="color: rgb(68, 85, 136); font-weight: bold;">float32</span> = <span style="color: rgb(0, 153, 153);">22.</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span> <span style="color: rgb(0, 153, 153);">7</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Conversion syntax with a short declaration.</span>
+    n <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">byte</span>(<span style="color: rgb(208, 16, 64);">'\n'</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// byte is an alias for uint8.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Arrays have size fixed at compile time.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> a4 [<span style="color: rgb(0, 153, 153);">4</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>           <span style="color: rgb(153, 153, 136); font-style: normal;">// An array of 4 ints, initialized to all 0.</span>
+    a3 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> [<span style="color: rgb(0, 0, 0); font-weight: bold;">...</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">5</span>} <span style="color: rgb(153, 153, 136); font-style: normal;">// An array initialized with a fixed size of three</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// elements, with values 3, 1, and 5.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Slices have dynamic size. Arrays and slices each have advantages</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// but use cases for slices are much more common.</span>
+    s3 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> []<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">4</span>, <span style="color: rgb(0, 153, 153);">5</span>, <span style="color: rgb(0, 153, 153);">9</span>}    <span style="color: rgb(153, 153, 136); font-style: normal;">// Compare to a3. No ellipsis here.</span>
+    s4 <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>([]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>, <span style="color: rgb(0, 153, 153);">4</span>)    <span style="color: rgb(153, 153, 136); font-style: normal;">// Allocates slice of 4 ints, initialized to all 0.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> d2 [][]<span style="color: rgb(68, 85, 136); font-weight: bold;">float64</span>      <span style="color: rgb(153, 153, 136); font-style: normal;">// Declaration only, nothing allocated here.</span>
+    bs <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> []<span style="color: rgb(0, 134, 179); font-weight: 700;">byte</span>(<span style="color: rgb(208, 16, 64);">&quot;a slice&quot;</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Type conversion syntax.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Because they are dynamic, slices can be appended to on-demand.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// To append elements to a slice, the built-in append() function is used.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// First argument is a slice to which we are appending. Commonly,</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// the array variable is updated in place, as in example below.</span>
+    s <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> []<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">2</span>, <span style="color: rgb(0, 153, 153);">3</span>}     <span style="color: rgb(153, 153, 136); font-style: normal;">// Result is a slice of length 3.</span>
+    s = <span style="color: rgb(0, 134, 179); font-weight: 700;">append</span>(s, <span style="color: rgb(0, 153, 153);">4</span>, <span style="color: rgb(0, 153, 153);">5</span>, <span style="color: rgb(0, 153, 153);">6</span>)  <span style="color: rgb(153, 153, 136); font-style: normal;">// Added 3 elements. Slice now has length of 6.</span>
+    fmt.Println(s) <span style="color: rgb(153, 153, 136); font-style: normal;">// Updated slice is now [1 2 3 4 5 6]</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// To append another slice, instead of list of atomic elements we can</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// pass a reference to a slice or a slice literal like this, with a</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// trailing ellipsis, meaning take a slice and unpack its elements,</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// appending them to slice s.</span>
+    s = <span style="color: rgb(0, 134, 179); font-weight: 700;">append</span>(s, []<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(0, 153, 153);">7</span>, <span style="color: rgb(0, 153, 153);">8</span>, <span style="color: rgb(0, 153, 153);">9</span>}<span style="color: rgb(0, 0, 0); font-weight: bold;">...</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Second argument is a slice literal.</span>
+    fmt.Println(s)  <span style="color: rgb(153, 153, 136); font-style: normal;">// Updated slice is now [1 2 3 4 5 6 7 8 9]</span>
+
+    p, q <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> learnMemory() <span style="color: rgb(153, 153, 136); font-style: normal;">// Declares p, q to be type pointer to int.</span>
+    fmt.Println(<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>p, <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>q)   <span style="color: rgb(153, 153, 136); font-style: normal;">// * follows a pointer. This prints two ints.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Maps are a dynamically growable associative array type, like the</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// hash or dictionary types of some other languages.</span>
+    m <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">map</span>[<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(208, 16, 64);">&quot;three&quot;</span>: <span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(208, 16, 64);">&quot;four&quot;</span>: <span style="color: rgb(0, 153, 153);">4</span>}
+    m[<span style="color: rgb(208, 16, 64);">&quot;one&quot;</span>] = <span style="color: rgb(0, 153, 153);">1</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Unused variables are an error in Go.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The underscore lets you &quot;use&quot; a variable but discard its value.</span>
+    _, _, _, _, _, _, _, _, _, _ = str, s2, g, f, u, pi, n, a3, s4, bs
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Usually you use it to ignore one of the return values of a function</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// For example, in a quick and dirty script you might ignore the</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// error value returned from os.Create, and expect that the file</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// will always be created.</span>
+    file, _ <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> os.Create(<span style="color: rgb(208, 16, 64);">&quot;output.txt&quot;</span>)
+    fmt.Fprint(file, <span style="color: rgb(208, 16, 64);">&quot;This is how you write to a file, by the way&quot;</span>)
+    file.Close()
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Output of course counts as using a variable.</span>
+    fmt.Println(s, c, a4, s3, d2, m)
+
+    learnFlowControl() <span style="color: rgb(153, 153, 136); font-style: normal;">// Back in the flow.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// It is possible, unlike in many other languages for functions in go</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// to have named return values.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Assigning a name to the type being returned in the function declaration line</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// allows us to easily return from multiple points in a function as well as to</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// only use the return keyword, without anything further.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnNamedReturns(x, y <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) (z <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    z = x <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> y
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// z is implicit here, because we named it earlier.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Go is fully garbage collected. It has pointers but no pointer arithmetic.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// You can make a mistake with a nil pointer, but not by incrementing a pointer.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnMemory() (p, q <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Named return values p and q have type pointer to int.</span>
+    p = <span style="color: rgb(0, 134, 179); font-weight: 700;">new</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Built-in function new allocates memory.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The allocated int is initialized to 0, p is no longer nil.</span>
+    s <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>([]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>, <span style="color: rgb(0, 153, 153);">20</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// Allocate 20 ints as a single block of memory.</span>
+    s[<span style="color: rgb(0, 153, 153);">3</span>] = <span style="color: rgb(0, 153, 153);">7</span>             <span style="color: rgb(153, 153, 136); font-style: normal;">// Assign one of them.</span>
+    r <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span><span style="color: rgb(0, 153, 153);">2</span>              <span style="color: rgb(153, 153, 136); font-style: normal;">// Declare another local variable.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span>s[<span style="color: rgb(0, 153, 153);">3</span>], <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span>r     <span style="color: rgb(153, 153, 136); font-style: normal;">// &amp; takes the address of an object.</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> expensiveComputation() <span style="color: rgb(68, 85, 136); font-weight: bold;">float64</span> {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> m.Exp(<span style="color: rgb(0, 153, 153);">10</span>)
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnFlowControl() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// If statements require brace brackets, and do not require parentheses.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">true</span> {
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;told ya&quot;</span>)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Formatting is standardized by the command line command &quot;go fmt.&quot;</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">false</span> {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Pout.</span>
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Gloat.</span>
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Use switch in preference to chained if statements.</span>
+    x <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">42.0</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">switch</span> x {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">0</span>:
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">1</span>:
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">42</span>:
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Cases don't &quot;fall through&quot;.</span>
+        <span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">        There is a `fallthrough` keyword however, see:</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">          https://github.com/golang/go/wiki/Switch#fall-through</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">        */</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">43</span>:
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Unreached.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">default</span>:
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// Default case is optional.</span>
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Like if, for doesn't use parens either.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Variables declared in for and if are local to their scope.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> x <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 153, 153);">0</span>; x &lt; <span style="color: rgb(0, 153, 153);">3</span>; x<span style="color: rgb(0, 0, 0); font-weight: bold;">++</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// ++ is a statement.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;iteration&quot;</span>, x)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// x == 42 here.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// For is the only loop statement in Go, but it has alternate forms.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// Infinite loop.</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>    <span style="color: rgb(153, 153, 136); font-style: normal;">// Just kidding.</span>
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">continue</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// Unreached.</span>
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// You can use range to iterate over an array, a slice, a string, a map, or a channel.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// range returns one (channel) or two values (array, slice, string and map).</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> key, value <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">range</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">map</span>[<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>{<span style="color: rgb(208, 16, 64);">&quot;one&quot;</span>: <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(208, 16, 64);">&quot;two&quot;</span>: <span style="color: rgb(0, 153, 153);">2</span>, <span style="color: rgb(208, 16, 64);">&quot;three&quot;</span>: <span style="color: rgb(0, 153, 153);">3</span>} {
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// for each pair in the map, print key and value</span>
+        fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;key=%s, value=%d\n&quot;</span>, key, value)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// If you only need the value, use the underscore as the key</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> _, name <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">range</span> []<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>{<span style="color: rgb(208, 16, 64);">&quot;Bob&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;Bill&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;Joe&quot;</span>} {
+        fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;Hello, %s\n&quot;</span>, name)
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// As with for, := in an if statement means to declare and assign</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// y first, then test y &gt; x.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> y <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> expensiveComputation(); y &gt; x {
+        x = y
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Function literals are closures.</span>
+    xBig <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> x &gt; <span style="color: rgb(0, 153, 153);">10000</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// References x declared above switch statement.</span>
+    }
+    x = <span style="color: rgb(0, 153, 153);">99999</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;xBig:&quot;</span>, xBig()) <span style="color: rgb(153, 153, 136); font-style: normal;">// true</span>
+    x = <span style="color: rgb(0, 153, 153);">1.3e3</span>                    <span style="color: rgb(153, 153, 136); font-style: normal;">// This makes x == 1300</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;xBig:&quot;</span>, xBig()) <span style="color: rgb(153, 153, 136); font-style: normal;">// false now.</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// What's more is function literals may be defined and called inline,</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// acting as an argument to function, as long as:</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// a) function literal is called immediately (),</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// b) result type matches expected type of argument.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;Add + double two numbers: &quot;</span>,
+        <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>(a, b <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> {
+            <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> (a <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> b) <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(0, 153, 153);">2</span>
+        }(<span style="color: rgb(0, 153, 153);">10</span>, <span style="color: rgb(0, 153, 153);">2</span>)) <span style="color: rgb(153, 153, 136); font-style: normal;">// Called with args 10 and 2</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Add + double two numbers: 24</span>
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// When you need it, you'll love it.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">goto</span> love
+love:
+
+    learnFunctionFactory() <span style="color: rgb(153, 153, 136); font-style: normal;">// func returning func is fun(3)(3)</span>
+    learnDefer()      <span style="color: rgb(153, 153, 136); font-style: normal;">// A quick detour to an important keyword.</span>
+    learnInterfaces() <span style="color: rgb(153, 153, 136); font-style: normal;">// Good stuff coming up!</span>
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnFunctionFactory() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Next two are equivalent, with second being more practical</span>
+    fmt.Println(sentenceFactory(<span style="color: rgb(208, 16, 64);">&quot;summer&quot;</span>)(<span style="color: rgb(208, 16, 64);">&quot;A beautiful&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;day!&quot;</span>))
+
+    d <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> sentenceFactory(<span style="color: rgb(208, 16, 64);">&quot;summer&quot;</span>)
+    fmt.Println(d(<span style="color: rgb(208, 16, 64);">&quot;A beautiful&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;day!&quot;</span>))
+    fmt.Println(d(<span style="color: rgb(208, 16, 64);">&quot;A lazy&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;afternoon!&quot;</span>))
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Decorators are common in other languages. Same can be done in Go</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// with function literals that accept arguments.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> sentenceFactory(mystring <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>(before, after <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>(before, after <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> {
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> fmt.Sprintf(<span style="color: rgb(208, 16, 64);">&quot;%s %s %s&quot;</span>, before, mystring, after) <span style="color: rgb(153, 153, 136); font-style: normal;">// new string</span>
+    }
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnDefer() (ok <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span>) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Deferred statements are executed just before the function returns.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">defer</span> fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;deferred statements execute in reverse (LIFO) order.&quot;</span>)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">defer</span> fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;\nThis line is being printed first because&quot;</span>)
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Defer is commonly used to close a file, so the function closing the</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// file stays close to the function opening the file.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">true</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Define Stringer as an interface type with one method, String.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">type</span> Stringer <span style="color: rgb(0, 0, 0); font-weight: bold;">interface</span> {
+    String() <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Define pair as a struct with two fields, ints named x and y.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">type</span> pair <span style="color: rgb(0, 0, 0); font-weight: bold;">struct</span> {
+    x, y <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Define a method on type pair. Pair now implements Stringer.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> (p pair) String() <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// p is called the &quot;receiver&quot;</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Sprintf is another public function in package fmt.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Dot syntax references fields of p.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> fmt.Sprintf(<span style="color: rgb(208, 16, 64);">&quot;(%d, %d)&quot;</span>, p.x, p.y)
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnInterfaces() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Brace syntax is a &quot;struct literal&quot;. It evaluates to an initialized</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// struct. The := syntax declares and initializes p to this struct.</span>
+    p <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> pair{<span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(0, 153, 153);">4</span>}
+    fmt.Println(p.String()) <span style="color: rgb(153, 153, 136); font-style: normal;">// Call String method of p, of type pair.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> i Stringer          <span style="color: rgb(153, 153, 136); font-style: normal;">// Declare i of interface type Stringer.</span>
+    i = p                   <span style="color: rgb(153, 153, 136); font-style: normal;">// Valid because pair implements Stringer</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Call String method of i, of type Stringer. Output same as above.</span>
+    fmt.Println(i.String())
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Functions in the fmt package call the String method to ask an object</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// for a printable representation of itself.</span>
+    fmt.Println(p) <span style="color: rgb(153, 153, 136); font-style: normal;">// Output same as above. Println calls String method.</span>
+    fmt.Println(i) <span style="color: rgb(153, 153, 136); font-style: normal;">// Output same as above.</span>
+
+    learnVariadicParams(<span style="color: rgb(208, 16, 64);">&quot;great&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;learning&quot;</span>, <span style="color: rgb(208, 16, 64);">&quot;here!&quot;</span>)
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Functions can have variadic parameters.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnVariadicParams(myStrings <span style="color: rgb(0, 0, 0); font-weight: bold;">...</span><span style="color: rgb(0, 0, 0); font-weight: bold;">interface</span>{}) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Iterate each value of the variadic.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// The underbar here is ignoring the index argument of the array.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> _, param <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">range</span> myStrings {
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;param:&quot;</span>, param)
+    }
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Pass variadic value as a variadic parameter.</span>
+    fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;params:&quot;</span>, fmt.Sprintln(myStrings<span style="color: rgb(0, 0, 0); font-weight: bold;">...</span>))
+
+    learnErrorHandling()
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnErrorHandling() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// &quot;, ok&quot; idiom used to tell if something worked or not.</span>
+    m <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">map</span>[<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>]<span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>{<span style="color: rgb(0, 153, 153);">3</span>: <span style="color: rgb(208, 16, 64);">&quot;three&quot;</span>, <span style="color: rgb(0, 153, 153);">4</span>: <span style="color: rgb(208, 16, 64);">&quot;four&quot;</span>}
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> x, ok <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> m[<span style="color: rgb(0, 153, 153);">1</span>]; !ok { <span style="color: rgb(153, 153, 136); font-style: normal;">// ok will be false because 1 is not in the map.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;no one there&quot;</span>)
+    } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> {
+        fmt.Print(x) <span style="color: rgb(153, 153, 136); font-style: normal;">// x would be the value, if it were in the map.</span>
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// An error value communicates not just &quot;ok&quot; but more about the problem.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> _, err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> strconv.Atoi(<span style="color: rgb(208, 16, 64);">&quot;non-int&quot;</span>); err <span style="color: rgb(0, 0, 0); font-weight: bold;">!=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span> { <span style="color: rgb(153, 153, 136); font-style: normal;">// _ discards value</span>
+        <span style="color: rgb(153, 153, 136); font-style: normal;">// prints 'strconv.ParseInt: parsing &quot;non-int&quot;: invalid syntax'</span>
+        fmt.Println(err)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// We'll revisit interfaces a little later. Meanwhile,</span>
+    learnConcurrency()
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// c is a channel, a concurrency-safe communication object.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> inc(i <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>, c <span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) {
+    c <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span> i <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">1</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;- is the &quot;send&quot; operator when a channel appears on the left.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// We'll use inc to increment some numbers concurrently.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnConcurrency() {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Same make function used earlier to make a slice. Make allocates and</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// initializes slices, maps, and channels.</span>
+    c <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>)
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Start three concurrent goroutines. Numbers will be incremented</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// concurrently, perhaps in parallel if the machine is capable and</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// properly configured. All three send to the same channel.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> inc(<span style="color: rgb(0, 153, 153);">0</span>, c) <span style="color: rgb(153, 153, 136); font-style: normal;">// go is a statement that starts a new goroutine.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> inc(<span style="color: rgb(0, 153, 153);">10</span>, c)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> inc(<span style="color: rgb(0, 0, 0); font-weight: bold;">-</span><span style="color: rgb(0, 153, 153);">805</span>, c)
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Read three results from the channel and print them out.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// There is no telling in what order the results will arrive!</span>
+    fmt.Println(<span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c, <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c, <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c) <span style="color: rgb(153, 153, 136); font-style: normal;">// channel on right, &lt;- is &quot;receive&quot; operator.</span>
+
+    cs <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>)       <span style="color: rgb(153, 153, 136); font-style: normal;">// Another channel, this one handles strings.</span>
+    ccs <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">make</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">chan</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">string</span>) <span style="color: rgb(153, 153, 136); font-style: normal;">// A channel of string channels.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() { c <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span> <span style="color: rgb(0, 153, 153);">84</span> }()       <span style="color: rgb(153, 153, 136); font-style: normal;">// Start a new goroutine just to send a value.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() { cs <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span> <span style="color: rgb(208, 16, 64);">&quot;wordy&quot;</span> }() <span style="color: rgb(153, 153, 136); font-style: normal;">// Again, for cs this time.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Select has syntax like a switch statement but each case involves</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// a channel operation. It selects a case at random out of the cases</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// that are ready to communicate.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">select</span> {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> i <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>c: <span style="color: rgb(153, 153, 136); font-style: normal;">// The value received can be assigned to a variable,</span>
+        fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;it's a %T&quot;</span>, i)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>cs: <span style="color: rgb(153, 153, 136); font-style: normal;">// or the value received can be discarded.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;it's a string&quot;</span>)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;-</span>ccs: <span style="color: rgb(153, 153, 136); font-style: normal;">// Empty channel, not ready for communication.</span>
+        fmt.Println(<span style="color: rgb(208, 16, 64);">&quot;didn't happen.&quot;</span>)
+    }
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// At this point a value was taken from either c or cs. One of the two</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// goroutines started above has completed, the other will remain blocked.</span>
+
+    learnWebProgramming() <span style="color: rgb(153, 153, 136); font-style: normal;">// Go does it. You want to do it too.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A single function from package http starts a web server.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> learnWebProgramming() {
+
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// First parameter of ListenAndServe is TCP address to listen to.</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Second parameter is an interface, specifically http.Handler.</span>
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">go</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">func</span>() {
+        err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> http.ListenAndServe(<span style="color: rgb(208, 16, 64);">&quot;:8080&quot;</span>, pair{})
+        fmt.Println(err) <span style="color: rgb(153, 153, 136); font-style: normal;">// don't ignore errors</span>
+    }()
+
+    requestServer()
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Make pair an http.Handler by implementing its only method, ServeHTTP.</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> (p pair) ServeHTTP(w http.ResponseWriter, r <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>http.Request) {
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Serve data with a method of http.ResponseWriter.</span>
+    w.Write([]<span style="color: rgb(0, 134, 179); font-weight: 700;">byte</span>(<span style="color: rgb(208, 16, 64);">&quot;You learned Go in Y minutes!&quot;</span>))
+}
+
+<span style="color: rgb(0, 0, 0); font-weight: bold;">func</span> requestServer() {
+    resp, err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> http.Get(<span style="color: rgb(208, 16, 64);">&quot;http://localhost:8080&quot;</span>)
+    fmt.Println(err)
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">defer</span> resp.Body.Close()
+    body, err <span style="color: rgb(0, 0, 0); font-weight: bold;">:=</span> ioutil.ReadAll(resp.Body)
+    fmt.Printf(<span style="color: rgb(208, 16, 64);">&quot;\nWebserver said: `%s`&quot;</span>, <span style="color: rgb(0, 134, 179); font-weight: 700;">string</span>(body))
+}
+</pre></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px;">Further Reading</h2><p style="margin: 22pt 0px 0px; padding: 0px;">The root of all things Go is the <a href="http://golang.org/">official Go web site</a>. There you can follow the tutorial, play interactively, and read lots. Aside from a tour, <a href="https://golang.org/doc/">the docs</a> contain information on how to write clean and effective Go code, package and command docs, and release history.</p><p style="margin: 22pt 0px 0px; padding: 0px;">The language definition itself is highly recommended. It’s easy to read and amazingly short (as language definitions go these days.)</p><p style="margin: 22pt 0px 0px; padding: 0px;">You can play around with the code on <a href="https://play.golang.org/p/tnWMjr16Mm">Go playground</a>. Try to change it and run it from your browser! Note that you can use <a href="https://play.golang.org/">https://play.golang.org</a> as a <a href="https://en.wikipedia.org/wiki/Read-eval-print_loop">REPL</a> to test things and code in your browser, without even installing Go.</p><p style="margin: 22pt 0px 0px; padding: 0px;">On the reading list for students of Go is the <a href="http://golang.org/src/pkg/">source code to the standard library</a>. Comprehensively documented, it demonstrates the best of readable and understandable Go, Go style, and Go idioms. Or you can click on a function name in <a href="http://golang.org/pkg/">the documentation</a> and the source code comes up!</p><p style="margin: 22pt 0px 0px; padding: 0px;">Another great resource to learn Go is <a href="https://gobyexample.com/">Go by example</a>.</p><p style="margin: 22pt 0px 0px; padding: 0px;">Go Mobile adds support for mobile platforms (Android and iOS). You can write all-Go native mobile apps or write a library that contains bindings from a Go package, which can be invoked via Java (Android) and Objective-C (iOS). Check out the <a href="https://github.com/golang/go/wiki/Mobile">Go Mobile page</a> for more information.</p><hr style="display: block; height: 1px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 22pt 0px 0px; padding: 0px;"/><p style="margin: 22pt 0px 0px; padding: 0px;">Got a suggestion? A correction, perhaps? <a href="https://github.com/adambard/learnxinyminutes-docs/issues/new">Open an Issue</a> on the Github Repo, or make a pull request yourself!</p><p style="margin: 22pt 0px 0px; padding: 0px;">Originally contributed by Sonia Keys, and updated by <a href="https://github.com/adambard/learnxinyminutes-docs/blame/master/go.html.markdown">30 contributor(s)</a>.</p><div style="display: block; margin-top: 60px; text-align: right; color: rgb(119, 119, 119);"><a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US" rel="license" style="float: left;"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border: 0px; vertical-align: middle; max-width: 100%; height: auto;"></img></a><div><br/></div><div style="margin: 22pt 0px 0px; padding: 0px;"><div>© 2017 <a href="https://github.com/soniakeys">Sonia Keys</a>, <a href="https://github.com/cbess">Christopher Bess</a>, <a href="https://github.com/holocronweaver">Jesse Johnson</a>, <a href="https://github.com/qguv">Quint Guvernator</a>, <a href="https://github.com/josedonizetti">Jose Donizetti</a>, <a href="https://github.com/heyalexej">Alexej Friesen</a>, <a href="https://github.com/cwalk">Clayton Walker</a>, <a href="https://github.com/leonid-shevtsov">Leonid Shevtsov</a></div></div></div></div></div></span>
+</div></body></html> 

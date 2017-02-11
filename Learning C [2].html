@@ -1,0 +1,763 @@
+<html>
+<head>
+  <title>Learning C</title>
+  <basefont face="Tahoma" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/303788 (en-US, DDL); Windows/10.0.14393 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Tahoma;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="7109"/>
+<h1>Learning C</h1>
+
+<div><span><div><div style="float: right; text-align: center; background: rgb(238, 238, 238); padding: 0px 20px; border-radius: 3px; border-bottom: 2px solid rgb(221, 221, 221); color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div><span style="display: block;"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flearnxinyminutes.com%2Fdocs%2Fc%2F&amp;text=Learn+X+in+Y+minutes%2C+where+X%3Dc">Share this page</a></span></div></div></div><div><b><span style="font-size: 24.928px;"><span style="font-family: helvetica, arial, san-serif;"><span style="color: rgb(0, 0, 0);"><br/></span></span></span></b></div><div><hr/></div><div><b><span style="font-size: 24.928px;"><span style="font-family: helvetica, arial, san-serif;"><span style="color: rgb(0, 0, 0);">Hyperpolyglot</span></span></span></b></div><div><span style="color: rgb(0, 0, 0);"><span style="font-family: helvetica, arial, san-serif;"><span style="font-size: 24.928px;">C, Go</span></span></span></div><div><div style="margin: 22pt 0px 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 0); font-size: 13.12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><p style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><a name="top" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;"></a><em style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif;">a side-by-side reference sheet</em></p><div><br/></div><div style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; width: 700px;"><div><a href="http://hyperpolyglot.org/c#grammar-invocation" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">grammar and invocation</a> | <a href="http://hyperpolyglot.org/c#variables-expressions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">variables and expressions</a> | <a href="http://hyperpolyglot.org/c#arithmetic-logic" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">arithmetic and logic</a> | <a href="http://hyperpolyglot.org/c#strings" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">strings</a> | <a href="http://hyperpolyglot.org/c#regexes" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">regexes</a> | <a href="http://hyperpolyglot.org/c#dates-time" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dates and time</a> | <a href="http://hyperpolyglot.org/c#fixed-length-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">fixed-length-arrays</a> | <a href="http://hyperpolyglot.org/c#resizable-arrays" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">resizable arrays</a> | <a href="http://hyperpolyglot.org/c#dictionaries" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">dictionaries</a> | <a href="http://hyperpolyglot.org/c#functions" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">functions</a> | <a href="http://hyperpolyglot.org/c#execution-control" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">execution control</a> | <a href="http://hyperpolyglot.org/c#concurrency" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">concurrency</a> | <a href="http://hyperpolyglot.org/c#file-handles" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">file handles</a> | <a href="http://hyperpolyglot.org/c#files" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">files</a> | <a href="http://hyperpolyglot.org/c#directories" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">directories</a> | <a href="http://hyperpolyglot.org/c#processes-environment" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">processes and environment</a> | <a href="http://hyperpolyglot.org/c#option-parsing" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">option parsing</a> | <a href="http://hyperpolyglot.org/c#libraries-namespaces" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">libraries and namespaces</a> | <a href="http://hyperpolyglot.org/c#user-defined-types" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">user-defined types</a> | <a href="http://hyperpolyglot.org/c#cpp-macros" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">c preprocessor macros</a> | <a href="http://hyperpolyglot.org/c#net-web" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">net and web</a> | <a href="http://hyperpolyglot.org/c#unit-tests" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">unit tests</a> | <a href="http://hyperpolyglot.org/c#debugging-profiling" style="font-family: &quot;lucida grande&quot;, helvetica, arial, san-serif; color: rgb(0, 0, 170); transition: background-color 0.3s ease;">debugging and profiling</a></div><div><br/></div></div></div></div><div><hr/></div><div><span style="color: rgb(34, 34, 34);"><span style="font-size: 28px;"><span style="font-family: &quot;Roboto Slab&quot;, serif;"><b><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></b></span></span></span></div></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Where X=c</h2><p style="margin: 22pt 0px 0px; padding: 0px; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Get the code: <a href="https://learnxinyminutes.com/docs/files/learnc.c">learnc.c</a></p><div style="font-size: 14pt; color: rgb(34, 34, 34); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><p style="margin: 22pt 0px 0px; padding: 0px;">Ah, C. Still <strong style="font-weight: bold;">the</strong> language of modern high-performance computing.</p><p style="margin: 22pt 0px 0px; padding: 0px;">C is the lowest-level language most programmers will ever use, but it more than makes up for it with raw speed. Just be aware of its manual memory management and C will take you as far as you need to go.</p><div style="background: rgb(238, 238, 238); padding: 18pt; overflow-x: auto; margin: 0px; font-family: &quot;Ubuntu Mono&quot;, monospace; display: block;"><pre style="margin: 1em 0px; font-family: monospace, serif; font-size: 1em; white-space: pre-wrap; word-wrap: break-word;"><span style="color: rgb(153, 153, 136); font-style: normal;">// Single-line comments start with // - only available in C99 and later.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Multi-line comments look like this. They work in C89 as well.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Multi-line comments don't nest /* Be careful */</span>  <span style="color: rgb(153, 153, 136); font-style: normal;">// comment ends on this line...</span>
+<span style="color: rgb(166, 23, 23); background-color: rgb(227, 210, 210);">*/</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// ...not this one!</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Constants: #define &lt;keyword&gt;</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Constants are written in all-caps out of convention, not requirement</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#define DAYS_IN_YEAR 365</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Enumeration constants are also ways to declare constants.</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// All statements must end with a semicolon</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">enum</span> <span style="color: rgb(51, 51, 51);">days</span> {<span style="color: rgb(51, 51, 51);">SUN</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(51, 51, 51);">MON</span>, <span style="color: rgb(51, 51, 51);">TUE</span>, <span style="color: rgb(51, 51, 51);">WED</span>, <span style="color: rgb(51, 51, 51);">THU</span>, <span style="color: rgb(51, 51, 51);">FRI</span>, <span style="color: rgb(51, 51, 51);">SAT</span>};
+<span style="color: rgb(153, 153, 136); font-style: normal;">// MON gets 2 automatically, TUE gets 3, etc.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Import headers with #include</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#include &lt;stdlib.h&gt;</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#include &lt;stdio.h&gt;</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#include &lt;string.h&gt;</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// (File names between &lt;angle brackets&gt; are headers from the C standard library.)</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// For your own headers, use double quotes instead of angle brackets:</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//#include &quot;my_header.h&quot;</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Declare function signatures in advance in a .h file, or at the top of</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// your .c file.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">function_1</span>();
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">function_2</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>);
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Must declare a 'function prototype' before main() when functions occur after</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// your main() function.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">add_two_ints</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x1</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x2</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// function prototype</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// although `int add_two_ints(int, int);` is also valid (no need to name the args),</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// it is recommended to name arguments in the prototype as well for easier inspection</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Your program's entry point is a function called</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// main with an integer return type.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">main</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span>) {
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// your program</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// The command line arguments used to run your program are also passed to main</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// argc being the number of arguments - your program's name counts as 1</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// argv is an array of character arrays - containing the arguments themselves</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// argv[0] = name of your program, argv[1] = first argument, etc.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">main</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">argc</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span><span style="color: rgb(0, 0, 0); font-weight: bold;">**</span> <span style="color: rgb(51, 51, 51);">argv</span>)
+{
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// print output using printf, for &quot;print formatted&quot;</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// %d is an integer, \n is a newline</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 153, 153);">0</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 0</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Types</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// All variables MUST be declared at the top of the current block scope</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// we declare them dynamically along the code for the sake of the tutorial</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// ints are usually 4 bytes</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x_int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// shorts are usually 2 bytes</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">short</span> <span style="color: rgb(51, 51, 51);">x_short</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// chars are guaranteed to be 1 byte</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">x_char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">y_char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">'y'</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Char literals are quoted with ''</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// longs are often 4 to 8 bytes; long longs are guaranteed to be at least</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// 64 bits</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">x_long</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">x_long_long</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// floats are usually 32-bit floating point numbers</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">float</span> <span style="color: rgb(51, 51, 51);">x_float</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0.0f</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// 'f' suffix here denotes floating point literal</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// doubles are usually 64-bit floating-point numbers</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">double</span> <span style="color: rgb(51, 51, 51);">x_double</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0.0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// real numbers without any suffix are doubles</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// integer types may be unsigned (greater than or equal to zero)</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">unsigned</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">short</span> <span style="color: rgb(51, 51, 51);">ux_short</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">unsigned</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">ux_int</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">unsigned</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">long</span> <span style="color: rgb(51, 51, 51);">ux_long_long</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// chars inside single quotes are integers in machine's character set.</span>
+  <span style="color: rgb(208, 16, 64);">'0'</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 48 in the ASCII character set.</span>
+  <span style="color: rgb(208, 16, 64);">'A'</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 65 in the ASCII character set.</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// sizeof(T) gives you the size of a variable with type T in bytes</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// sizeof(obj) yields the size of the expression (variable, literal, etc.).</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%zu</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 4 (on most machines with 4-byte words)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// If the argument of the `sizeof` operator is an expression, then its argument</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// is not evaluated (except VLAs (see below)).</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// The value it yields in this case is a compile-time constant.</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">a</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">1</span>;
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// size_t is an unsigned integer type of at least 2 bytes used to represent</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// the size of an object.</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">size_t</span> <span style="color: rgb(51, 51, 51);">size</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span>(<span style="color: rgb(51, 51, 51);">a</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// a++ is not evaluated</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;sizeof(a++) = %zu where a = %d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">size</span>, <span style="color: rgb(51, 51, 51);">a</span>);
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// prints &quot;sizeof(a++) = 4 where a = 1&quot; (on a 32-bit architecture)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Arrays must be initialized with a concrete size.</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">my_char_array</span>[<span style="color: rgb(0, 153, 153);">20</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// This array occupies 1 * 20 = 20 bytes</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">my_int_array</span>[<span style="color: rgb(0, 153, 153);">20</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// This array occupies 4 * 20 = 80 bytes</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// (assuming 4-byte words)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// You can initialize an array to 0 thusly:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">my_array</span>[<span style="color: rgb(0, 153, 153);">20</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> {<span style="color: rgb(0, 153, 153);">0</span>};
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Indexing an array is like other languages -- or,</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// rather, other languages are like C</span>
+  <span style="color: rgb(51, 51, 51);">my_array</span>[<span style="color: rgb(0, 153, 153);">0</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Arrays are mutable; it's just memory!</span>
+  <span style="color: rgb(51, 51, 51);">my_array</span>[<span style="color: rgb(0, 153, 153);">1</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">2</span>;
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">my_array</span>[<span style="color: rgb(0, 153, 153);">1</span>]); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 2</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// In C99 (and as an optional feature in C11), variable-length arrays (VLAs)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// can be declared as well. The size of such an array need not be a compile</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// time constant:</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;Enter the array size: &quot;</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// ask the user for an array size</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">array_size</span>;
+  <span style="color: rgb(51, 51, 51);">fscanf</span>(<span style="color: rgb(51, 51, 51);">stdin</span>, <span style="color: rgb(208, 16, 64);">&quot;%d&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span><span style="color: rgb(51, 51, 51);">array_size</span>);
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">var_length_array</span>[<span style="color: rgb(51, 51, 51);">array_size</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// declare the VLA</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;sizeof array = %zu</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span> <span style="color: rgb(51, 51, 51);">var_length_array</span>);
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Example:</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// &gt; Enter the array size: 10</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// &gt; sizeof array = 40</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Strings are just arrays of chars terminated by a NULL (0x00) byte,</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// represented in strings as the special character '\0'.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// (We don't have to include the NULL byte in string literals; the compiler</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">//  inserts it at the end of the array for us.)</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">a_string</span>[<span style="color: rgb(0, 153, 153);">20</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">&quot;This is a string&quot;</span>;
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%s</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">a_string</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// %s formats a string</span>
+
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">a_string</span>[<span style="color: rgb(0, 153, 153);">16</span>]); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// i.e., byte #17 is 0 (as are 18, 19, and 20)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// If we have characters between single quotes, that's a character literal.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// It's of type `int`, and *not* `char` (for historical reasons).</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">cha</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">'a'</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// fine</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">chb</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">'a'</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// fine too (implicit conversion from int to char)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Multi-dimensional arrays:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">multi_array</span>[<span style="color: rgb(0, 153, 153);">2</span>][<span style="color: rgb(0, 153, 153);">5</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> {
+    {<span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(0, 153, 153);">2</span>, <span style="color: rgb(0, 153, 153);">3</span>, <span style="color: rgb(0, 153, 153);">4</span>, <span style="color: rgb(0, 153, 153);">5</span>},
+    {<span style="color: rgb(0, 153, 153);">6</span>, <span style="color: rgb(0, 153, 153);">7</span>, <span style="color: rgb(0, 153, 153);">8</span>, <span style="color: rgb(0, 153, 153);">9</span>, <span style="color: rgb(0, 153, 153);">0</span>}
+  };
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// access elements:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">array_int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">multi_array</span>[<span style="color: rgb(0, 153, 153);">0</span>][<span style="color: rgb(0, 153, 153);">2</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 3</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Operators</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Shorthands for multiple declarations:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">1</span>, <span style="color: rgb(51, 51, 51);">i2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">2</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">float</span> <span style="color: rgb(51, 51, 51);">f1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">1.0</span>, <span style="color: rgb(51, 51, 51);">f2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">2.0</span>;
+
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">b</span>, <span style="color: rgb(51, 51, 51);">c</span>;
+  <span style="color: rgb(51, 51, 51);">b</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">c</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Arithmetic is straightforward</span>
+  <span style="color: rgb(51, 51, 51);">i1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(51, 51, 51);">i2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 3</span>
+  <span style="color: rgb(51, 51, 51);">i2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> <span style="color: rgb(51, 51, 51);">i1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1</span>
+  <span style="color: rgb(51, 51, 51);">i2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">i1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 2</span>
+  <span style="color: rgb(51, 51, 51);">i1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span> <span style="color: rgb(51, 51, 51);">i2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0 (0.5, but truncated towards 0)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// You need to cast at least one integer to float to get a floating-point result</span>
+  (<span style="color: rgb(68, 85, 136); font-weight: bold;">float</span>)<span style="color: rgb(51, 51, 51);">i1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span> <span style="color: rgb(51, 51, 51);">i2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0.5f</span>
+  <span style="color: rgb(51, 51, 51);">i1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span> (<span style="color: rgb(68, 85, 136); font-weight: bold;">double</span>)<span style="color: rgb(51, 51, 51);">i2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0.5 // Same with double</span>
+  <span style="color: rgb(51, 51, 51);">f1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span> <span style="color: rgb(51, 51, 51);">f2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0.5, plus or minus epsilon</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Floating-point numbers and calculations are not exact</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Modulo is there as well</span>
+  <span style="color: rgb(0, 153, 153);">11</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">%</span> <span style="color: rgb(0, 153, 153);">3</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 2</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Comparison operators are probably familiar, but</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// there is no Boolean type in C. We use ints instead.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// (Or _Bool or bool in C99.)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// 0 is false, anything else is true. (The comparison</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// operators always yield 0 or 1.)</span>
+  <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">==</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0 (false)</span>
+  <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">!=</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1 (true)</span>
+  <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1</span>
+  <span style="color: rgb(0, 153, 153);">3</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0</span>
+  <span style="color: rgb(0, 153, 153);">2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;=</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1</span>
+  <span style="color: rgb(0, 153, 153);">2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;=</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// C is not Python - comparisons don't chain.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Warning: The line below will compile, but it means `(0 &lt; a) &lt; 2`.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// This expression is always true, because (0 &lt; a) could be either 1 or 0.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// In this case it's 1, because (0 &lt; 1).</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">between_0_and_2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(51, 51, 51);">a</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">2</span>;
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Instead use:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">between_0_and_2</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(51, 51, 51);">a</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;&amp;</span> <span style="color: rgb(51, 51, 51);">a</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">2</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Logic works on ints</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">!</span><span style="color: rgb(0, 153, 153);">3</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0 (Logical not)</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">!</span><span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1</span>
+  <span style="color: rgb(0, 153, 153);">1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;&amp;</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1 (Logical and)</span>
+  <span style="color: rgb(0, 153, 153);">0</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;&amp;</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0</span>
+  <span style="color: rgb(0, 153, 153);">0</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">||</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1 (Logical or)</span>
+  <span style="color: rgb(0, 153, 153);">0</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">||</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Conditional ternary expression ( ? : )</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">e</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">5</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">f</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">10</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">z</span>;
+  <span style="color: rgb(51, 51, 51);">z</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> (<span style="color: rgb(51, 51, 51);">e</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(51, 51, 51);">f</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">?</span> <span style="color: rgb(153, 0, 0); font-weight: bold;">e</span> : <span style="color: rgb(51, 51, 51);">f</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 10 &quot;if e &gt; f return e, else return f.&quot;</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Increment and decrement operators:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">j</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">s</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">j</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Return j THEN increase j. (s = 0, j = 1)</span>
+  <span style="color: rgb(51, 51, 51);">s</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">++</span><span style="color: rgb(51, 51, 51);">j</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Increase j THEN return j. (s = 2, j = 2)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// same with j-- and --j</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Bitwise operators!</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">~</span><span style="color: rgb(0, 153, 153);">0x0F</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0xFFFFFFF0 (bitwise negation, &quot;1's complement&quot;, example result for 32-bit int)</span>
+  <span style="color: rgb(0, 153, 153);">0x0F</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span> <span style="color: rgb(0, 153, 153);">0xF0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0x00 (bitwise AND)</span>
+  <span style="color: rgb(0, 153, 153);">0x0F</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">|</span> <span style="color: rgb(0, 153, 153);">0xF0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0xFF (bitwise OR)</span>
+  <span style="color: rgb(0, 153, 153);">0x04</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">^</span> <span style="color: rgb(0, 153, 153);">0x0F</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0x0B (bitwise XOR)</span>
+  <span style="color: rgb(0, 153, 153);">0x01</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;&lt;</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0x02 (bitwise left shift (by 1))</span>
+  <span style="color: rgb(0, 153, 153);">0x02</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;&gt;</span> <span style="color: rgb(0, 153, 153);">1</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 0x01 (bitwise right shift (by 1))</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Be careful when shifting signed integers - the following are undefined:</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// - shifting into the sign bit of a signed integer (int a = 1 &lt;&lt; 31)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// - left-shifting a negative number (int a = -1 &lt;&lt; 2)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// - shifting by an offset which is &gt;= the width of the type of the LHS:</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">//   int a = 1 &lt;&lt; 32; // UB if int is 32 bits wide</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Control Structures</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 153, 153);">0</span>) {
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;I am never run</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+  } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span> (<span style="color: rgb(0, 153, 153);">0</span>) {
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;I am also never run</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+  } <span style="color: rgb(0, 0, 0); font-weight: 700;">else</span> {
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;I print</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+  }
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// While loops exist</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">while</span> (<span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">10</span>) { <span style="color: rgb(153, 153, 136); font-style: normal;">//ANY value not zero is true.</span>
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d, &quot;</span>, <span style="color: rgb(51, 51, 51);">ii</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// ii++ increments ii AFTER using its current value.</span>
+  } <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; prints &quot;0, 1, 2, 3, 4, 5, 6, 7, 8, 9, &quot;</span>
+
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">kk</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">do</span> {
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d, &quot;</span>, <span style="color: rgb(51, 51, 51);">kk</span>);
+  } <span style="color: rgb(0, 0, 0); font-weight: 700;">while</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">++</span><span style="color: rgb(51, 51, 51);">kk</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">10</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// ++kk increments kk BEFORE using its current value.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; prints &quot;0, 1, 2, 3, 4, 5, 6, 7, 8, 9, &quot;</span>
+
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// For loops too</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">jj</span>;
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">jj</span><span style="color: rgb(0, 0, 0); font-weight: bold;">=</span><span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">jj</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">10</span>; <span style="color: rgb(51, 51, 51);">jj</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>) {
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d, &quot;</span>, <span style="color: rgb(51, 51, 51);">jj</span>);
+  } <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; prints &quot;0, 1, 2, 3, 4, 5, 6, 7, 8, 9, &quot;</span>
+
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// *****NOTES*****:</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Loops and Functions MUST have a body. If no body is needed:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span>;
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;=</span> <span style="color: rgb(0, 153, 153);">5</span>; <span style="color: rgb(51, 51, 51);">i</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>) {
+    ; <span style="color: rgb(153, 153, 136); font-style: normal;">// use semicolon to act as the body (null statement)</span>
+  }
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Or</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;=</span> <span style="color: rgb(0, 153, 153);">5</span>; <span style="color: rgb(51, 51, 51);">i</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>);
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// branching with multiple choices: switch()</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">switch</span> (<span style="color: rgb(51, 51, 51);">a</span>) {
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">0</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span> <span style="color: rgb(153, 153, 136); font-style: normal;">// labels need to be integral *constant* expressions</span>
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;Hey, 'a' equals 0!</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// if you don't break, control flow falls over labels</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">1</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span>
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;Huh, 'a' equals 1!</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// Be careful - without a &quot;break&quot;, execution continues until the</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// next &quot;break&quot; is reached.</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">3</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">case</span> <span style="color: rgb(0, 153, 153);">4</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span>
+    <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;Look at that.. 'a' is either 3, or 4</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>);
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">default</span><span style="color: rgb(0, 0, 0); font-weight: bold;">:</span>
+    <span style="color: rgb(153, 153, 136); font-style: normal;">// if `some_integral_expression` didn't match any of the labels</span>
+    <span style="color: rgb(51, 51, 51);">fputs</span>(<span style="color: rgb(208, 16, 64);">&quot;Error!</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">stderr</span>);
+    <span style="color: rgb(51, 51, 51);">exit</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">-</span><span style="color: rgb(0, 153, 153);">1</span>);
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">break</span>;
+  }
+  <span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">  using &quot;goto&quot; in C</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">  */</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">typedef</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">enum</span> { <span style="color: rgb(0, 134, 179); font-weight: 700;">false</span>, <span style="color: rgb(0, 134, 179); font-weight: 700;">true</span> } <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span>;
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// for C don't have bool as data type :(</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">bool</span> <span style="color: rgb(51, 51, 51);">disaster</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">false</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span>, <span style="color: rgb(51, 51, 51);">j</span>;
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span>(<span style="color: rgb(51, 51, 51);">i</span><span style="color: rgb(0, 0, 0); font-weight: bold;">=</span><span style="color: rgb(0, 153, 153);">0</span>;<span style="color: rgb(51, 51, 51);">i</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(0, 153, 153);">100</span>;<span style="color: rgb(0, 0, 0); font-weight: bold;">++</span><span style="color: rgb(51, 51, 51);">i</span>)
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span>(<span style="color: rgb(51, 51, 51);">j</span><span style="color: rgb(0, 0, 0); font-weight: bold;">=</span><span style="color: rgb(0, 153, 153);">0</span>;<span style="color: rgb(51, 51, 51);">j</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(0, 153, 153);">100</span>;<span style="color: rgb(0, 0, 0); font-weight: bold;">++</span><span style="color: rgb(51, 51, 51);">j</span>)
+  {
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span>((<span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(51, 51, 51);">j</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;=</span> <span style="color: rgb(0, 153, 153);">150</span>)
+        <span style="color: rgb(51, 51, 51);">disaster</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 134, 179); font-weight: 700;">true</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">if</span>(<span style="color: rgb(51, 51, 51);">disaster</span>)
+        <span style="color: rgb(0, 0, 0); font-weight: 700;">goto</span> <span style="color: rgb(51, 51, 51);">error</span>;
+  }
+  <span style="color: rgb(153, 0, 0); font-weight: bold;">error</span> :
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;Error occured at i = %d &amp; j = %d.</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">i</span>, <span style="color: rgb(51, 51, 51);">j</span>);
+  <span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">  https://ideone.com/GuPhd6</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">  this will print out &quot;Error occured at i = 52 &amp; j = 99.&quot;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">  */</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Typecasting</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Every value in C has a type, but you can cast one value into another type</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// if you want (with some constraints).</span>
+
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x_hex</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0x01</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// You can assign vars with hex literals</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Casting between types will attempt to preserve their numeric values</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">x_hex</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 1</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">short</span>) <span style="color: rgb(51, 51, 51);">x_hex</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 1</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">char</span>) <span style="color: rgb(51, 51, 51);">x_hex</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 1</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Types will overflow without warning</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">unsigned</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span>) <span style="color: rgb(0, 153, 153);">257</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 1 (Max char = 255 if char is 8 bits long)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// For determining the max value of a `char`, a `signed char` and an `unsigned char`,</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// respectively, use the CHAR_MAX, SCHAR_MAX and UCHAR_MAX macros from &lt;limits.h&gt;</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Integral types can be cast to floating-point types, and vice-versa.</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%f</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">float</span>)<span style="color: rgb(0, 153, 153);">100</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// %f formats a float</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%lf</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">double</span>)<span style="color: rgb(0, 153, 153);">100</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// %lf formats a double</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">char</span>)<span style="color: rgb(0, 153, 153);">100.0</span>);
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Pointers</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// A pointer is a variable declared to store a memory address. Its declaration will</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// also tell you the type of data it points to. You can retrieve the memory address</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// of your variables, then mess with them.</span>
+
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%p</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span><span style="color: rgb(51, 51, 51);">x</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Use &amp; to retrieve the address of a variable</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// (%p formats an object pointer of type void *)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints some address in memory;</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Pointers start with * in their declaration</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">px</span>, <span style="color: rgb(51, 51, 51);">not_a_pointer</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// px is a pointer to an int</span>
+  <span style="color: rgb(51, 51, 51);">px</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span><span style="color: rgb(51, 51, 51);">x</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Stores the address of x in px</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%p</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, (<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>)<span style="color: rgb(51, 51, 51);">px</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints some address in memory</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%zu, %zu</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span>(<span style="color: rgb(51, 51, 51);">px</span>), <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span>(<span style="color: rgb(51, 51, 51);">not_a_pointer</span>));
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints &quot;8, 4&quot; on a typical 64-bit system</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// To retrieve the value at the address a pointer is pointing to,</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// put * in front to dereference it.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Note: yes, it may be confusing that '*' is used for _both_ declaring a</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// pointer and dereferencing it.</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">px</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 0, the value of x</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// You can also change the value the pointer is pointing to.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// We'll have to wrap the dereference in parenthesis because</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// ++ has a higher precedence than *.</span>
+  (<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">px</span>)<span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Increment the value px is pointing to by 1</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">px</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 1</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">x</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 1</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Arrays are a good way to allocate a contiguous block of memory</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x_array</span>[<span style="color: rgb(0, 153, 153);">20</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">//declares array of size 20 (cannot change size)</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">xx</span>;
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">xx</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">xx</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">20</span>; <span style="color: rgb(51, 51, 51);">xx</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>) {
+    <span style="color: rgb(51, 51, 51);">x_array</span>[<span style="color: rgb(51, 51, 51);">xx</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">20</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> <span style="color: rgb(51, 51, 51);">xx</span>;
+  } <span style="color: rgb(153, 153, 136); font-style: normal;">// Initialize x_array to 20, 19, 18,... 2, 1</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Declare a pointer of type int and initialize it to point to x_array</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span><span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">x_ptr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">x_array</span>;
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// x_ptr now points to the first element in the array (the integer 20).</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// This works because arrays often decay into pointers to their first element.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// For example, when an array is passed to a function or is assigned to a pointer,</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// it decays into (implicitly converted to) a pointer.</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Exceptions: when the array is the argument of the `&amp;` (address-of) operator:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">arr</span>[<span style="color: rgb(0, 153, 153);">10</span>];
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">ptr_to_arr</span>)[<span style="color: rgb(0, 153, 153);">10</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span><span style="color: rgb(51, 51, 51);">arr</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// &amp;arr is NOT of type `int *`!</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// It's of type &quot;pointer to array&quot; (of ten `int`s).</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// or when the array is a string literal used for initializing a char array:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">otherarr</span>[] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">&quot;foobarbazquirk&quot;</span>;
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// or when it's the argument of the `sizeof` or `alignof` operator:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">arraythethird</span>[<span style="color: rgb(0, 153, 153);">10</span>];
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">ptr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">arraythethird</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// equivalent with int *ptr = &amp;arr[0];</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%zu, %zu</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span> <span style="color: rgb(51, 51, 51);">arraythethird</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span> <span style="color: rgb(51, 51, 51);">ptr</span>);
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// probably prints &quot;40, 4&quot; or &quot;40, 8&quot;</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Pointers are incremented and decremented based on their type</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// (this is called pointer arithmetic)</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>(<span style="color: rgb(51, 51, 51);">x_ptr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">1</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 19</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">x_array</span>[<span style="color: rgb(0, 153, 153);">1</span>]); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints 19</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// You can also dynamically allocate contiguous blocks of memory with the</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// standard library function malloc, which takes one argument of type size_t</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// representing the number of bytes to allocate (usually from the heap, although this</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// may not be true on e.g. embedded systems - the C standard says nothing about it).</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_ptr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">malloc</span>(<span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span>(<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_ptr</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(0, 153, 153);">20</span>);
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">xx</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">xx</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(0, 153, 153);">20</span>; <span style="color: rgb(51, 51, 51);">xx</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>) {
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>(<span style="color: rgb(51, 51, 51);">my_ptr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(51, 51, 51);">xx</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">20</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> <span style="color: rgb(51, 51, 51);">xx</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// my_ptr[xx] = 20-xx</span>
+  } <span style="color: rgb(153, 153, 136); font-style: normal;">// Initialize memory to 20, 19, 18, 17... 2, 1 (as ints)</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Note that there is no standard way to get the length of a</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// dynamically allocated array in C. Because of this, if your arrays are</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// going to be passed around your program a lot, you need another variable</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// to keep track of the number of elements (size) of an array. See the</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// functions section for more info.</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">size</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">10</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_arr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">malloc</span>(<span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">size</span>);
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Add an element to the array</span>
+  <span style="color: rgb(51, 51, 51);">size</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>;
+  <span style="color: rgb(51, 51, 51);">my_arr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">realloc</span>(<span style="color: rgb(51, 51, 51);">my_arr</span>, <span style="color: rgb(0, 0, 0); font-weight: 700;">sizeof</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span>) <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">size</span>);
+  <span style="color: rgb(51, 51, 51);">my_arr</span>[<span style="color: rgb(0, 153, 153);">10</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">5</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Dereferencing memory that you haven't allocated gives</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// &quot;unpredictable results&quot; - the program is said to invoke &quot;undefined behavior&quot;</span>
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>(<span style="color: rgb(51, 51, 51);">my_ptr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(0, 153, 153);">21</span>)); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; Prints who-knows-what? It may even crash.</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// When you're done with a malloc'd block of memory, you need to free it,</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// or else no one else can use it until your program terminates</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// (this is called a &quot;memory leak&quot;):</span>
+  <span style="color: rgb(51, 51, 51);">free</span>(<span style="color: rgb(51, 51, 51);">my_ptr</span>);
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Strings are arrays of char, but they are usually represented as a</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// pointer-to-char (which is a pointer to the first element of the array).</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// It's good practice to use `const char *' when referring to a string literal,</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// since string literals shall not be modified (i.e. &quot;foo&quot;[0] = 'a' is ILLEGAL.)</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">const</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_str</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">&quot;This is my very own string literal&quot;</span>;
+  <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;%c</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_str</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// =&gt; 'T'</span>
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// This is not the case if the string is an array</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// (potentially initialized with a string literal)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// that resides in writable memory, as in:</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">foo</span>[] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">&quot;foo&quot;</span>;
+  <span style="color: rgb(51, 51, 51);">foo</span>[<span style="color: rgb(0, 153, 153);">0</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(208, 16, 64);">'a'</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// this is legal, foo now contains &quot;aoo&quot;</span>
+
+  <span style="color: rgb(51, 51, 51);">function_1</span>();
+} <span style="color: rgb(153, 153, 136); font-style: normal;">// end main function</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Functions</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Function declaration syntax:</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;return type&gt; &lt;function name&gt;(&lt;args&gt;)</span>
+
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">add_two_ints</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x1</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">x2</span>)
+{
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">x1</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">+</span> <span style="color: rgb(51, 51, 51);">x2</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Use return to return a value</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Functions are call by value. When a function is called, the arguments passed to</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">the function are copies of the original arguments (except arrays). Anything you</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">do to the arguments in the function do not change the value of the original</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">argument where the function was called.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">Use pointers if you need to edit the original argument values.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">Example: in-place string reversal</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// A void function returns no value</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">str_reverse</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">str_in</span>)
+{
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(51, 51, 51);">tmp</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">size_t</span> <span style="color: rgb(51, 51, 51);">len</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">strlen</span>(<span style="color: rgb(51, 51, 51);">str_in</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// `strlen()` is part of the c standard library</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(51, 51, 51);">len</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span> <span style="color: rgb(0, 153, 153);">2</span>; <span style="color: rgb(51, 51, 51);">ii</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>) {
+    <span style="color: rgb(51, 51, 51);">tmp</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">str_in</span>[<span style="color: rgb(51, 51, 51);">ii</span>];
+    <span style="color: rgb(51, 51, 51);">str_in</span>[<span style="color: rgb(51, 51, 51);">ii</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">str_in</span>[<span style="color: rgb(51, 51, 51);">len</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> <span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> <span style="color: rgb(0, 153, 153);">1</span>]; <span style="color: rgb(153, 153, 136); font-style: normal;">// ii-th char from end</span>
+    <span style="color: rgb(51, 51, 51);">str_in</span>[<span style="color: rgb(51, 51, 51);">len</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> <span style="color: rgb(51, 51, 51);">ii</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">-</span> <span style="color: rgb(0, 153, 153);">1</span>] <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">tmp</span>;
+  }
+}
+<span style="color: rgb(153, 153, 136); font-style: normal;">//NOTE: string.h header file needs to be included to use strlen()</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">char c[] = &quot;This is a test.&quot;;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">str_reverse(c);</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">printf(&quot;%s\n&quot;, c); // =&gt; &quot;.tset a si sihT&quot;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">as we can return only one variable</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">to change values of more than one variables we use call by reference</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">swapTwoNumbers</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">a</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">b</span>)
+{
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">temp</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">a</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">a</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">b</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">b</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(51, 51, 51);">temp</span>;
+}
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">int first = 10;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">int second = 20;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">printf(&quot;first: %d\nsecond: %d\n&quot;, first, second);</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">swapTwoNumbers(&amp;first, &amp;second);</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">printf(&quot;first: %d\nsecond: %d\n&quot;, first, second);</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">// values will be swapped</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">With regards to arrays, they will always be passed to functions</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">as pointers. Even if you statically allocate an array like `arr[10]`,</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">it still gets passed as a pointer to the first element in any function calls.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Again, there is no standard way to get the size of a dynamically allocated</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">array in C.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Size must be passed!</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Otherwise, this function has no way of knowing how big the array is.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">printIntArray</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">arr</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">size</span>) {
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">for</span> (<span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span> <span style="color: rgb(51, 51, 51);">size</span>; <span style="color: rgb(51, 51, 51);">i</span><span style="color: rgb(0, 0, 0); font-weight: bold;">++</span>) {
+        <span style="color: rgb(51, 51, 51);">printf</span>(<span style="color: rgb(208, 16, 64);">&quot;arr[%d] is: %d</span><span style="color: rgb(208, 16, 64);">\n</span><span style="color: rgb(208, 16, 64);">&quot;</span>, <span style="color: rgb(51, 51, 51);">i</span>, <span style="color: rgb(51, 51, 51);">arr</span>[<span style="color: rgb(51, 51, 51);">i</span>]);
+    }
+}
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">int my_arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">int size = 10;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">printIntArray(my_arr, size);</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">// will print &quot;arr[0] is: 1&quot; etc</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// if referring to external variables outside function, must use extern keyword.</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">testFunc</span>() {
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">extern</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">i</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">//i here is now using external variable i</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// make external variables private to source file with static:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">static</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">j</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">//other files using testFunc2() cannot access variable j</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">testFunc2</span>() {
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">extern</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">j</span>;
+}
+<span style="color: rgb(153, 153, 136); font-style: normal;">//**You may also declare functions as static to make them private**</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// User-defined types and structs</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Typedefs can be used to create type aliases</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">typedef</span> <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">my_type</span>;
+<span style="color: rgb(51, 51, 51);">my_type</span> <span style="color: rgb(51, 51, 51);">my_type_var</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">0</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Structs are just collections of data, the members are allocated sequentially,</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// in the order they are written:</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">struct</span> <span style="color: rgb(51, 51, 51);">rectangle</span> {
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">width</span>;
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">height</span>;
+};
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// It's not generally true that</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// sizeof(struct rectangle) == sizeof(int) + sizeof(int)</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// due to potential padding between the structure members (this is for alignment</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// reasons). [1]</span>
+
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">function_1</span>()
+{
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">struct</span> <span style="color: rgb(51, 51, 51);">rectangle</span> <span style="color: rgb(51, 51, 51);">my_rec</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Access struct members with .</span>
+  <span style="color: rgb(51, 51, 51);">my_rec</span>.<span style="color: rgb(51, 51, 51);">width</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">10</span>;
+  <span style="color: rgb(51, 51, 51);">my_rec</span>.<span style="color: rgb(51, 51, 51);">height</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">20</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// You can declare pointers to structs</span>
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">struct</span> <span style="color: rgb(51, 51, 51);">rectangle</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_rec_ptr</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span><span style="color: rgb(51, 51, 51);">my_rec</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Use dereferencing to set struct pointer members...</span>
+  (<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_rec_ptr</span>).<span style="color: rgb(51, 51, 51);">width</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">30</span>;
+
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// ... or even better: prefer the -&gt; shorthand for the sake of readability</span>
+  <span style="color: rgb(51, 51, 51);">my_rec_ptr</span><span style="color: rgb(0, 0, 0); font-weight: bold;">-&gt;</span><span style="color: rgb(51, 51, 51);">height</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 153, 153);">10</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Same as (*my_rec_ptr).height = 10;</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// You can apply a typedef to a struct for convenience</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">typedef</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">struct</span> <span style="color: rgb(51, 51, 51);">rectangle</span> <span style="color: rgb(51, 51, 51);">rect</span>;
+
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">area</span>(<span style="color: rgb(51, 51, 51);">rect</span> <span style="color: rgb(51, 51, 51);">r</span>)
+{
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">r</span>.<span style="color: rgb(51, 51, 51);">width</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">r</span>.<span style="color: rgb(51, 51, 51);">height</span>;
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// if you have large structs, you can pass them &quot;by pointer&quot; to avoid copying</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// the whole struct:</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">areaptr</span>(<span style="color: rgb(0, 0, 0); font-weight: 700;">const</span> <span style="color: rgb(51, 51, 51);">rect</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">r</span>)
+{
+  <span style="color: rgb(0, 0, 0); font-weight: 700;">return</span> <span style="color: rgb(51, 51, 51);">r</span><span style="color: rgb(0, 0, 0); font-weight: bold;">-&gt;</span><span style="color: rgb(51, 51, 51);">width</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span> <span style="color: rgb(51, 51, 51);">r</span><span style="color: rgb(0, 0, 0); font-weight: bold;">-&gt;</span><span style="color: rgb(51, 51, 51);">height</span>;
+}
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Function pointers</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">At run time, functions are located at known memory addresses. Function pointers are</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">much like any other pointer (they just store a memory address), but can be used</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">to invoke functions directly, and to pass handlers (or callback functions) around.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">However, definition syntax may be initially confusing.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">Example: use str_reverse from a pointer</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+<span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">str_reverse_through_pointer</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">str_in</span>) {
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// Define a function pointer variable, named f.</span>
+  <span style="color: rgb(68, 85, 136); font-weight: bold;">void</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">f</span>)(<span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Signature should exactly match the target function.</span>
+  <span style="color: rgb(51, 51, 51);">f</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span><span style="color: rgb(51, 51, 51);">str_reverse</span>; <span style="color: rgb(153, 153, 136); font-style: normal;">// Assign the address for the actual function (determined at run time)</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// f = str_reverse; would work as well - functions decay into pointers, similar to arrays</span>
+  (<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">f</span>)(<span style="color: rgb(51, 51, 51);">str_in</span>); <span style="color: rgb(153, 153, 136); font-style: normal;">// Just calling the function through the pointer</span>
+  <span style="color: rgb(153, 153, 136); font-style: normal;">// f(str_in); // That's an alternative but equally valid syntax for calling it.</span>
+}
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">As long as function signatures match, you can assign any function to the same pointer.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">Function pointers are usually typedef'd for simplicity and readability, as follows:</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(0, 0, 0); font-weight: 700;">typedef</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">void</span> (<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">my_fnp_type</span>)(<span style="color: rgb(68, 85, 136); font-weight: bold;">char</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>);
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Then used when declaring the actual pointer variable:</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ...</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// my_fnp_type f;</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">//Special characters:</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/*</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\a'; // alert (bell) character</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\n'; // newline character</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\t'; // tab character (left justifies text)</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\v'; // vertical tab</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\f'; // new page (form feed)</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\r'; // carriage return</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\b'; // backspace character</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\0'; // NULL character. Usually put at end of strings in C.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">//   hello\n\0. \0 used by convention to mark end of string.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\\'; // backslash</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\?'; // question mark</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\''; // single quote</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\&quot;'; // double quote</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\xhh'; // hexadecimal number. Example: '\xb' = vertical tab character</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">'\0oo'; // octal number. Example: '\013' = vertical tab character</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">//print formatting:</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%d&quot;;    // integer</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%3d&quot;;   // integer with minimum of length 3 digits (right justifies text)</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%s&quot;;    // string</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%f&quot;;    // float</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%ld&quot;;   // long</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%3.2f&quot;; // minimum 3 digits left and 2 digits right decimal float</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%7.4s&quot;; // (can do with strings too)</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%c&quot;;    // char</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%p&quot;;    // pointer</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%x&quot;;    // hexadecimal</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%o&quot;;    // octal</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">&quot;%%&quot;;    // prints %</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// Order of Evaluation</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">///////////////////////////////////////</span>
+
+<span style="color: rgb(153, 153, 136); font-style: normal;">//---------------------------------------------------//</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//        Operators                  | Associativity //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//---------------------------------------------------//</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// () [] -&gt; .                        | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ! ~ ++ -- + = *(type)sizeof       | right to left //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// * / %                             | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// + -                               | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// &lt;&lt; &gt;&gt;                             | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// &lt; &lt;= &gt; &gt;=                         | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// == !=                             | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// &amp;                                 | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ^                                 | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// |                                 | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// &amp;&amp;                                | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ||                                | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ?:                                | right to left //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// = += -= *= /= %= &amp;= ^= |= &lt;&lt;= &gt;&gt;= | right to left //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">// ,                                 | left to right //</span>
+<span style="color: rgb(153, 153, 136); font-style: normal;">//---------------------------------------------------//</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/******************************* Header Files **********************************</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">Header files are an important part of C as they allow for the connection of C</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">source files and can simplify code and definitions by separating them into</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">separate files.</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">Header files are syntactically similar to C source files but reside in &quot;.h&quot;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">files. They can be included in your C source file by using the precompiler</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">command #include &quot;example.h&quot;, given that example.h exists in the same directory</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">as the C file.</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">*/</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* A safe guard to prevent the header from being defined too many times. This */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* happens in the case of circle dependency, the contents of the header is    */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* already defined.                                                           */</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#ifndef EXAMPLE_H </span><span style="color: rgb(153, 153, 136); font-style: italic;">/* if EXAMPLE_H is not yet defined. */</span><span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;"></span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#define EXAMPLE_H </span><span style="color: rgb(153, 153, 136); font-style: italic;">/* Define the macro EXAMPLE_H. */</span><span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;"></span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Other headers can be included in headers and therefore transitively */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* included into files that include this header.                       */</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#include &lt;string.h&gt;</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Like c source files macros can be defined in headers and used in files */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* that include this header file.                                         */</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#define EXAMPLE_NAME &quot;Dennis Ritchie&quot;</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Function macros can also be defined. */</span>
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#define ADD(a, b) (a + b)</span>
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Structs and typedefs can be used for consistency between files. */</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">typedef</span> <span style="color: rgb(0, 0, 0); font-weight: 700;">struct</span> <span style="color: rgb(51, 51, 51);">node</span>
+{
+    <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">val</span>;
+    <span style="color: rgb(0, 0, 0); font-weight: 700;">struct</span> <span style="color: rgb(51, 51, 51);">node</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">next</span>;
+} <span style="color: rgb(51, 51, 51);">Node</span>;
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* So can enumerations. */</span>
+<span style="color: rgb(0, 0, 0); font-weight: 700;">enum</span> <span style="color: rgb(51, 51, 51);">traffic_light_state</span> {<span style="color: rgb(51, 51, 51);">GREEN</span>, <span style="color: rgb(51, 51, 51);">YELLOW</span>, <span style="color: rgb(51, 51, 51);">RED</span>};
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Function prototypes can also be defined here for use in multiple files,  */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* but it is bad practice to define the function in the header. Definitions */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* should instead be put in a C file.                                       */</span>
+<span style="color: rgb(51, 51, 51);">Node</span> <span style="color: rgb(153, 0, 0); font-weight: 700;">createLinkedList</span>(<span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(51, 51, 51);">vals</span>, <span style="color: rgb(68, 85, 136); font-weight: bold;">int</span> <span style="color: rgb(51, 51, 51);">len</span>);
+
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* Beyond the above elements, other definitions should be left to a C source */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* file. Excessive includes or definitions should, also not be contained in */</span>
+<span style="color: rgb(153, 153, 136); font-style: italic;">/* a header file but instead put into separate headers or a C file.          */</span>
+
+<span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;">#endif </span><span style="color: rgb(153, 153, 136); font-style: italic;">/* End of the if precompiler directive. */</span><span style="color: rgb(153, 153, 153); font-weight: bold; font-style: italic;"></span>
+</pre></div><h2 style="font-size: 1.5em; margin: 22pt 0px 0px; font-family: &quot;Roboto Slab&quot;, serif; padding: 0px;">Further Reading</h2><p style="margin: 22pt 0px 0px; padding: 0px;">Best to find yourself a copy of <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">K&amp;R, aka “The C Programming Language”</a> It is <em>the</em> book about C, written by Dennis Ritchie, the creator of C, and Brian Kernighan. Be careful, though - it’s ancient and it contains some inaccuracies (well, ideas that are not considered good anymore) or now-changed practices.</p><p style="margin: 22pt 0px 0px; padding: 0px;">Another good resource is <a href="http://c.learncodethehardway.org/book/">Learn C The Hard Way</a>.</p><p style="margin: 22pt 0px 0px; padding: 0px;">If you have a question, read the <a href="http://c-faq.com/">compl.lang.c Frequently Asked Questions</a>.</p><p style="margin: 22pt 0px 0px; padding: 0px;">It’s very important to use proper spacing, indentation and to be consistent with your coding style in general. Readable code is better than clever code and fast code. For a good, sane coding style to adopt, see the <a href="https://www.kernel.org/doc/Documentation/CodingStyle">Linux kernel coding style</a>.</p><p style="margin: 22pt 0px 0px; padding: 0px;">Other than that, Google is your friend.</p><p style="margin: 22pt 0px 0px; padding: 0px;">[1] http://stackoverflow.com/questions/119123/why-isnt-sizeof-for-a-struct-equal-to-the-sum-of-sizeof-of-each-member</p><hr style="display: block; height: 1px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 22pt 0px 0px; padding: 0px;"/><p style="margin: 22pt 0px 0px; padding: 0px;">Got a suggestion? A correction, perhaps? <a href="https://github.com/adambard/learnxinyminutes-docs/issues/new">Open an Issue</a> on the Github Repo, or make a pull request yourself!</p><p style="margin: 22pt 0px 0px; padding: 0px;">Originally contributed by Adam Bard, and updated by <a href="https://github.com/adambard/learnxinyminutes-docs/blame/master/c.html.markdown">35 contributor(s)</a>.</p><div style="display: block; margin-top: 60px; text-align: right; color: rgb(119, 119, 119);"><a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US" rel="license" style="float: left;"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border: 0px; vertical-align: middle; max-width: 100%;"></img></a><div><br/></div><div style="margin: 22pt 0px 0px; padding: 0px;"><div>© 2017 <a href="http://adambard.com/">Adam Bard</a>, <a href="http://twitter.com/H2CO3_iOS">Árpád Goretity</a>, <a href="http://cbs.stgn.pl/">Jakub Trzebiatowski</a>, <a href="https://marcoms.github.io/">Marco Scannadinari</a>, <a href="https://github.io/zfergus2">Zachary Ferguson</a>,<a href="https://github.com/himanshu81494">himanshu</a></div></div></div></div></div></span>
+</div></body></html> 
