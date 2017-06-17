@@ -16,6 +16,57 @@
 <a name="371"/>
 <h1>_Programming Memorized &lt; 2017</h1>
 
+### ASA - Cisco Adaptive Security Appliance (ASA) Software
+
+### CED - Certified Ethical Hacker (CEH) is a qualification obtained by assessing the security of computer systems, using penetration testing techniques. The code for the CEH exam is 312-50, and the certification is in Version 9 as of 2016. [1][2]
+Penetration tests are employed by organizations that hire certified ethical hackers to penetrate networks and computer systems with the purpose of finding and fixing security vulnerabilities. While unauthorized hacking, also known as Black Hat hacking, is illegal, penetration testing done at the request of the owner of the targeted systems is not.[citation needed]
+
+### CAPM - Certified Associate in Project Management
+This credential, granted by the Project Management Institute, is designed for newer project managers who can demonstrate an understanding of the basics, terminology, and processes of effective project management.
+
+### AWS CSA - AWS Certified Solutions Architect – Associate
+As more organizations adopt Amazon Elastic Compute Cloud (EC2), there is increasing need for qualified technicians. Introduced in 2013, the AWS Certified Solutions Architect – Associate is becoming a valuable — and valued — certification. To go for this certification, Amazon recommends that you have at least one year of hands-on experience with AWS, plus knowledge of at least one high-level programming language. AWS certifications are reported to be “challenging” and real-world experience of how AWS services work and interact is essential to passing the certification exam.
+
+### CCNP Security -  Cisco Certified Network Professional – Security
+The certification focuses on the skills related to securing Cisco-based networks, including identity management, authentication, authorization, firewalls, anti-malware programs, and security policy development. Professionals with the CCNP – Security credential are typically employed in IT security groups and systems administration.
+
+### VCP6-DCV - VMware Certified Professional 6 – Data Center Virtualization (VCP6-DCV)
+This credential is for IT professionals who work in data centers that have moved to, or are transitioning to, private clouds. Candidates for VCP6-DCV certification need a thorough understanding of networking (DNS, routing, database connectivity, etc.), as well as a minimum of six months experience in configuring, deploying, and managing VMware vSphere 6 environments.
+Candidates who are new to VMware technology are expected to pass two exams — the vSphere 6 Foundations exam and the VMware Certified Professional 6 – Data Center Virtualization (VCP6-DCV) exam. vSphere 6 Foundations is a 90-minute on-line exam with 65 single and multiple choice questions. The VCP6-DCV exam is a proctored test taken at a local VMware-authorized testing center. This exam is 100-minutes long, with 85 single and multiple choice questions.
+VMware certifications are no longer valid for life! You’ll have to recertify every two years by taking the then current exam. — so look forward to vSphere 7 or 8 or maybe 9 in 2018!
+
+### CISM - Certified Information Security Manager
+The CISM credential is granted by ISACA, an independent, nonprofit, association. CISM is focused primarily on information security management and on professionals such as information security professionals or chief information officers. The CISM certification demonstrates that the holder can develop and manage an information security program in line with the goals of the organization.
+
+### CISA - Certified Information Systems Auditor
+This certification, as the name suggests, is targeted at practicing IT auditors, rather than those professionals who are involved in the security of systems, networks, and information. The CISA certification is granted by ISACA, the same body that grants the Certified Information Security Manager (CISM) credential.
+
+### CISSP - Certified Information Systems Security Professional
+The CISSP is granted by the non-profit security consortium known as (ISC)2. Whereas the CISM credential is aimed at management professionals, CISSP is more technical and covers a broader and deeper range of topics. Introduced in 1994, the CISSP is a respected, vendor-neutral security certification. Candidates for CISSP would have roles such as security consultants, security auditors/analysts, security managers, network architects, etc.
+
+### MCSE -  Microsoft Certified Solutions Expert – Private Cloud
+With the popularity of Microsoft private cloud computing, Microsoft’s MCSE – Private Cloud is gaining respect as a required credential for server admins, systems programmers and network managers. After reports of cheating on MSCE exams, Microsoft has “raised the bar” by replacing multiple-choice questions with more difficult performance-related scenario questions and also by increasing the number of exams required.
+
+### PMP -  Project Management Professional (PMP)
+The PMP is another certification granted by the Project Management Institute. They claim that it’s “the gold standard of project management certification” — but maybe they’re biased!
+The PMP demands some serious, real-world experience as a project manager before you can even apply to take the certification exam. If you don’t have a four-year degree, you’ll need to have 7,500 hours leading and directing projects, plus 35 hours of project management education! If you are the proud graduate of a four-year school, then you’ll only need 4,500 hours as a project leader or manager and, of course,  35 hours of project management education!
+
+### CCIE - CCI Cisco Certified Internetwork Expert
+Here’s our vote for #1 toughest certification! It’s Cisco’s top level certification and a highly valued “badge of competency” in the industry. Less than 3% of Cisco certified engineers obtain the CCIE certification, which translates to less than 1% of the networking professionals worldwide. Certainly, it’s not easy to become a CCIE. And once you become one, you must re-certify every two years or your CCIE will be suspended!
+
+===
+
+### GNS3
+Network Simulation/Emulation Application for prototyping without hardwar. Lots of graphing functionality with actual spects from real hardware running current OSes. "The software that empowers network professionals."
+GNS3 provides an effective way to get hands on with core networking topics and concepts. Apply what you are learning today. Start your free week today! http://cbt.gg/2ftwhwB
+
+### Long short-term memory (LSTM) 
+is a recurrent neural network (RNN) architecture (an artificial neural network) proposed in 1997 by Sepp Hochreiter and Jürgen Schmidhuber[2] and further improved in 2000 by Felix Gers et al.[3] Like most RNNs, a LSTM network is universal in the sense that given enough network units it can compute anything a conventional computer can compute, provided it has the proper weight matrix, which may be viewed as its program. Unlike traditional RNNs, an LSTM network is well-suited to learn from experience to classify, process and predict time series when there are time lags of unknown size and bound between important events. Relative insensitivity to gap length gives an advantage to LSTM over alternative RNNs and hidden Markov models and other sequence learning methods in numerous applications. Among other successes, LSTM achieved the best known results in natural language text compression,[4] unsegmented connected handwriting recognition,[5] and in 2009 won the ICDAR handwriting competition. LSTM networks have also been used for automatic speech recognition, and were a major component of a network that in 2013 achieved a record 17.7% phoneme error rate on the classic TIMIT natural speech dataset.[6] As of 2016, major technology companies including Google, Apple, Microsoft, and Baidu are using LSTM networks as fundamental components in new products.[7][8] For example, Google uses LSTM for speech recognition on the smartphone,[9][10] for the smart assistant Allo,[11] and for Google Translate.[12][13] Apple uses LSTM for the "Quicktype" function on the iPhone[14][15] and for Siri.[16] Amazon uses LSTM for Amazon Alexa.[17]
+
+### LDAP (Lightweight Directory Access Protocol) 
+is a software protocol for enabling anyone to locate organizations, individuals, and other resources such as files and devices in a network, whether on the public Internet or on a corporate intranet.
+
+===
 
 	* A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine, is a mathematical model of computation. It is an abstract machine that can be in exactly one of a finite number of states at any given time. The FSM can change from one state to another in response to some external inputs; the change from one state to another is called a transition. A FSM is defined by a list of its states, its initial state, and the conditions for each transition.
 	* In theoretical computer science and formal language theory, a regular language (also called a rational language[1][2]) is a formal language that can be expressed using a regular expression, in the strict sense of the latter notion used in theoretical computer science (as opposed to many regular expressions engines provided by modern programming languages, which are augmented with features that allow recognition of languages that cannot be expressed by a classic regular expression).
